@@ -1,0 +1,191 @@
+<!------------------------------------------------------ ▼ ▼ ▼ FORMS ▼ ▼ ▼ ----------------------------------------------->
+
+
+<!-- добавление атрибута data-ajax="true" и method="POST" позволяет отправлять формы через ajax -->
+<form action="mail.php" data-ajax="true"  method="POST" class="form _scr-item">
+
+
+	<!-------------------------------- INPUT (inp+tab)  --------------------------------->
+
+	<!-- data-value= дает возможность валидации -->
+	<!-- 
+		добавление класса _req для input добавляет валидацию. создает див с data-error="Ошибка" + для к input и его родителю добавляет класс _error, который можно стилизовать в forms.css
+	-->
+	<!-- 
+		добавление класса _text для input валидирует поле на соответствие паттерну text
+	-->
+	<!-- 
+		добавление класса _email для input валидирует поле на соответствие паттерну email
+	-->
+	<!-- 
+		добавление класса _digital для input не дает вводить символы кроме цифр (маска) (файл forms.js)
+	-->
+	<!-- 
+		добавление класса _phone для input не дает вводить символы кроме маски телефона (маска) (файл forms.js)
+	-->
+	<!-- 
+		добавление класса _date для input прикрепляет маску + календарь к форме (файл forms.js)
+	-->
+	<!-- 
+		при фокусе на импуте добавляется класс _focus, который можно стилизовать в forms.css
+	-->
+	<div class="inputs__line">
+		<div class="inputs__item">
+			<label for="inp" class="inputs__label">TEXT</label>
+			<input id="inp" autocomplete="off" type="text" name="form[text]"
+				data-error="Поле не может содержать специальные символы" data-value="Подпись поля" class="input _text _req">
+			<div class="warning"></div>
+		</div>
+		<div class="inputs__item">
+			<label for="inp" class="inputs__label">EMAIL</label>
+			<input id="inp" autocomplete="off" type="text" name="form[email]" data-error="Некорректный e-mail адрес"
+				data-value="Подпись поля" class="input _email _req">
+		</div>
+		<div class="inputs__item">
+			<label for="inp" class="inputs__label">PHONE</label>
+			<input id="inp" autocomplete="off" type="text" name="form[phone]"
+				data-error="Внесите номер телефона согласно образцу" data-value="Подпись поля" class="input _phone _req">
+		</div>
+	</div>
+
+
+
+
+	<!---------------------- SELECT (sel+tab, выпадающее меню)  ---------------------->
+
+	<!-- вызывается сниппетом <SELECT (sel+tab)> (файл forms.scss) -->
+	<!-- построен на JS полностью, можно стилизовать в forms.scss -->
+	<!-- 
+		класс для select является модификатором для JS оболочки. т.е. если форм select несколько, меняя класс form на новый в новом select`e, можно с ними взаимодействовать отдельно
+	-->
+	<div class="form__line">
+		<select name="form[select]" class="form">
+			<option value="1" selected="selected">Пункт №1</option>
+			<option value="2">Пункт №2</option>
+			<option value="3">Пункт №3</option>
+			<option value="4">Пункт №4</option>
+		</select>
+	</div>
+
+
+	<!----------------------------------- CHECK (chk+tab) ------------------------------->
+
+	<label class="checkbox">
+		<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[check]">
+		<span class="checkbox__text"><span>Я даю свое согласие на обработку персональных данных в соответствии с <a
+					href="">Условиями</a></span></span>
+	</label>
+
+
+
+	<!---------------------------------- OPTIONS (opt+tab) ------------------------------>
+
+	<div class="options">
+		<label class="options__item">
+			<input class="options__input" checked type="radio" value="1" name="form[option]">
+			<span class="options__text"><span>Text #1</span></span>
+		</label>
+		<label class="options__item">
+			<input class="options__input" type="radio" value="2" name="form[option]">
+			<span class="options__text"><span>Text #2</span></span>
+		</label>
+	</div>
+
+
+	<!---------------------- QUANTITY (счет количества чего-либо)  ---------------------->
+
+	<div class="form__line">
+		<div class="quantity">
+			<div class="quantity__button quantity__button_minus"></div>
+			<div class="quantity__input">
+				<input autocomplete="off" type="text" name="form[quantity]" value="1">
+			</div>
+			<div class="quantity__button quantity__button_plus"></div>
+		</div>
+	</div>
+
+
+
+	<!---------------------- RANGE (ползунок диапазона значений)  ---------------------->
+
+	<!-- для работы подключить:
+	в style.scss - @import "nouislider"; 
+	в vendors.js - @@include('libs/nouislider.js', {});
+-->
+
+	<div class="form__line">
+		<div class="price">
+			<div class="price__range"></div>
+			<div class="price__inputs">
+				<input id="price-start" autocomplete="off" type="text" name="form[price]" class="input" data-from="0">
+				<input id="price-end" autocomplete="off" type="text" name="form[price]" class="input" data-to="2000">
+			</div>
+		</div>
+	</div>
+
+
+	<!---------------------------------- RATING ------------------------------>
+
+	<div class="form__line">
+		<div class="form__label">Простой рейтинг (без JS):</div>
+		<div class="simple-rating">
+			<div class="simple-rating__items">
+				<input id="simple-rating__5" type="radio" class="simple-rating__item" name="simple-rating" value="5">
+				<label for="simple-rating__5" class="simple-rating__label"></label>
+				<input id="simple-rating__4" type="radio" class="simple-rating__item" name="simple-rating" value="4">
+				<label for="simple-rating__4" class="simple-rating__label"></label>
+				<input id="simple-rating__3" type="radio" class="simple-rating__item" checked name="simple-rating"
+					value="3">
+				<label for="simple-rating__3" class="simple-rating__label"></label>
+				<input id="simple-rating__2" type="radio" class="simple-rating__item" name="simple-rating" value="2">
+				<label for="simple-rating__2" class="simple-rating__label"></label>
+				<input id="simple-rating__1" type="radio" class="simple-rating__item" name="simple-rating" value="1">
+				<label for="simple-rating__1" class="simple-rating__label"></label>
+			</div>
+		</div>
+	</div>
+
+	<div class="form__line">
+		<div class="form__label">Точный рейтинг (JS):</div>
+		<div class="rating rating_set">
+			<div class="rating__body">
+				<div class="rating__active"></div>
+				<div class="rating__items">
+					<input type="radio" class="rating__item" value="1" name="rating">
+					<input type="radio" class="rating__item" value="2" name="rating">
+					<input type="radio" class="rating__item" value="3" name="rating">
+					<input type="radio" class="rating__item" value="4" name="rating">
+					<input type="radio" class="rating__item" value="5" name="rating">
+				</div>
+			</div>
+			<div class="rating__value">3.6</div>
+		</div>
+	</div>
+	<button type="submit" class="form__btn btn">Отправить</button>
+
+	<div class="form__line">
+		<div class="form__label">Точный рейтинг (JS + AJAX):</div>
+		<div data-ajax="true" class="rating rating_set">
+			<div class="rating__body">
+				<div class="rating__active"></div>
+				<div class="rating__items">
+					<input type="radio" class="rating__item" value="1" name="rating">
+					<input type="radio" class="rating__item" value="2" name="rating">
+					<input type="radio" class="rating__item" value="3" name="rating">
+					<input type="radio" class="rating__item" value="4" name="rating">
+					<input type="radio" class="rating__item" value="5" name="rating">
+				</div>
+			</div>
+			<div class="rating__value">1.6</div>
+		</div>
+	</div>
+
+
+	<!----------------------------- INPUT SUBMIT BTN  ------------------------>
+
+	<button type="submit" class="form__btn btn">Задать вопрос</button>
+
+
+</form>
+
+<!------------------------------------------------------ ▲ ▲ ▲ FORMS ▲ ▲ ▲ ----------------------------------------------->

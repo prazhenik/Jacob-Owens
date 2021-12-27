@@ -1,0 +1,114 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a,
+a:focus,
+a:active,
+a:hover,
+a:visited {
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+	padding: 0;
+}
+a:visited {
+	color: inherit;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+	display: block;
+}
+
+html,
+body {
+	height: 100%;
+}
+body {
+	line-height: 1;
+	text-rendering: optimizeLegibility;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+	font-family: $fontFamily;
+	font-size: inherit;
+	vertical-align: middle;
+	background-color: inherit;
+}
+
+// формат инпута при автозаподстановке данных браузером
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	transition: background-color 5000s ease 0s;
+	-webkit-box-shadow: 0 0 0px 1000px transparent inset;
+	-webkit-text-fill-color: white !important;
+}
+
+label {
+	display: inline-block;
+}
+
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+	background-color: inherit;
+	outline: none;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+ul li {
+	list-style: none;
+}
+img {
+	display: block;
+	object-fit: cover;
+}
+svg path {
+	stroke: inherit;
+	stroke-width: inherit;
+	fill: $tc1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+//-webkit-overflow-scrolling: touch;
+/*
+&::-webkit-scrollbar {
+	display: none;
+}
+*/

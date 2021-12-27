@@ -1,0 +1,105 @@
+//размер шрифта и line-height
+@mixin fontSize($font_size, $line-height, $font_weight) {
+	font-size: $font_size + px;
+	line-height: calc(#{$line-height} / #{$font_size});
+	font-weight: $font_weight;
+}
+
+@mixin blockSize($width, $height) {
+	width: $width + px;
+	height: $height + px;
+}
+
+//анимация keyframes
+@mixin animate($animation, $duration, $method, $times) {
+	animation: $animation $duration $method $times;
+}
+
+//анимация keyframes вендоры
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+//Percent
+@function percent($px, $from) {
+	$result: math.div($px, $from) * 100%;
+	@return $result;
+}
+//REM
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+//EM
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+
+//=============================== ▼ ▼ ▼ МИКСИНЫ НИЖЕ - НЕ МЕНЯТЬ ▼ ▼ ▼=============================================
+//Подключение файлов шрифтов для работы функции fontstyle (gulpfile.js)
+
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff2") format("woff2"), url("../fonts/#{$file_name}.woff") format("woff");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+//Адаптивное свойство
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+	$addSize: ($startSize - $minSize);
+	@if $type==1 {
+		//Только если меньше контейнера
+		#{$property}: #{$startSize + px};
+		@media (max-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidthContainer - $minWidth})
+			);
+		}
+	} @else if $type==2 {
+		//Только если больше контейнера
+		#{$property}: #{$startSize + px};
+		@media (min-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth - $minWidth}));
+		}
+	} @else {
+		//Всегда
+		#{$property}: calc(
+			#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidthContainer - $minWidth})
+		);
+	}
+}
+//Адаптивное свойство
+@mixin adaptiv-value-to($property, $startSize, $minSize, $minWidth) {
+	$addSize: $startSize - $minSize;
+	//#{$property}: $minSize + px;
+	@media (min-width: #{$minWidth + px}) {
+		#{$property}: calc(
+			#{$minSize + px} + #{$addSize} * (((100vw - #{$minWidth + px})) / ((#{$maxWidth - $minWidth})))
+		);
+	}
+}
+
+
+
+//Currency
+@mixin currency($sym) {
+	&::after {
+		content: "#{$sym}";
+	}
+}

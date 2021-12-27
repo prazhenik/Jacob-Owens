@@ -1,0 +1,160 @@
+<!------------------------------------------------------ ▼ ▼ ▼ TABS ▼ ▼ ▼ ----------------------------------------------->
+
+<div class="tabs-block _scr-item _tabs">
+	<nav class="tabs-block__nav">
+		<div class="tabs-block__item _tabs-item _active">Таб №1</div>
+		<div class="tabs-block__item _tabs-item">Таб №2</div>
+		<div class="tabs-block__item _tabs-item">Таб №3</div>
+	</nav>
+	<div class="tabs-block__body">
+		<div class="tabs-block__block _tabs-block _active">
+			[Таб №1] Lorem
+		</div>
+		<div class="tabs-block__block _tabs-block">
+			[Таб №2] Lorem
+		</div>
+		<div class="tabs-block__block _tabs-block">
+			[Таб №3] Lorem
+		</div>
+	</div>
+</div>
+
+<!------------------------------------------------------ ▲ ▲ ▲ TABS ▲ ▲ ▲ ----------------------------------------------->
+
+<!----------------------------------------------------- ▼ ▼ ▼ SPOLLERS ▼ ▼ ▼ -------------------------------------------->
+
+<!---------------------- обычные спойлеры и аккордеон  ---------------------->
+
+<!-- по умолчанию в верстке 1 спойлер. можно раскомментить код для добавления нескольких -->
+<!-- Для родителя слойлеров пишем атрибут data-spollers -->
+<!-- Для заголовков слойлеров пишем атрибут data-spoller -->
+<!-- Если нужно что бы в блоке открывался болько один слойлер (аккордеон) добавляем атрибут data-one-spoller -->
+
+<div data-spollers data-one-spoller class="block block_1">
+	<div class="block__item">
+		<button tabindex="-1" type="button" data-spoller class="block__title"><span>Обычный спойлер №1</span></button>
+		<div class="block__text">
+			Обычный спойлер №1 текст
+		</div>
+	</div>
+	<!-- <div class="block__item">
+		<button tabindex="-1" type="button" data-spoller class="block__title">Обычный спойлер №2</button>
+		<div class="block__text">
+			Обычный спойлер №3 текст
+		</div>
+	</div>
+	<div class="block__item">
+		<button tabindex="-1" type="button" data-spoller class="block__title">Обычный спойлер №3</button>
+		<div class="block__text">
+			Обычный спойлер №3 текст
+		</div>
+	</div> -->
+</div>
+
+<!---------------------- спойлеры, работающие на экранах ДО ... рх  ---------------------->
+
+<!-- Если нужно включать\выключать работу спойлеров на разных размерах экранов пишем параметры ширины и типа брейкпоинта.
+Например: 
+data-spollers="650,min" - спойлеры будут работать только на экранах больше или равно 650px-->
+
+<div data-spollers="650,min" class="block block_2">
+	<div class="block__item">
+		<button tabindex="-1" type="button" data-spoller class="block__title">Спойлер работает на экранах >=
+			650px</button>
+		<div class="block__text">
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas hic numquam magni. Nulla, laborum illo enim
+			qui eum architecto soluta, quos provident natus nobis a et aspernatur, labore fuga aliquam!
+		</div>
+	</div>
+</div>
+
+<!---------------------- спойлеры, работающие на экранах ОТ ... рх  ---------------------->
+
+<!-- Если нужно включать\выключать работу спойлеров на разных размерах экранов пишем параметры ширины и типа брейкпоинта.
+Например: 
+data-spollers="800,max" - спойлеры будут работать только на экранах меньше или равно 800px  -->
+
+<div data-spollers="800,max" class="block block_3">
+	<div class="block__item">
+		<button tabindex="-1" type="button" data-spoller class="block__title">Спойлер #1 работает на экранах <=
+				800px</button>
+				<div class="block__text">
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas hic numquam magni. Nulla, laborum illo
+					enim qui eum architecto soluta, quos provident natus nobis a et aspernatur, labore fuga aliquam!
+				</div>
+	</div>
+</div>
+
+<!-------------------------------------- ▲ ▲ ▲ SPOLLERS ▲ ▲ ▲ ---------------------------------------->
+
+<!-------------------------------------- ▼ ▼ ▼ SLIDER ▼ ▼ ▼ ------------------------------------------>
+<div class="slider _swiper">
+	<div class="slider__slide">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam est culpa minima ratione corporis laboriosam. Vel
+		asperiores minus sit quae rerum deserunt aperiam esse beatae eveniet sequi, nulla officia cumque.
+	</div>
+</div>
+
+
+<!--------------------------------------- ▲ ▲ ▲ SLIDER  ▲ ▲ ▲ ---------------------------------------->
+
+
+<!------------------------------ ▼ ▼ ▼ GALLERY (lightgallery) ▼ ▼ ▼ ---------------------------------->
+
+<div class="gallery-block _scr-item _gallery">
+	<a href="img/01.jpg" class="gallery-block__item">
+		<img src="img/01.jpg" alt="">
+	</a>
+	<a href="img/02.jpg" class="gallery-block__item">
+		<img src="img/02.jpg" alt="">
+	</a>
+	<a href="img/03.jpg" class="gallery-block__item">
+		<img src="img/03.jpg" alt="">
+	</a>
+	<a href="img/04.jpg" class="gallery-block__item">
+		<img src="img/04.jpg" alt="">
+	</a>
+	<a href="img/05.jpg" class="gallery-block__item">
+		<img src="img/05.jpg" alt="">
+	</a>
+</div>
+
+<!------------------------------- ▲ ▲ ▲ GALLERY  ▲ ▲ ▲ ---------------------------------------------->
+
+<!-------------------------------------- ▼ ▼ ▼ BURGER ▼ ▼ ▼ ----------------------------------------->
+
+<!-- секции, на которые ссылается data-goto="" должны обязательно иметь такой же класс, как и значение атрибута data-goto="" -->
+
+<a href="#" class="header__logo"></a>
+<div class="header__menu menu">
+	<div class="menu__icon">
+		<span></span>
+	</div>
+	<nav class="menu__body">
+		<ul class="menu__list">
+			<li><a data-goto=".page__section_1" href="#" class="menu__link">Раздел №1</a></li>
+			<li><a data-goto=".page__section_2" href="#" class="menu__link">Раздел №2</a></li>
+			<li><a data-goto=".page__section_3" href="#" class="menu__link">Раздел №3</a></li>
+			<li>
+				<a href="#" class="menu__link">Страница №1</a>
+				<span class="menu__arrow"></span>
+				<ul class="menu__sub-list">
+					<li>
+						<a href="#" class="menu__sub-link">Раздел страницы №1</a>
+					</li>
+					<li>
+						<a href="#" class="menu__sub-link">Раздел страницы №2</a>
+					</li>
+					<li>
+						<a href="#" class="menu__sub-link">Раздел страницы №3</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="menu__link">Страница №2</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+<!-------------------------------------- ▲ ▲ ▲ BURGER  ▲ ▲ ▲ ---------------------------------------->

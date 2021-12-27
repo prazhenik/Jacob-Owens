@@ -1,0 +1,23 @@
+//св-во для элемента
+//animation: (scale 1s linear 1);
+
+@keyframes scale {
+	0% {
+		@include blockSize(15, 15);
+	}
+
+	100% {
+		@include blockSize(20, 20);
+	}
+}
+
+@keyframes zoom {
+	0% {
+		transform: rotate(0deg);
+		transition: 0.6s;
+	}
+	100% {
+		transform: rotate(360deg);
+		transition: 0.6s;
+	}
+}

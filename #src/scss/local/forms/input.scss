@@ -1,0 +1,67 @@
+//----------------------------------- INPUT (inp+tab) ---------------------------------
+
+input {
+	height: 50px;
+	border-radius: 10px;
+	padding: 0px 10px;
+	&:focus {
+		outline: none;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: rgba(255, 255, 255, .21);
+
+	caret-color : $navc1;
+	&:focus {
+		background-color: rgba(255, 255, 255, .4);
+	
+	}
+}
+
+input::placeholder {
+	color: $tc3;
+}
+
+.inputs__item {
+	width: 100%;
+	position: relative;
+	margin: 0px 0px 20px 0px;
+
+	&:last-of-type {
+		margin: 0px;
+	}
+	&._focus {
+	}
+	// &._error {
+	// 	border-bottom: 1px solid red;
+	// 	color: #ee1212;
+	// }
+}
+
+.inputs__label {
+	margin: 0px 0px 5px 0px;
+}
+
+.input {
+	width: 100%;
+	display: block;
+	font-size: inherit;
+	&._focus {
+		color: $tc1;
+	}
+	&._error {
+		color: #ee1212;
+	}
+}
+
+textarea.input {
+	resize: none;
+	padding: 0px 0px;
+}

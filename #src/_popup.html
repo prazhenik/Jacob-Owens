@@ -1,0 +1,54 @@
+
+<!-- в место в верстку вызова добавть ссылку на попап -->
+<!-- в href указываем придуманное имя попапа, который хотим открыть. Например: href="#callback"  -->
+
+<!-- <a href="#callback" class="_popup-link">Кнопка попапа</a> -->
+
+<!-- не забыть подключить этот файл в index.html  @@include('_popup.html',{})-->
+
+<!---------------------------------универсальный попап  -------------------------------->
+<!-- имя попапа писать в виде модификатора к popup_ Пример: popup_callback-->
+<div class="popup popup_callback"> 
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum dolores ut aut, quia maxime non ad explicabo, quisquam placeat nostrum similique. Necessitatibus eaque est dignissimos explicabo, veniam omnis reprehenderit pariatur?
+			<!-- сюда добавлять содержание попапа -->
+		</div>
+	</div>
+</div>
+
+
+<!--------------------------------- попап для сообщения -------------------------------->
+
+<div class="popup popup_massagename-message">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+		</div>
+	</div>
+</div>
+
+
+<!--------------------------------- попап для видео (только ютуб) ------------------------------------->
+
+<!-- в место в верстку вызова добавть ссылку на попап -->
+<!-- в href указываем придуманное имя попапа, который хотим открыть. Например: href="#video"  -->
+
+<!-- <a href="#video" class="_popup-link" data-video="вписать ID видео на ютубе">Кнопка попапа</a> -->
+
+<!-- не забыть подключить этот файл в index.html  @@include('_popup.html',{})-->
+
+<!---------------------------------универсальный попап  -------------------------------->
+<!-- имя попапа писать в виде модификатора к popup_ Пример: popup_video-->
+
+
+
+<div class="popup popup_video">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close popup__close_video"></div>
+			<div class="popup__video _video"></div>
+		</div>
+	</div>
+</div>

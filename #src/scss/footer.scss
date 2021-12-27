@@ -1,0 +1,231 @@
+.footer {
+	position: relative;
+	@include fontSize(16, 19, 400);
+	@include adaptiv-value(font-size, 16, 12, 3);
+	@include adaptiv-value(padding-top, 40, 20, 1);
+	@include adaptiv-value(padding-bottom, 85, 31, 1);
+	color: $navc1;
+	@media (max-width: $md4) {
+		padding-bottom: 80px;
+	}
+	&__line {
+		width: 100%;
+	}
+
+	&__container {
+
+	}
+
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__outro {
+		flex: 0 0 48%;
+		text-align: justify;
+		@media (max-width: $md4) {
+			flex: 0 0 100%;
+		}
+		& span {
+			color: $tc1;
+			font-weight: 900;
+		}
+	}
+
+	&__text {
+		//@include adaptiv-value(max-width, 325, 250, 3);
+		@media (max-width: $md4) {
+			margin: 0 auto 30px;
+		}
+	}
+
+	&__policy {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		flex: 0 0 48%;
+		@media (max-width: $md4) {
+			flex: 1 0 80%;
+			margin: 0 auto;
+			@include adaptiv-value(max-width, 325, 250, 3);
+			box-sizing: content-box;
+			align-items: center;
+		}
+		& span {
+			@include adaptiv-value(font-size, 12, 9, 3);
+		}
+	}
+}
+
+.policy {
+	text-align: right;
+	&__links {
+		margin: 0px 0px 15px 0px;
+		@media (max-width: $md4) {
+			display: flex;
+			justify-content: space-evenly;
+			width: 100%;
+		}
+	}
+	&__link {
+		display: block;
+		@media (max-width: $md4) {
+			display: inline-block;
+		}
+	}
+}
+
+// .footer {
+
+// 	background: blueviolet;
+// 	&__container {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		flex-wrap: wrap;
+// 	}
+
+// 	&__policy {
+// 		font-weight: 400;
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: space-between;
+// 		@media (max-width: $md6) {
+// 			margin: 0px 0px 10px 0px;
+// 		}
+// 	}
+
+// 	&__menu {
+// 		flex: 1 1 auto;
+// 		@media (max-width: $md3) {
+// 			display: none;
+// 		}
+// 	}
+
+// 	&__intouch {
+// 		font-weight: 400;
+// 		text-align: right;
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: space-between;
+// 		@media (max-width: $md5) {
+// 			text-align: left;
+// 		}
+// 	}
+
+// 	&__official {
+// 		margin: 0px 0px 0px 0px;
+// 		@media (min-width: $md5) {
+// 			margin: 0px 0px 10px 0px;
+// 		}
+// 	}
+// 	&__official > * {
+// 		padding: 0px 0px 5px 0px;
+// 		transition: border-bottom 0.5s ease;
+// 		border-bottom: 1px solid transparent;
+// 		&:hover {
+// 			transition: border-bottom 0.5s ease;
+// 			//border-bottom: 1px solid $borc3;
+// 		}
+// 	}
+
+// 	&__tel {
+// 		display: block;
+// 		margin: 0px 0px 5px 0px;
+// 	}
+
+// 	&__mail {
+// 		display: block;
+// 	}
+
+// 	&__socials > * {
+// 		font-size: 22px;
+// 		padding: 0px 0px 5px 0px;
+// 		transition: border-bottom 0.5s ease;
+// 		border-bottom: 1px solid transparent;
+// 		&:not(:last-child) {
+// 			margin: 0px 5px 0px 0px;
+// 		}
+// 		&:hover {
+// 			transition: border-bottom 0.5s ease;
+// 			//border-bottom: 1px solid $borc3;
+// 		}
+// 	}
+
+// 	&__pay-logo {
+// 		margin-left: auto;
+// 		width: 68px;
+// 		object-fit: contain;
+// 		@media (max-width: $md5) {
+// 			display: none;
+// 		}
+// 	}
+// }
+
+// .policy {
+// 	&__body a {
+// 		transition: border-bottom 0.5s ease;
+// 		border-bottom: 1px solid transparent;
+// 		&:hover {
+// 			transition: border-bottom 0.5s ease;
+// 			//border-bottom: 1px solid $borc3;
+// 		}
+// 	}
+// 	&__body > * {
+// 		&:not(:last-child) {
+// 			display: block;
+// 			@include adaptiv-value(margin-bottom, 6, 2, 1);
+// 			margin: 0px 0px 6px 0px;
+// 		}
+// 	}
+// }
+// .site-logo {
+// 	&_footer {
+// 		z-index: 0;
+// 		margin: 0px 0px 15px 0px;
+// 	}
+// }
+
+// .menu {
+// 	// &__body {
+// 	// }
+
+// 	&__list {
+// 		&_footer {
+// 			flex-wrap: nowrap;
+// 		}
+// 	}
+
+// 	&__link {
+// 		&_group {
+// 			margin: 0px 0px 35px 0px;
+// 		}
+// 	}
+
+// 	&__sub-list > li {
+// 		text-align: left;
+// 		margin: 0px 0px 10px 20px;
+// 	}
+
+// 	&__sub-list > li:last-child {
+// 		margin: 0px 0px 0px 20px;
+// 	}
+
+// 	// &__sub-link {
+// 	// }
+// }
+
+// // .tel {
+// // }
+// // .socials {
+// // 	&__insta {
+// // 	}
+
+// // 	&__facebook {
+// // 	}
+
+// // 	&__twitter {
+// // 	}
+// // }

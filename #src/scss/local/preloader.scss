@@ -1,0 +1,153 @@
+//--------------- ▼ ▼ ▼ preloader ▼ ▼ ▼ ------------------
+body._loaded .preloader {
+	display: none;
+
+}
+
+._loaded_hiding .preloader {
+	transition: 0.5s opacity;
+	opacity: 0;
+
+}
+
+
+
+.preloader {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+
+.preloader__overlay {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $bgc1;
+	opacity: 1;
+	
+}
+
+.preloader__circle {
+	width: 110px;
+	height: 110px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	border: 6px solid transparent;
+	box-shadow: 0 0 0 5px $navc1;
+	background: transparent;
+	overflow: hidden;
+}
+.preloader__o {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: rotateo 1s infinite alternate;
+}
+
+@keyframes rotateo {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-180deg);
+	}
+}
+.preloader__brick {
+	width: 100px;
+	height: 100px;
+	background: $tc3;
+	position: absolute;
+	-webkit-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
+	border: 1px solid #000;
+}
+.preloader__brick:nth-child(1) {
+	transform: rotate(0deg) translate(-91px, 47px) skewX(-30deg);
+	animation: brick-anim-1 1s infinite alternate;
+}
+
+@keyframes brick-anim-1 {
+	0% {
+		transform: rotate(0deg) translate(-91px, 47px) skewX(-30deg) scale(1.2);
+	}
+	100% {
+		transform: rotate(0deg) translate(-91px, 7px) skewX(-30deg)  scale(.95);
+	}
+}
+.preloader__brick:nth-child(2) {
+	transform: rotate(60deg) translate(-91px, 47px) skewX(-30deg);
+	animation: brick-anim-2 1s infinite alternate;
+}
+
+@keyframes brick-anim-2 {
+	0% {
+		transform: rotate(60deg) translate(-91px, 47px) skewX(-30deg) scale(1.2);
+	}
+	100% {
+		transform: rotate(60deg) translate(-91px, 7px) skewX(-30deg)  scale(.95);
+	}
+}
+.preloader__brick:nth-child(3) {
+	transform: rotate(120deg) translate(-91px, 47px) skewX(-30deg);
+	animation: brick-anim-3 1s infinite alternate;
+}
+
+@keyframes brick-anim-3 {
+	0% {
+		transform: rotate(120deg) translate(-91px, 47px) skewX(-30deg) scale(1.2);
+	}
+	100% {
+		transform: rotate(120deg) translate(-91px, 7px) skewX(-30deg)  scale(.95);
+	}
+}
+.preloader__brick:nth-child(4) {
+	transform: rotate(180deg) translate(-91px, 47px) skewX(-30deg);
+	animation: brick-anim-4 1s infinite alternate;
+}
+
+@keyframes brick-anim-4 {
+	0% {
+		transform: rotate(180deg) translate(-91px, 47px) skewX(-30deg) scale(1.2);
+	}
+	100% {
+		transform: rotate(180deg) translate(-91px, 7px) skewX(-30deg)  scale(.95);
+	}
+}
+.preloader__brick:nth-child(5) {
+	transform: rotate(240deg) translate(-91px, 47px) skewX(-30deg);
+	animation: brick-anim-5 1s infinite alternate;
+}
+
+@keyframes brick-anim-5 {
+	0% {
+		transform: rotate(240deg) translate(-91px, 47px) skewX(-30deg) scale(1.2);
+	}
+	100% {
+		transform: rotate(240deg) translate(-91px, 7px) skewX(-30deg)  scale(.95);
+	}
+}
+.preloader__brick:nth-child(6) {
+	transform: rotate(300deg) translate(-91px, 47px) skewX(-30deg) scale(1);
+	animation: brick-anim-6 1s infinite alternate;
+}
+
+@keyframes brick-anim-6 {
+	0% {
+		transform: rotate(300deg) translate(-91px, 47px) skewX(-30deg) scale(1.2);
+	}
+	100% {
+		transform: rotate(300deg) translate(-91px, 7px) skewX(-30deg) scale(.95);
+	}
+}
+
+//--------------- ▲ ▲ ▲ preloader ▲ ▲ ▲ ------------------

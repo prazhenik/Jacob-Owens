@@ -1,0 +1,15 @@
+//------------------------ RANGE (ползунок диапазона значений) ------------------------
+
+.price {
+	// .price__range
+	//&__range {}
+	// .price__inputs
+	&__inputs {
+		display: flex;
+
+		input {
+			background-color: #77608d;
+			margin: 0px 10px 0px 0px;
+		}
+	}
+}

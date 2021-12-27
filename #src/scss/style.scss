@@ -1,0 +1,319 @@
+@use "sass:math";
+
+//======================================== ▼ ▼ ▼ МИКСИНЫ ▼ ▼ ▼============================================================
+
+@import "local/mixins";
+
+//======================================== ▲ ▲ ▲ МИКСИНЫ ▲ ▲ ▲============================================================
+
+//======================================== ▼ ▼ ▼ ШРИФТЫ ▼ ▼ ▼=============================================================
+
+//-------------- строка для кода шрифта ускоряющая загрузку + кириллический ----------------
+//&display=swap&subset=cyrillic-ext
+
+//-------------- подключение шрифтов по CDN, если есть ----------------
+
+//-------------- файл со шрифтами, который собирает ГАЛП ----------------
+@import "local/fonts";
+
+//-------------- иконочные шрифты ----------------
+@import "local/icons";
+
+//-------------- шрифт по умолчанию ----------------
+$fontFamily: "Roboto"; //вписать шрифт
+$fontSize: 16;
+$fontWeight: 900;
+$letterSpacing: 0.02;
+
+//======================================== ▲ ▲ ▲ ШРИФТЫ ▲ ▲ ▲=============================================================
+
+//======================================== ▼ ▼ ▼ ПЕРЕМЕННЫЕ ▼ ▼ ▼=========================================================
+
+//-------------- брейкпоинты (влияют на миксины)----------------
+$minWidth: 280; // минимальная ширина страницы
+$maxWidth: 1920; // ширина полотна
+$containerPadding: 20;
+$maxWidthContainer: 1200; // ширина контейнера
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+
+$md1: $maxWidthContainer + px; //мин десктопное
+$md2: 991.98px; // планшетное конт 720
+$md3: 767.98px; //телефонное конт 540
+$md4: 576.98px; // телефонное конт padding: 0 10px
+$md5: 424.98px; // телефонное конт padding: 0 10px
+$md6: 359.98px; // мин телефонное конт padding: 0 10px
+
+//======================================== ▼ ▼ ▼ БРЕЙКПОИНТЫ ▼ ▼ ▼====================================================
+
+// Тип адаптива:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+@if ($responsiveType==1) {
+	// Отзывчивая
+	._container {
+		position: relative;
+		width: 100%;
+		@if ($maxWidthContainer>0) {
+			max-width: $maxWidthContainer + $containerPadding + px;
+			//box-sizing: border-box;
+			margin: 0 auto;
+		}
+		@if ($containerPadding>0) {
+			padding: 0 math.div($containerPadding, 2) + px;
+			@media (max-width: $md1) {
+				padding: 0 5%;
+			}
+		}
+	}
+} @else {
+	// По брейк-поинтам
+	._container {
+		margin: 0 auto;
+		width: 100%;
+		@if ($maxWidthContainer>0) {
+			max-width: $maxWidthContainer + px;
+			box-sizing: border-box;
+		} @else {
+			@if ($containerPadding>0) {
+				padding: 0 math.div($containerPadding, 2) + px;
+			}
+		}
+		//--------------------------------------------MD 1: $mw + 20;--------------------------------------
+		@media (max-width: $md1) {
+			max-width: 970px;
+		}
+		//-----------------------------------------------MD 2: 991.98----------------------------------------------
+		@media (max-width: $md2) {
+			max-width: 720px;
+		}
+		//-----------------------------------------------MD 3: 767.98-----------------------------------------------
+		@media (max-width: $md3) {
+			max-width: 540px;
+		}
+		@media (max-width: $md4) {
+			max-width: none;
+			@if ($containerPadding>0 and $maxWidthContainer>0) {
+				padding: 0 math.div($containerPadding, 2) + px;
+			}
+		}
+		//-----------------------------------------------MD 5: 424.98-----------------------------------------------
+		@media (max-width: $md5) {
+		}
+		//-----------------------------------------------MD 6: 359.98-----------------------------------------------
+		@media (max-width: $md6) {
+		}
+	}
+}
+
+._container-lg {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 100%;
+	padding: 0 math.div($containerPadding, 2) + px;
+	@media (min-width: $md1) {
+		padding: 0 3%;
+	}
+}
+
+//======================================== ▲ ▲ ▲ БРЕЙКПОИНТЫ ▲ ▲ ▲=========================================================
+
+//--------------------Цвета шрифтов--------------------
+
+$tc1: rgba(255, 255, 255, 1); // main text color
+$tc2: rgba(0, 0, 0, 1);
+$tc3: rgba(255, 255, 255, 0.7);
+//---------------------Цвета фонов---------------------
+$bgc1: rgba(0, 0, 0, 1); // main bcg
+$bgc2: rgba(0, 0, 0, 0.6); // menu scroll
+$bgc3: rgba(0, 0, 0, 0.85); // menu
+//----------------Цвета Кнопок и навигации------------
+$navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
+$navc2: rgba(0, 160, 255, .35); // cta prim bcg hover
+$navc3: rgba(255, 255, 255, 1); //cta second bcg
+$navc4: rgba(26, 49, 252, 1); // cta prim bcg hover
+
+//---------------------Цвета границ---------------------
+$borc1: rgba(255, 255, 255, 0.5); //cta border
+$borc2: rgba(0, 0, 0, 0.7); //active option border, input button border
+
+$mainTextColor: $tc1;
+$mainBgcColor: $bgc1;
+
+//======================================== ▲ ▲ ▲ ПЕРЕМЕННЫЕ ▲ ▲ ▲==========================================================
+
+//-------------------- обнуление стилей ---------------------
+@import "local/null";
+
+//========================================= ▼ ▼ ▼ ФАЙЛЫ БИБЛИОТЕК ▼ ▼ ▼====================================================
+
+//@import "libs/datepicker";
+//@import "libs/hystmodal";
+@import "libs/lightgallery";
+//@import "libs/nouislider";
+//@import "libs/popover.min";
+//@import "libs/simplebar";
+//@import "libs/swiper";
+//@import "libs/tippy";
+
+//========================================= ▲ ▲ ▲ ФАЙЛЫ БИБЛИОТЕК ▲ ▲ ▲===================================================
+
+//=================================== ▼ ▼ ▼ ФАЙЛЫ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ ▼ ▼ ▼=================================
+
+//все что касается форм/инпутов
+@import "local/forms/form";
+//@import "local/forms/checkbox";
+@import "local/forms/input";
+//@import "local/forms/options";
+//@import "local/forms/quantity";
+//@import "local/forms/range";
+//@import "local/forms/ratings";
+//@import "local/forms/select";
+
+//интерфейсные готовые блоки
+@import "local/ui/burger";
+//@import "local/ui/spollers";
+//@import "local/ui/sliders";
+//@import "local/ui/tabs";
+@import "local/ui/buttons";
+
+//@import "local/keyframes"; //кейфреймы
+@import "local/preloader";
+@import "local/popup";
+@import "local/textstyles";
+@import "local/breadcrumbs";
+//@import "local/media";
+
+//============================ ▲ ▲ ▲ ФАЙЛЫ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ ▲ ▲ ▲==========================================
+
+//==================================== ▼ ▼ ▼ ОБЩИЕ СТИЛИ КОНКРЕТНОГО ПРОЕКТА ▼ ▼ ▼==========================================
+
+//------------custom scrollbar----------------
+
+$scrollbarWidth: 17px;
+
+
+//------------custom scrollbar----------------
+
+//-------------------- общие стили -------------------------
+
+html {
+	font-size: #{$fontSize + px};
+	font-family: $fontFamily;
+	color: $mainTextColor;
+	font-weight: $fontWeight;
+	letter-spacing: #{$letterSpacing + em};
+}
+body {
+	position: relative;
+	left: 0;
+	right: 0;
+	height: 100%;
+	min-height: 100vh;
+	background-color: $mainBgcColor;
+	overflow-Y: scroll;
+	padding: 0 !important;
+	&._lock {
+		overflow: hidden; //класс для блокировки скрола в бургере и модалке
+	}
+	&._lock._pc {
+		padding-right: calc($scrollbarWidth - 0.5px) !important; // общая коррекция контента на скролл при модалке/меню
+		//padding: 0 !important;
+	}
+}
+
+body._lock._pc .header {
+	padding-right: calc(
+		$scrollbarWidth - 0.5px
+	) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
+}
+
+body._lock._pc .__popup-link {
+	margin-right: calc($scrollbarWidth - 0.5px) !important; // коррекция _popup-link на скролл при модалке/меню  _popup-link position fixed ил relative
+}
+
+
+._line {
+	display: block;
+	width: 200px;
+	border-top: 2px solid $borc1;
+	margin: 0px auto;
+	@include adaptiv-value(margin-bottom, 85, 30, 1);
+}
+
+//------------------свойства для удаления гор скрола + прибивает footer к низу страницы (ч.1)-----------------
+.wrapper {
+	width: 100%;
+	min-height: 100vh;
+	min-width: $minWidth + px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	/*&._loaded {
+	}*/
+}
+
+.main {
+	flex: 1 1 auto; //свойство прибивает footer к низу страницы (ч.2)
+}
+
+//============================================<FULL SCREEN>================================================
+
+._fullscrn {
+	background: url("../img/home/jakob-owens-hero31.jpg") 70% center / cover no-repeat;
+	min-height: 100vh;
+	display: flex;
+	@media (max-width: $md4) {
+		background: url("../img/home/jakob-owens-hero31.jpg") 0 50% / fill no-repeat;
+		min-height: 40vh;
+		//min-height: calc(var(--vh, 1vh) * 100); //убирает скачек контента при скрытии/показе панели нав. моб браузера
+	}
+}
+
+//================================================<IBG>====================================================
+
+// Стили для отзывчивых картинок (IBG)
+// Сниппет (HTML): ibg (div c картинкой и классами)
+// Сниппет (HTML): ibga (a c картинкой и классами)
+[class*="__image-ibg"] {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+//==================================== ▲ ▲ ▲ ОБЩИЕ СТИЛИ КОНКРЕТНОГО ПРОЕКТА ▲ ▲ ▲========================
+
+//=============================== ▼ ▼ ▼ ФАЙЛЫ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ ▼ ▼ ▼=============================================
+
+//--------------------- стили дополнений -------------------------
+@import "libs/nouislider"; //дополнение для подключения ползунков цены
+//@import "datepicker"; //дополнение для календаря
+//@import "lightgallery";
+//@import "pagging";
+//@import "tippy";
+
+//------------------ стили страниц многостраничного сайта -------------------------
+
+@import "_main_homepage";
+
+//-------------------- стили основных разделов страницы -------------------------
+@import "header";
+@import "main";
+@import "footer";
+
+//=============================== ▲ ▲ ▲ ФАЙЛЫ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ ▲ ▲ ▲=============================================

@@ -1,0 +1,21 @@
+//-------------------------------------------- FORM -------------------------------------
+
+.form {
+	margin: 0px 0px 0px 0px;
+	&__line {
+		margin: 0px 0px 20px 0px;
+	}
+	&__label {
+		display: inline-block;
+		//margin: 0px 0px 15px 0px;
+	}
+	&__error {
+		position: absolute;
+		@include adaptiv-value(font-size, 11, 9, 1);
+		@include adaptiv-value(bottom, -20, -15, 1);
+		right: 0;
+		z-index: 2;
+		color: red;
+	}
+}
+

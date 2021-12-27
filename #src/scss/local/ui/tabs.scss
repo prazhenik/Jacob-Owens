@@ -1,0 +1,40 @@
+//---------------------------- ▼ ▼ ▼ TABS ▼ ▼ ▼ ------------------------------
+
+.tabs-block {
+	margin: 0px 0px 50px 0px;
+	&__nav {
+		display: flex;
+		margin: 0px -2px;
+	}
+	// .tabs-block__item
+	&__item {
+		flex: 0 1 33.333%;
+		margin: 0px 2px;
+		background-color: #e4e71b;
+		padding: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		&._active {
+			background-color: #1ebd33;
+		}
+	}
+	// .tabs-block__body
+	&__body {
+		padding: 20px 0px 0px 0px;
+	}
+	// .tabs-block__block
+	//&__block {}
+}
+
+//._tabs {}
+//._tabs-item {}
+._tabs-block {
+	display: none;
+	&._active {
+		display: block;
+	}
+}
+
+//---------------------------- ▲ ▲ ▲ TABS ▲ ▲ ▲ ------------------------------
