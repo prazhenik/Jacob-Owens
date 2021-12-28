@@ -53,15 +53,25 @@
 		height: 60px;
 		padding: 5px 0px;
 		@media (max-width: $md4) {
-			justify-content: space-between;
+			justify-content: center;
 		}
 	}
 
 	&__item {
-		font-size: rem(20);
+		@include adaptiv-value(font-size, 20, 16, 3);
 		font-weight: 500;
 		z-index: 15;
 		color: $tc3;
+		@media (max-width: $md4) {
+			padding: 0px 10px;
+		}
+		&:not(:last-child) {
+			@include adaptiv-value(margin-right, 50, 15, 3);
+			@media (max-width: $md4) {
+				margin-right: 0px;
+			}
+		}
+		
 	}
 
 	&__logo {
@@ -82,23 +92,21 @@
 	align-items: center;
 	margin: 0px 20px 0px 0px;
 	flex: 1 1 auto;
+	@media (max-width: $md4) {
+		display: none;
+	}
 	&__text {
 		font-family: "Comforter", cursive;
-		font-size: rem(34);
-	}
-
-	&__icon {
-		display: none;
-		fill: $tc1;
-		fill-opacity: 0.7;
-		margin: 0px 10px 0px 0px;
+		@include adaptiv-value(font-size, 34, 20, 3);
 	}
 }
 
 .subscribe {
 	position: relative;
 	cursor: pointer;
-	margin: 0px 50px 0px 0px;
+	@media (max-width: $md4) {
+		order: 1;
+	}
 	&__text {
 		@media (max-width: $md4) {
 			display: none;
@@ -109,6 +117,7 @@
 		display: none;
 		@media (max-width: $md4) {
 			display: block;
+			order: 1;
 		}
 	}
 
@@ -126,7 +135,7 @@
 		z-index: 15;
 		@media (max-width: $md4) {
 			margin: 0px 0px 0px -10px;
-			order: 1;
+			
 		}
 		& a {
 			overflow: visible;
@@ -164,7 +173,9 @@
 	}
 }
 ._popup-link {
-	margin: 0px 50px 0px 0px;
+	@media (max-width: $md4) {
+		order: 3;
+	}
 	&__text {
 		@media (max-width: $md4) {
 			display: none;
@@ -182,6 +193,9 @@
 //burger styles in burger.scss
 .menu {
 	text-align: right;
+	@media (max-width: $md4) {
+		order: 2;
+	}
 	&__icon-close {
 	}
 
@@ -190,8 +204,12 @@
 		border-radius: 7px;
 		color: $tc1;
 		transition:  background-color 0.5s ease;
+
 		&:not(._active) {
 			background-color: $navc1;
+			@media (max-width: $md4) {
+				background-color: transparent;
+			}
 		}
 		&:hover:not(._active) {
 			
@@ -199,6 +217,7 @@
 		&._active {
 			transition: all 0.5s ease;
 		}
+
 	}
 
 	&__icon {
@@ -206,8 +225,12 @@
 	}
 
 	&__text {
+		line-height: 1rem;
 		text-transform: uppercase;
 		padding: 0px 15px 0px 0px;
+		@media (max-width: $md4) {
+			display: none;
+		}
 	}
 
 	&__body {

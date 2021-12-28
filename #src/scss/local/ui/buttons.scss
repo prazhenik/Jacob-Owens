@@ -9,8 +9,7 @@ a:visited {
 	align-items: center;
 	justify-content: center;
 	width: auto;
-	min-height: 50px;
-	//@include adaptiv-value(min-height, 50, 30, 1);
+	@include adaptiv-value(min-height, 50, 40, 1);
 	@include adaptiv-value(padding-left, 25, 15, 3);
 	@include adaptiv-value(padding-right, 25, 15, 3);
 	transition: all 0.5s ease;
