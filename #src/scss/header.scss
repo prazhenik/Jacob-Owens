@@ -1,5 +1,4 @@
 //================================= HEADER ==================================================
-
 .header {
 	position: fixed;
 	top: 0;
@@ -7,6 +6,16 @@
 	width: 100%;
 	z-index: 17;
 	font-weight: 400;
+	&__popups {
+	}
+
+	&__container {
+		@media (max-width: $md4) {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+		}
+	}
 
 	&__container:before {
 		content: "";
@@ -36,147 +45,159 @@
 		}
 	}
 
-	&__popups {
-	}
-
-	&__container {
-		@media (max-width: $md4) {
-			position: fixed;
-			left: 0;
-			bottom: 0;
-		}
-	}
-
 	&__content {
 		position: relative;
 		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		height: 60px;
+		padding: 5px 0px;
 		@media (max-width: $md4) {
 			justify-content: space-between;
 		}
 	}
 
-	&__logo {
-		display: flex;
-		flex: 1 0 auto;
-		margin: 0px 10px 0px 0px;
-		font-size: rem(16);
+	&__item {
+		font-size: rem(20);
 		font-weight: 500;
-		letter-spacing: 0.1em;
 		z-index: 15;
-		@media (max-width: $md4) {
-			display: none;
-		}
-
-	}
-	&__link {
-		display: flex;
-		max-height: 60px;
-		padding: 5px 0px;
-		align-items: center;
-
-		& img {
-			height: 50px;
-			border: 1px solid $tc3;
-			border-radius: 7px;
-			margin: 0px 10px 0px 0px;
-			transition: all 0.5s ease;
-		}
-		&:hover img {
-			border: 1px solid $tc1;
-		}
-		& p {
-			color: $tc3;
-			transition: all 0.5s ease;
-		}
-		&:hover p {
-			color: $tc1;
-			opacity: 1;
-			transform: scale3d(1.05, 1.05, 1.05);
-		}
-
+		color: $tc3;
 	}
 
+	&__logo {
+	}
 
-
-	&__menu {
-		display: inline-block;
-		position: relative;
-		text-align: end;
+	&__subscribe {
 	}
 
 	&__popup-link {
-		// styles in popup.scss
+	}
+
+	&__menu {
 	}
 }
 
-.socials {
+.logo {
 	display: flex;
-	height: 100%;
-	padding: 5px 0px;
-	z-index: 15;
-	@media (max-width: $md4) {
-		margin: 0px 0px 0px -10px;
-		order: 1;
+	align-items: center;
+	margin: 0px 20px 0px 0px;
+	flex: 1 1 auto;
+	&__text {
+		font-family: "Comforter", cursive;
+		font-size: rem(34);
 	}
-	& a {
-		overflow: visible;
-		transition: all 0.5s ease;
-		&._active_PC {
-			transform: scale3d(1.15, 1.15, 1.15);
-			transition: all 0.5s ease;
+
+	&__icon {
+		display: none;
+		fill: $tc1;
+		fill-opacity: 0.7;
+		margin: 0px 10px 0px 0px;
+	}
+}
+
+.subscribe {
+	position: relative;
+	cursor: pointer;
+	margin: 0px 50px 0px 0px;
+	&__text {
+		@media (max-width: $md4) {
+			display: none;
 		}
 	}
 
-	& a svg {
-		box-sizing: content-box;
-		padding: 10px;
+	&__icon {
+		display: none;
+		@media (max-width: $md4) {
+			display: block;
+		}
 	}
 
-	& a svg path {
-		transition: fill 0.5s ease, fill-opacity 0.5s ease;
+	&__socials {
+		position: absolute;
+		top: 20px;
+		left: 50%;
+		transform: translate(-50%);
+		display: flex;
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+		padding: 5px 0px;
+		z-index: 15;
+		@media (max-width: $md4) {
+			margin: 0px 0px 0px -10px;
+			order: 1;
+		}
+		& a {
+			overflow: visible;
+			transition: all 0.5s ease;
+			&._active_PC {
+				transform: scale3d(1.15, 1.15, 1.15);
+				transition: all 0.5s ease;
+			}
+		}
+
+		& a svg {
+			box-sizing: content-box;
+			padding: 10px;
+		}
+
+		& a svg path {
+			transition: fill 0.5s ease, fill-opacity 0.5s ease;
+		}
+
+		& a._active_PC svg path {
+			fill: $tc1;
+			fill-opacity: 1;
+			transition: all 0.5s ease;
+		}
+	}
+}
+.socials {
+	&__insta {
 	}
 
-	& a._active_PC svg path {
-		fill: $tc1;
-		fill-opacity: 1;
-		transition: all 0.5s ease;
+	&__facebook {
+	}
+
+	&__linkedin {
+	}
+}
+._popup-link {
+	margin: 0px 50px 0px 0px;
+	&__text {
+		@media (max-width: $md4) {
+			display: none;
+		}
+	}
+
+	&__icon {
+		display: none;
+		@media (max-width: $md4) {
+			display: block;
+		}
 	}
 }
 
 //burger styles in burger.scss
 .menu {
-	height: 100%;
-	padding: 5px 0px;
-	text-transform: uppercase;
-	cursor: pointer;
+	text-align: right;
+	&__icon-close {
+	}
 
 	&__button {
-		color: $tc1;
-		display: flex;
-		height: 100%;
 		position: relative;
-		align-items: center;
-		z-index: 17;
-		transition: all 0.5s ease;
-		opacity: 0.7;
-
-		&._active {
-			opacity: 1;
+		border-radius: 7px;
+		color: $tc1;
+		transition:  background-color 0.5s ease;
+		&:not(._active) {
+			background-color: $navc1;
 		}
-		@media (min-width: $md4) {
-			&:hover {
-				opacity: 1;
-				transform: translateY(-2px);
-				transition: color 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
-			}
-			&._active {
-				&:hover {
-					opacity: 1;
-					transform: translateY(-2px);
-					transition: color 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
-				}
-			}
+		&:hover:not(._active) {
+			
+		}
+		&._active {
+			transition: all 0.5s ease;
 		}
 	}
 
@@ -184,14 +205,17 @@
 		//styles in burger.scss
 	}
 
+	&__text {
+		text-transform: uppercase;
+		padding: 0px 15px 0px 0px;
+	}
+
 	&__body {
 		//styles in burger.scss
 	}
 
 	&__list {
-		&_header {
-			//styles in burger.scss
-		}
+		//styles in burger.scss
 	}
 
 	&__link {

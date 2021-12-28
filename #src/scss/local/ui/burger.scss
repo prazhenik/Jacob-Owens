@@ -2,7 +2,7 @@
 
 //----------------------desktop-------------------------
 
-.menu {
+.menu__wrapper {
 	display: block;
 }
 .menu__list {
@@ -55,12 +55,15 @@ body._touch .menu__list > li {
 	position: relative;
 	@include blockSize(40, 20);
 	cursor: pointer;
+	transition: transform .5s ease;
 	&._active {
 		border-right: 1px solid;
-		border-left: 1px solid;
-		color: $tc3;
+		border-left: 1px solid;;
+		z-index: 17;
 	}
 	&._hover {
+		transform: translateY(-2px);
+		transition: transform .5s ease;
 	}
 }
 

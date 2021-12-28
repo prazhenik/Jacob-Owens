@@ -12,7 +12,7 @@
 //&display=swap&subset=cyrillic-ext
 
 //-------------- подключение шрифтов по CDN, если есть ----------------
-
+@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
 //-------------- файл со шрифтами, который собирает ГАЛП ----------------
 @import "local/fonts";
 
@@ -119,10 +119,7 @@ $responsiveType: 1;
 	margin: 0 auto;
 	width: 100%;
 	max-width: 100%;
-	padding: 0 math.div($containerPadding, 2) + px;
-	@media (min-width: $md1) {
-		padding: 0 3%;
-	}
+	padding: 0 3%;
 }
 
 //======================================== ▲ ▲ ▲ БРЕЙКПОИНТЫ ▲ ▲ ▲=========================================================
@@ -138,9 +135,9 @@ $bgc2: rgba(0, 0, 0, 0.6); // menu scroll
 $bgc3: rgba(0, 0, 0, 0.85); // menu
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
-$navc2: rgba(0, 160, 255, .35); // cta prim bcg hover
+$navc2: rgba(0, 160, 255, 0.35); // cta prim bcg hover
 $navc3: rgba(255, 255, 255, 1); //cta second bcg
-$navc4: rgba(26, 49, 252, 1); // cta prim bcg hover
+$navc4: rgba(26, 49, 252, 0.3); // cta prim bcg hover
 
 //---------------------Цвета границ---------------------
 $borc1: rgba(255, 255, 255, 0.5); //cta border
@@ -201,7 +198,6 @@ $mainBgcColor: $bgc1;
 
 $scrollbarWidth: 17px;
 
-
 //------------custom scrollbar----------------
 
 //-------------------- общие стили -------------------------
@@ -220,7 +216,7 @@ body {
 	height: 100%;
 	min-height: 100vh;
 	background-color: $mainBgcColor;
-	overflow-Y: scroll;
+	overflow-y: scroll;
 	padding: 0 !important;
 	&._lock {
 		overflow: hidden; //класс для блокировки скрола в бургере и модалке
@@ -238,9 +234,10 @@ body._lock._pc .header {
 }
 
 body._lock._pc .__popup-link {
-	margin-right: calc($scrollbarWidth - 0.5px) !important; // коррекция _popup-link на скролл при модалке/меню  _popup-link position fixed ил relative
+	margin-right: calc(
+		$scrollbarWidth - 0.5px
+	) !important; // коррекция _popup-link на скролл при модалке/меню  _popup-link position fixed ил relative
 }
-
 
 ._line {
 	display: block;
