@@ -30,6 +30,7 @@
 		@media (max-width: $md4) {
 			display: block;
 			top: auto;
+			height: 50px;
 			bottom: 0;
 			opacity: 1;
 			box-shadow: 0 -3px 5px 2px rgba(0, 0, 0, 0.3);
@@ -53,7 +54,8 @@
 		height: 60px;
 		padding: 5px 0px;
 		@media (max-width: $md4) {
-			justify-content: center;
+			justify-content: space-evenly;
+			height: 50px;
 		}
 	}
 
@@ -63,7 +65,7 @@
 		z-index: 15;
 		color: $tc3;
 		@media (max-width: $md4) {
-			padding: 0px 10px;
+			padding: 10px;
 		}
 		&:not(:last-child) {
 			@include adaptiv-value(margin-right, 50, 15, 3);
