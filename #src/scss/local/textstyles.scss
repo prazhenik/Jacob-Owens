@@ -12,10 +12,10 @@
 	}
 	@media (max-width: $md3) {
 		line-height: 1.2em;
-		margin: 0px 0px 35px 0px;
+		@include adaptiv-value(margin-bottom, 35, 20, 3);
 	}
 	@media (max-width: $md4) {
-		font-size: rem(30);
+		font-size: rem(26);
 		
 
 	}

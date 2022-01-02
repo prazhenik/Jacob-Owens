@@ -21,3 +21,51 @@
 		transition: 0.6s;
 	}
 }
+
+@keyframes profile {
+	0% {
+		content: "director";
+	}
+	10% {
+		content: "director";
+	}
+	15% {
+		content: "director";
+	}
+	22% {
+		content: "editor";
+	}
+	27% {
+		content: "editor";
+	}
+	32% {
+		content: "editor";
+	}
+	44% {
+		content: "cameraman";
+	}
+	49% {
+		content: "cameraman";
+	}
+	54% {
+		content: "cameraman";
+	}
+	66% {
+		content: "colorist";
+	}
+	71% {
+		content: "colorist";
+	}
+	76% {
+		content: "colorist";
+	}
+	88% {
+		content: "traveler";
+	}
+	93% {
+		content: "traveler";
+	}
+	100% {
+		content: "traveler";
+	}
+}

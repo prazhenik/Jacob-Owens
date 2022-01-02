@@ -11,8 +11,8 @@
 		box-sizing: content-box;
 		text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
 		@media (max-width: $md3) {
-			margin: 0px;
 			max-width: 60%;
+			margin: 0px;
 		}
 	}
 
@@ -25,6 +25,7 @@
 		font-size: rem(20);
 		letter-spacing: 3.3px;
 		margin: 0px 0px 35px 0px;
+
 		@media (min-width: $md1) {
 			@include adaptiv-value(font-size, 20, 15, 3);
 			@include adaptiv-value(line-height, 23, 16, 3);
@@ -34,8 +35,21 @@
 			line-height: 1.2em;
 		}
 		@media (max-width: $md4) {
+			display: none;
+		}
+	}
+	&__text-dynamic {
+		@media (max-width: $md4) {
 			font-size: rem(16);
+			letter-spacing: 3.3px;
+			font-weight: 400;
 			margin: 0;
+		}
+		&:before {
+			@media (max-width: $md4) {
+				content: "";
+				animation: profile 10s infinite;
+			}
 		}
 	}
 
@@ -57,7 +71,6 @@
 			color: $tc1;
 			transition: color 0s ease;
 		}
-
 	}
 
 	&__arrDown {
@@ -75,16 +88,24 @@
 		}
 	}
 
-	&__bottom-overlay {
+	&__shadow-top,
+	&__shadow-bottom {
 		position: absolute;
 		left: 0;
-		bottom: 0;
 		width: 100%;
-		@include adaptiv-value(height, 60, 20, 1);
-		@media (min-width: $md4) {
+		@include adaptiv-value(height, 60, 30, 1);
+	}
+	&__shadow-top {
+		@media (max-width: $md4) {
+			top: 0;
 			background: rgba(0, 0, 0, 1);
-			background: linear-gradient(to top, rgba(0, 0, 0, 1) 10%, rgba(255, 255, 255, 0) 100%);
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 100%);
 		}
+	}
+	&__shadow-bottom {
+		bottom: 0;
+		background: rgba(0, 0, 0, 1);
+		background: linear-gradient(to top, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 100%);
 	}
 }
 
