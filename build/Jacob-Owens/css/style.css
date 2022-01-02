@@ -1508,7 +1508,6 @@ body._touch .menu__list > li {
 .menu__icon._active {
   border-right: 1px solid;
   border-left: 1px solid;
-  z-index: 17;
 }
 
 .menu__icon._hover {
@@ -1729,6 +1728,46 @@ a:visited:hover {
   font-weight: 900;
   font-size: 17px;
   line-height: 24px;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes scale {
@@ -3147,16 +3186,16 @@ body._lock._pc .__popup-link {
 }
 
 .subscribe__socials {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-      -ms-transform: translate(-50%);
-          transform: translate(-50%);
+  display: none;
+  opacity: 0;
+  -webkit-animation: fadeOut 0.3s linear;
+          animation: fadeOut 0.3s linear;
+}
+
+.subscribe__socials._active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -3166,7 +3205,16 @@ body._lock._pc .__popup-link {
           align-items: center;
   height: 100%;
   padding: 5px 0px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
   z-index: 15;
+  opacity: 1;
+  -webkit-animation: fadeIn 0.3s linear;
+          animation: fadeIn 0.3s linear;
 }
 
 .subscribe__socials a {
@@ -3187,7 +3235,7 @@ body._lock._pc .__popup-link {
 .subscribe__socials a svg {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  padding: 10px;
+  padding: 5px;
 }
 
 .subscribe__socials a svg path {
@@ -3219,6 +3267,7 @@ body._lock._pc .__popup-link {
   -webkit-transition: background-color 0.5s ease;
   -o-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
+  z-index: 17;
 }
 
 .menu__button:not(._active) {
@@ -3651,8 +3700,8 @@ body._lock._pc .__popup-link {
             order: 1;
   }
 
-  .subscribe__socials {
-    margin: 0px 0px 0px -10px;
+  .subscribe__socials._active {
+    top: -150px;
   }
 
   ._popup-link {
