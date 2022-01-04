@@ -1,7 +1,8 @@
 //----------------------------------- INPUT (inp+tab) ---------------------------------
 
 input {
-	height: 50px;
+	@include adaptiv-value(height, 50, 35, 3);
+	
 	border-radius: 10px;
 	padding: 0px 10px;
 	&:focus {
@@ -16,17 +17,18 @@ textarea {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background-color: rgba(255, 255, 255, .21);
-
+	background-color: rgba(255, 255, 255, .20);
 	caret-color : $navc1;
 	&:focus {
 		background-color: rgba(255, 255, 255, .4);
-	
+	}
+	&._error {
+		border-bottom: 2px solid red;
 	}
 }
 
 input::placeholder {
-	color: $tc3;
+	color: $tc2;
 }
 
 .inputs__item {
@@ -39,10 +41,7 @@ input::placeholder {
 	}
 	&._focus {
 	}
-	// &._error {
-	// 	border-bottom: 1px solid red;
-	// 	color: #ee1212;
-	// }
+
 }
 
 .inputs__label {
@@ -57,11 +56,16 @@ input::placeholder {
 		color: $tc1;
 	}
 	&._error {
-		color: #ee1212;
+		//color: #ee1212;
 	}
 }
 
-textarea.input {
+textarea {
 	resize: none;
-	padding: 0px 0px;
+	padding: 10px;
+	border-radius: 10px;
+	width: 100%;
+	min-height: 100px;
+	max-height: 200px;
+	@include adaptiv-value(font-size, 20, 14, 3);
 }

@@ -1,6 +1,7 @@
 // подключаются готовые библиотеки из папки js/libs/
 // ддя подключения заменить // на @@
 
+
 //https://github.com/qodesmith/datepicker  
 //include('libs/datepicker-full.min.js', {}); //A calendar pops up
 

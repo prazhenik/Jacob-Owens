@@ -26,7 +26,6 @@
 		height: 60px;
 		background: rgba(0, 0, 0, 0.1);
 		backdrop-filter: blur(10px);
-
 		@media (max-width: $md4) {
 			display: block;
 			top: auto;
@@ -62,8 +61,6 @@
 	&__item {
 		@include adaptiv-value(font-size, 20, 16, 3);
 		font-weight: 500;
-		z-index: 15;
-		color: $tc3;
 		@media (max-width: $md4) {
 			padding: 10px;
 		}
@@ -99,6 +96,11 @@
 	&__text {
 		font-family: "Comforter", cursive;
 		@include adaptiv-value(font-size, 34, 20, 3);
+		transition: all .3s ease;
+		&:hover {
+			color: $tc2;
+			transition: color .5s ease;
+		}
 	}
 }
 
@@ -109,11 +111,20 @@
 		order: 1;
 	}
 	&__text {
+		opacity: 1;
+		transition: all 1.5s ease;
+		@media (max-width: $md4) {
+			display: none;
+		}
+
+	}
+	&__text._hide {
+		opacity: 0;
+		transition: all 0.5s ease;
 		@media (max-width: $md4) {
 			display: none;
 		}
 	}
-
 	&__icon {
 		display: none;
 		@media (max-width: $md4) {
@@ -123,32 +134,32 @@
 	}
 
 	&__socials {
-		display: none;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 5px 0px;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%);
+		z-index: 15;
+		visibility: hidden;
 		opacity: 0;
-		animation: fadeOut .3s linear;
-		&._active {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			height: 100%;
-			padding: 5px 0px;
-			position: absolute;
-			top: 20px;
-			left: 50%;
-			transform: translate(-50%);
-			z-index: 15;
+		transition: all 0.5s ease;
+		&._show {
+			visibility: visible;
 			opacity: 1;
-			animation: fadeIn .3s linear;
+			transition: all 1.5s ease;
 			@media (max-width: $md4) {
-				top: -150px;
+				top: -50px;
+				transition: all .5s ease;
 			}
 		}
 
 		& a {
-			overflow: visible;
 			transition: all 0.5s ease;
 			&._active_PC {
-				transform: scale3d(1.15, 1.15, 1.15);
+				transform: scale3d(1.05, 1.05, 1.05);
 				transition: all 0.5s ease;
 			}
 		}
@@ -163,7 +174,7 @@
 		}
 
 		& a._active_PC svg path {
-			fill: $tc1;
+			fill: $tc2;
 			fill-opacity: 1;
 			transition: all 0.5s ease;
 		}
@@ -184,6 +195,11 @@
 		order: 3;
 	}
 	&__text {
+		transition: all .5s ease;
+		&:hover{
+			color: $tc2;
+			transition: color .5s ease;
+		}
 		@media (max-width: $md4) {
 			display: none;
 		}
@@ -209,13 +225,15 @@
 	&__button {
 		position: relative;
 		border-radius: 7px;
-		color: $tc1;
-		transition: background-color 0.5s ease;
-		z-index: 17;
+		color: $tc2;
+		transition: background 0.5s ease;
+		@media (max-width: $md4) {
+			z-index: 17;
+		}
 		&:not(._active) {
-			background-color: $navc1;
+			background: $navc1;
 			@media (max-width: $md4) {
-				background-color: transparent;
+				background: transparent;
 			}
 		}
 		&:hover:not(._active) {

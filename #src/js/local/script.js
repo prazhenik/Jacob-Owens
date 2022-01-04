@@ -39,12 +39,12 @@ if (smoothLinks) {
 
 
 //preloader
-window.onload = function preloader() {
-	document.body.classList.add('_loaded_hiding');
-	window.setTimeout(function () {
-		document.body.classList.remove('_loaded_hiding');
-	}, 1000);
-}
+// window.onload = function preloader() {
+// 	document.body.classList.add('_loaded_hiding');
+// 	window.setTimeout(function () {
+// 		document.body.classList.remove('_loaded_hiding');
+// 	}, 1000);
+// }
 
 
 
@@ -82,13 +82,58 @@ if (itemsPrice) {
 //------------------------------------total count----------------------------------------------------
 
 
+
+
+
+
+
+
+
+
+
 //------------------------------------subscribe submenu----------------------------------------------------
 
 const subscribe = document.querySelector(".subscribe");
+const subscribeText = document.querySelector(".subscribe__text");
+const subscribeIcon = document.querySelector(".subscribe__icon");
 const socials = document.querySelector(".socials");
+const iconsSocial = document.querySelectorAll(".socials a");
 
-console.log(subscribe);
 
-subscribe.addEventListener("click", function (e) {
-	socials.classList.toggle("_active");
-});
+if (!isMobile.any()) {
+	if (iconsSocial.length > 0) {
+		iconsSocial.forEach(iconSocial => {
+
+			iconSocial.addEventListener("mouseover", function (e) {
+				if (iconSocial.classList.contains("_active_PC")) {
+					iconSocial.classList.remove("_active_PC");
+				} else {
+					iconSocial.classList.add("_active_PC");
+				}
+			});
+			//анимация при уходе с кнопки
+			iconSocial.addEventListener("mouseout", function (e) {
+				iconSocial.classList.remove("_active_PC");
+			});
+
+		});
+	}
+	subscribe.addEventListener("mouseover", function (e) {
+		socials.classList.add("_show");
+		subscribeText.classList.add("_hide");
+	});
+
+	subscribe.addEventListener("mouseout", function (e) {
+		socials.classList.remove("_show");
+		subscribeText.classList.remove("_hide");
+	});
+
+} else {
+	subscribeIcon.addEventListener("click", function (e) {
+		socials.classList.toggle("_show");
+	});
+}
+
+
+//------------------------------------textarea autosize----------------------------------------------------
+autosize(document.querySelectorAll('textarea'));

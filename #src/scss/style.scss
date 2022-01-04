@@ -126,22 +126,24 @@ $responsiveType: 1;
 
 //--------------------Цвета шрифтов--------------------
 
-$tc1: rgba(255, 255, 255, 1); // main text color
-$tc2: rgba(0, 0, 0, 1);
-$tc3: rgba(255, 255, 255, 0.7);
+$tc1: rgba(210, 210, 210, 1); // main text color
+$tc2: rgba(255, 255, 255, 1); // hover text color
+$tc3: rgba(0, 0, 0, 1); // secondary text color
+
 //---------------------Цвета фонов---------------------
 $bgc1: rgba(0, 0, 0, 1); // main bcg
 $bgc2: rgba(0, 0, 0, 0.6); // menu scroll
 $bgc3: rgba(0, 0, 0, 0.85); // menu
+$bgc4: rgba(0, 0, 0, 0.1); // menu overlay
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
-$navc2: rgba(0, 160, 255, 0.35); // cta prim bcg hover
-$navc3: rgba(255, 255, 255, 1); //cta second bcg
-$navc4: rgba(26, 49, 252, 0.3); // cta prim bcg hover
+//$navc2: rgba(0, 160, 255, 0.35); // cta prim bcg hover
+//$navc3: rgba(255, 255, 255, 1); //cta second bcg
+//$navc4: rgba(26, 49, 252, 0.3); // cta prim bcg hover
 
 //---------------------Цвета границ---------------------
-$borc1: rgba(255, 255, 255, 0.5); //cta border
-$borc2: rgba(0, 0, 0, 0.7); //active option border, input button border
+$borc1: rgba(210, 210, 210, 1); //cta border
+$borc2: rgba(0, 0, 0, 1); //active option border, input button border
 
 $mainTextColor: $tc1;
 $mainBgcColor: $bgc1;
@@ -184,7 +186,7 @@ $mainBgcColor: $bgc1;
 @import "local/ui/buttons";
 
 @import "local/keyframes"; //кейфреймы
-@import "local/preloader";
+//@import "local/preloader";
 @import "local/popup";
 @import "local/textstyles";
 @import "local/breadcrumbs";

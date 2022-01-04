@@ -2,7 +2,7 @@
 
 
 //подключение JS файлов из папки js/files/
-@@include('local/script.js', {}); // стили конкретного проекта
+
 @@include('local/functions.js', {}); //все касательно функций (1)
 //include('local/sliders.js', {}); //все касательно слайдеров (2)
 
@@ -28,6 +28,8 @@
 //include('local/ui/spollers.js', {});
 //include('local/ui/tabs.js', {});
 
+
+@@include('local/script.js', {}); // стили конкретного проекта
 
 
 //include('local/map.js', {}); //все касательно карт 
