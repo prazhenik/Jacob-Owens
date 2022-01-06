@@ -1,5 +1,6 @@
 //----------------------------------------------HOME---------------------------------------------
 
+// ---------------------hero section
 .hero {
 	&__content {
 		display: flex;
@@ -39,11 +40,17 @@
 		}
 	}
 	&__text-dynamic {
+		display: inline-block; //для работы firstLetter
+		&::first-letter {
+			color: $navc1;
+			font-weight: 900;
+		}
 		@media (max-width: $md4) {
 			font-size: rem(16);
 			letter-spacing: 3.3px;
 			font-weight: 400;
 			margin: 0;
+			color: $tc2;
 		}
 		&:before {
 			@media (max-width: $md4) {
@@ -78,7 +85,7 @@
 		bottom: 10%;
 		padding: 10px;
 		margin: 0px 0px 0px -10px;
-		&:hover *{
+		&:hover * {
 			stroke: $tc2;
 			stroke-opacity: 1;
 			transition: all 0.5s ease;
@@ -89,7 +96,7 @@
 		@media (max-width: $md4) {
 			display: none;
 		}
-		& svg line{
+		& svg line {
 			transition: all 0.5s ease;
 		}
 	}
@@ -112,6 +119,74 @@
 		bottom: 0;
 		background: rgba(0, 0, 0, 1);
 		background: linear-gradient(to top, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 100%);
+	}
+}
+
+// ---------------------gellery sections
+
+// ---------------------hero-bottom section
+.hero-bottom {
+	height: 650px;
+	color: $tc3;
+	&__content {
+		background: url("../img/home/jakob-owens-hero-bottom.jpg") 20% top / cover no-repeat;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__offer {
+		text-align: right;
+		max-width: 100%;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		font-size: 32px;
+		line-height: 1em;
+	}
+
+	&__text {
+		font-size: 28px;
+		line-height: 1em;
+		font-weight: 400;
+		letter-spacing: 0.25em;
+		margin: 0px -7px 0px 0px;
+		
+	}
+
+	&__btn {
+		border: rgba(0, 0, 0, 1) 1px solid; 
+	}
+
+	&__subscribe {
+
+	}
+
+	&__adress {
+
+	}
+}
+
+.subscribe {
+	&__text {
+	}
+
+	&__icon {
+	}
+
+	&__socials {
+	}
+}
+.socials {
+	&__insta {
+	}
+
+	&__facebook {
+	}
+
+	&__linkedin {
 	}
 }
 

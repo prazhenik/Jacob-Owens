@@ -18,14 +18,14 @@ for (let index = 0; index < popup_link.length; index++) {
 }
 
 //закрытие при нажатии на оверлей
-// for (let index = 0; index < popups.length; index++) {
-// 	const popup = popups[index];
-// 	popup.addEventListener("click", function (e) {
-// 		if (!e.target.closest('.popup__body')) {
-// 			popup_close(e.target.closest('.popup'));
-// 		}
-// 	});
-// }
+for (let index = 0; index < popups.length; index++) {
+	const popup = popups[index];
+	popup.addEventListener("click", function (e) {
+		if (!e.target.closest('.popup__body')) {
+			popup_close(e.target.closest('.popup'));
+		}
+	});
+}
 
 
 function popup_open(item, video = '') {

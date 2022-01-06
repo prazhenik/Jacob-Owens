@@ -38,7 +38,7 @@ if (smoothLinks) {
 
 
 
-//preloader
+// preloader
 // window.onload = function preloader() {
 // 	document.body.classList.add('_loaded_hiding');
 // 	window.setTimeout(function () {
@@ -100,10 +100,14 @@ const socials = document.querySelector(".socials");
 const iconsSocial = document.querySelectorAll(".socials a");
 
 
-if (!isMobile.any()) {
-	if (iconsSocial.length > 0) {
-		iconsSocial.forEach(iconSocial => {
 
+if (iconsSocial.length > 0) {
+	iconsSocial.forEach(iconSocial => {
+		//скрытие панели при переходе
+		iconSocial.addEventListener("click", function (e) {
+			socials.classList.remove("_show");
+		});
+		if (!isMobile.any()) {
 			iconSocial.addEventListener("mouseover", function (e) {
 				if (iconSocial.classList.contains("_active_PC")) {
 					iconSocial.classList.remove("_active_PC");
@@ -115,24 +119,40 @@ if (!isMobile.any()) {
 			iconSocial.addEventListener("mouseout", function (e) {
 				iconSocial.classList.remove("_active_PC");
 			});
+			subscribe.addEventListener("mouseover", function (e) {
+				socials.classList.add("_show");
+				subscribeText.classList.add("_hide");
+			});
 
-		});
-	}
-	subscribe.addEventListener("mouseover", function (e) {
-		socials.classList.add("_show");
-		subscribeText.classList.add("_hide");
-	});
-
-	subscribe.addEventListener("mouseout", function (e) {
-		socials.classList.remove("_show");
-		subscribeText.classList.remove("_hide");
-	});
-
-} else {
-	subscribeIcon.addEventListener("click", function (e) {
-		socials.classList.toggle("_show");
+			subscribe.addEventListener("mouseout", function (e) {
+				socials.classList.remove("_show");
+				subscribeText.classList.remove("_hide");
+			});
+		}
 	});
 }
+
+
+
+
+subscribeIcon.addEventListener("click", function (e) {
+	socials.classList.toggle("_show");
+});
+
+
+//закрытие при нажатии на оверлей
+function socials_close() {
+	socials.classList.remove("_show");
+}
+document.addEventListener("click", function (e) {
+	if (!e.target.closest('.subscribe__icon')) {
+		socials_close(e.target.closest('.socials'));
+	}
+});
+
+
+
+
 
 
 //------------------------------------textarea autosize----------------------------------------------------

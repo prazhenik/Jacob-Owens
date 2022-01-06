@@ -96,7 +96,7 @@
 	&__text {
 		font-family: "Comforter", cursive;
 		@include adaptiv-value(font-size, 34, 20, 3);
-		transition: all .3s ease;
+		transition: all .5s ease;
 		&:hover {
 			color: $tc2;
 			transition: color .5s ease;
@@ -143,13 +143,17 @@
 		left: 50%;
 		transform: translate(-50%);
 		z-index: 15;
-		visibility: hidden;
 		opacity: 0;
+		visibility: hidden;
 		transition: all 0.5s ease;
+		@media (max-width: $md4) {
+			top: 50px;
+			transition: all .5s ease;
+		}
 		&._show {
 			visibility: visible;
 			opacity: 1;
-			transition: all 1.5s ease;
+			transition: all .5s ease;
 			@media (max-width: $md4) {
 				top: -50px;
 				transition: all .5s ease;
@@ -191,6 +195,7 @@
 	}
 }
 ._popup-link {
+
 	@media (max-width: $md4) {
 		order: 3;
 	}
@@ -209,6 +214,7 @@
 		display: none;
 		@media (max-width: $md4) {
 			display: block;
+
 		}
 	}
 }
