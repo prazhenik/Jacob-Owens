@@ -3497,7 +3497,7 @@ body._lock._pc .__popup-link {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  padding: 10px 0px;
+  padding: 5px 0px 25px;
 }
 
 .gallery__item_cameramen img {
