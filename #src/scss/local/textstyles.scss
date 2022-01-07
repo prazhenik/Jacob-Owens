@@ -27,7 +27,8 @@
 ._section-title {
 	@include adaptiv-value(font-size, 24, 12, 3);
 	@include adaptiv-value(line-height, 28, 14, 3);
-	@include adaptiv-value(padding, 130, 60, 3);
+	//@include adaptiv-value(padding, 130, 60, 3);
+	text-transform: uppercase;
 }
 
 ._section-subtitle {

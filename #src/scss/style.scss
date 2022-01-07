@@ -12,7 +12,7 @@
 //&display=swap&subset=cyrillic-ext
 
 //-------------- подключение шрифтов по CDN, если есть ----------------
-@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
 //-------------- файл со шрифтами, который собирает ГАЛП ----------------
 @import "local/fonts";
 
@@ -134,7 +134,7 @@ $tc3: rgba(0, 0, 0, 1); // secondary text color
 $bgc1: rgba(0, 0, 0, 1); // main bcg
 $bgc2: rgba(0, 0, 0, 0.6); // menu scroll
 $bgc3: rgba(0, 0, 0, 0.85); // menu
-$bgc4: rgba(0, 0, 0, 0.1); // menu overlay
+$bgc4: rgba(0, 0, 0, 0.3); // menu overlay
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
 //$navc2: rgba(0, 160, 255, 0.35); // cta prim bcg hover
@@ -161,7 +161,7 @@ $mainBgcColor: $bgc1;
 //@import "libs/nouislider";
 //@import "libs/popover.min";
 //@import "libs/simplebar";
-//@import "libs/swiper";
+@import "libs/swiper";
 //@import "libs/tippy";
 
 //========================================= ▲ ▲ ▲ ФАЙЛЫ БИБЛИОТЕК ▲ ▲ ▲===================================================
@@ -189,7 +189,7 @@ $mainBgcColor: $bgc1;
 //@import "local/preloader";
 @import "local/popup";
 @import "local/textstyles";
-@import "local/breadcrumbs";
+//@import "local/breadcrumbs";
 //@import "local/media";
 
 //============================ ▲ ▲ ▲ ФАЙЛЫ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ ▲ ▲ ▲==========================================
@@ -246,7 +246,6 @@ body._lock._pc .__popup-link {
 	width: 200px;
 	border-top: 2px solid $borc1;
 	margin: 0px auto;
-	
 }
 
 //------------------свойства для удаления гор скрола + прибивает footer к низу страницы (ч.1)-----------------
@@ -270,7 +269,6 @@ body._lock._pc .__popup-link {
 	@include adaptiv-value(padding-bottom, 50, 20, 1);
 }
 
-
 .hero-bottom {
 	@include adaptiv-value(padding-top, 100, 40, 1);
 	@include adaptiv-value(padding-bottom, 25, 10, 1);
@@ -278,7 +276,7 @@ body._lock._pc .__popup-link {
 
 //============================================<FULL SCREEN>================================================
 
-body._pc ._fullscrn {
+._fullscrn {
 	background: url("../img/home/jakob-owens-hero31.jpg") 70% center / cover no-repeat;
 	min-height: 100vh;
 	display: flex;
