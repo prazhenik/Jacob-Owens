@@ -126,7 +126,7 @@ $responsiveType: 1;
 
 //--------------------Цвета шрифтов--------------------
 
-$tc1: rgba(210, 210, 210, 1); // main text color
+$tc1: rgba(220, 220, 220, 1); // main text color
 $tc2: rgba(255, 255, 255, 1); // hover text color
 $tc3: rgba(0, 0, 0, 1); // secondary text color
 
@@ -278,7 +278,7 @@ body._lock._pc .__popup-link {
 
 //============================================<FULL SCREEN>================================================
 
-._fullscrn {
+body._pc ._fullscrn {
 	background: url("../img/home/jakob-owens-hero31.jpg") 70% center / cover no-repeat;
 	min-height: 100vh;
 	display: flex;

@@ -41,7 +41,7 @@
 		@media (min-width: $md4) {
 			opacity: 1;
 			top: 0;
-			box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.3);
+			box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.3);
 		}
 	}
 
@@ -52,6 +52,7 @@
 		justify-content: space-between;
 		height: 60px;
 		padding: 5px 0px;
+
 		@media (max-width: $md4) {
 			justify-content: space-evenly;
 			height: 50px;
@@ -96,10 +97,11 @@
 	&__text {
 		font-family: "Comforter", cursive;
 		@include adaptiv-value(font-size, 34, 20, 3);
-		transition: all .5s ease;
+		text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+		transition: all 0.5s ease;
 		&:hover {
 			color: $tc2;
-			transition: color .5s ease;
+			transition: color 0.5s ease;
 		}
 	}
 }
@@ -112,11 +114,10 @@
 	}
 	&__text {
 		opacity: 1;
-		transition: all 1.5s ease;
+		transition: all 0.5s ease;
 		@media (max-width: $md4) {
 			display: none;
 		}
-
 	}
 	&__text._hide {
 		opacity: 0;
@@ -136,55 +137,56 @@
 	&__socials {
 		display: flex;
 		align-items: center;
-		height: 100%;
-		padding: 5px 0px;
 		position: absolute;
 		top: 0;
 		left: 50%;
 		transform: translate(-50%);
-		z-index: 15;
 		opacity: 0;
 		visibility: hidden;
 		transition: all 0.5s ease;
 		@media (max-width: $md4) {
 			top: 50px;
-			transition: all .5s ease;
+			transition: all 0.5s ease;
 		}
 		&._show {
 			visibility: visible;
 			opacity: 1;
-			transition: all .5s ease;
+			transition: all 0.5s ease;
 			@media (max-width: $md4) {
 				top: -50px;
-				transition: all .5s ease;
-			}
-		}
-
-		& a {
-			transition: all 0.5s ease;
-			&._active_PC {
-				transform: scale3d(1.05, 1.05, 1.05);
 				transition: all 0.5s ease;
 			}
 		}
-
-		& a svg {
-			box-sizing: content-box;
-			padding: 5px;
-		}
-
-		& a svg path {
-			transition: fill 0.5s ease, fill-opacity 0.5s ease;
-		}
-
 		& a._active_PC svg path {
 			fill: $tc2;
-			fill-opacity: 1;
-			transition: all 0.5s ease;
 		}
 	}
 }
+
 .socials {
+	height: 100%;
+	padding: 5px 0px;
+	z-index: 15;
+	& a {
+		&._active_PC svg {
+			transform: scale3d(1.05, 1.05, 1.05);
+			transition: all 0.5s ease;
+		}
+	}
+
+	& a svg {
+		box-sizing: content-box;
+		padding: 5px;
+		transition: all 0.5s ease;
+	}
+
+	& a svg path {
+		transition: fill 0.5s ease, fill-opacity 0.5s ease;
+	}
+
+	& a._active_PC svg path {
+		fill-opacity: 1;
+	}
 	&__insta {
 	}
 
@@ -194,16 +196,18 @@
 	&__linkedin {
 	}
 }
-._popup-link {
 
+
+
+._popup-link {
 	@media (max-width: $md4) {
 		order: 3;
 	}
 	&__text {
-		transition: all .5s ease;
-		&:hover{
+		transition: all 0.5s ease;
+		&:hover {
 			color: $tc2;
-			transition: color .5s ease;
+			transition: color 0.5s ease;
 		}
 		@media (max-width: $md4) {
 			display: none;
@@ -214,7 +218,6 @@
 		display: none;
 		@media (max-width: $md4) {
 			display: block;
-
 		}
 	}
 }
