@@ -3495,9 +3495,9 @@ body._lock._pc .__popup-link {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  padding: 5px 0px 25px;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  padding: 5px 0px 5px;
 }
 
 .gallery__item_cameramen img {
@@ -3922,6 +3922,7 @@ body._lock._pc .__popup-link {
         grid-row-start: 1;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
+    padding: 0px;
   }
 
   .gallery__item_blue {
@@ -4261,7 +4262,7 @@ body._lock._pc .__popup-link {
 
   ._fullscrn {
     background: url("../img/home/jakob-owens-hero31.jpg") 0 50%/fill no-repeat;
-    min-height: 40vh;
+    min-height: 100vh;
   }
 
   .hero__text {

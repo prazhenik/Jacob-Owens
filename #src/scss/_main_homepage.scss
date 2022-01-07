@@ -134,8 +134,8 @@
 		&_title {
 			min-height: auto;
 			align-self: center;
-			justify-self: center;
-			padding: 5px 0px 25px;
+			justify-self: end;
+			padding: 5px 0px 5px;
 		}
 		&_cameramen {
 			& img {
@@ -173,6 +173,7 @@
 				grid-column-end: 4;
 				grid-row-start: 1;
 				grid-row-end: 2;
+				padding: 0px;
 			}
 
 			&_blue {
