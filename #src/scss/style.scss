@@ -135,6 +135,7 @@ $bgc1: rgba(0, 0, 0, 1); // main bcg
 $bgc2: rgba(0, 0, 0, 0.6); // menu scroll
 $bgc3: rgba(0, 0, 0, 0.85); // menu
 $bgc4: rgba(0, 0, 0, 0.3); // menu overlay
+$bgc5: rgba(220, 220, 220, 1); //
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
 //$navc2: rgba(0, 160, 255, 0.35); // cta prim bcg hover
@@ -155,13 +156,16 @@ $mainBgcColor: $bgc1;
 
 //========================================= ▼ ▼ ▼ ФАЙЛЫ БИБЛИОТЕК ▼ ▼ ▼====================================================
 
+
+
 //@import "libs/datepicker";
 //@import "libs/hystmodal";
-@import "libs/lightgallery";
+
+@import "libs/lightgallery-bundle.min";
 //@import "libs/nouislider";
 //@import "libs/popover.min";
 //@import "libs/simplebar";
-@import "libs/swiper";
+//@import "libs/swiper";
 //@import "libs/tippy";
 
 //========================================= ▲ ▲ ▲ ФАЙЛЫ БИБЛИОТЕК ▲ ▲ ▲===================================================
@@ -280,9 +284,10 @@ body._lock._pc .__popup-link {
 	background: url("../img/home/jakob-owens-hero31.jpg") 70% center / cover no-repeat;
 	min-height: 100vh;
 	display: flex;
+	box-shadow: inset 0px 20px 15px -15px $bgc3, inset 0px -20px 15px -15px $bgc3;
 	@media (max-width: $md4) {
 		background: url("../img/home/jakob-owens-hero31.jpg") 0 50% / fill no-repeat;
-		min-height: 100vh;
+		min-height: 60vh;
 		//min-height: calc(var(--vh, 1vh) * 100); //убирает скачек контента при скрытии/показе панели нав. моб браузера
 	}
 }
@@ -309,11 +314,7 @@ body._lock._pc .__popup-link {
 //=============================== ▼ ▼ ▼ ФАЙЛЫ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ ▼ ▼ ▼=============================================
 
 //--------------------- стили дополнений -------------------------
-@import "libs/nouislider"; //дополнение для подключения ползунков цены
-//@import "datepicker"; //дополнение для календаря
-//@import "lightgallery";
-//@import "pagging";
-//@import "tippy";
+
 
 //------------------ стили страниц многостраничного сайта -------------------------
 

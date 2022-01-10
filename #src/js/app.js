@@ -24,7 +24,7 @@
 
 //все касательно готовых модулей UI
 @@include('local/ui/burger.js', {});
-//include('local/ui/lightgallery.js', {});
+@@include('local/ui/lightgallery.js', {});
 //include('local/ui/spollers.js', {});
 //include('local/ui/tabs.js', {});
 

@@ -101,40 +101,21 @@
 		}
 	}
 
-	&__shadow-top,
-	&__shadow-bottom {
-		position: absolute;
-		left: 0;
-		width: 100%;
-		@include adaptiv-value(height, 60, 30, 1);
-	}
-	&__shadow-top {
-		@media (max-width: $md4) {
-			top: 0;
-			background: rgba(0, 0, 0, 1);
-			background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 100%);
-		}
-	}
-	&__shadow-bottom {
-		bottom: 0;
-		background: rgba(0, 0, 0, 1);
-		background: linear-gradient(to top, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 100%);
-	}
 }
 
 // ---------------------gellery sections
 
 .gallery {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-	gap: 5px;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 10px;
 	&__item {
 		position: relative;
-		min-height: 230px;
+		min-height: 150px;
 		&_title {
 			min-height: auto;
 			align-self: center;
-			justify-self: end;
+			justify-self: center;
 			padding: 5px 0px 5px;
 		}
 		&_cameramen {
@@ -221,10 +202,28 @@
 	}
 }
 
+.lg-actions, .lg-next::after {
+	content: "🠖" !important;
+}
+.lg-actions, .lg-prev::after {
+	content: "🠔" !important;
+}
+
+.lg-prev::before, .lg-next::before {
+	content: "" !important;
+}
+
+.lg-close:after {
+	content: "✖" !important;
+}
 // ---------------------hero-bottom section
 .hero-bottom {
 	color: $tc3;
+	
 	&__content {
+		display: flex;
+		align-items: center;
+		min-height: 60vh;
 		background: url("../img/home/jakob-owens-hero-bottom.jpg") 20% top / cover no-repeat;
 	}
 
@@ -232,8 +231,7 @@
 		text-align: right;
 		max-width: 60%;
 		margin-left: auto;
-		@include adaptiv-value(padding-top, 230, 50, 3);
-		@include adaptiv-value(padding-bottom, 230, 50, 3);
+		padding: 20px 0px;
 		@media (max-width: $md4) {
 			max-width: 40%;
 		}
