@@ -287,7 +287,7 @@ body._lock._pc .__popup-link {
 	box-shadow: inset 0px 20px 15px -15px $bgc3, inset 0px -20px 15px -15px $bgc3;
 	@media (max-width: $md4) {
 		background: url("../img/home/jakob-owens-hero31.jpg") 0 50% / fill no-repeat;
-		min-height: 60vh;
+		min-height: 50vh;
 		//min-height: calc(var(--vh, 1vh) * 100); //убирает скачек контента при скрытии/показе панели нав. моб браузера
 	}
 }

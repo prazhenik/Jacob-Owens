@@ -4,7 +4,7 @@
 	@include adaptiv-value(font-size, 16, 12, 3);
 	@include adaptiv-value(padding-top, 25, 10, 1);
 	@include adaptiv-value(padding-bottom, 85, 30, 1);
-	color: $navc1;
+	color: $tc1;
 	@media (max-width: $md4) {
 		padding-bottom: 80px;
 	}
@@ -82,7 +82,7 @@
 		}
 		&:hover{
 			transition: color .5s ease;
-			color: $tc2;
+			color: $navc1;
 		}
 	}
 }

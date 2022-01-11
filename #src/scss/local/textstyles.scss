@@ -4,21 +4,17 @@
 	font-weight: 900;
 	text-transform: uppercase;
 	color: $tc2;
-	font-size: rem(36);
-	margin: 0px 0px 5px 0px;
-	@media (min-width: $md1) {
-		@include adaptiv-value(font-size, 36, 20, 3);
-		@include adaptiv-value(line-height, 40, 30, 3);
-	}
-	@media (max-width: $md3) {
-		line-height: 1.2em;
-		@include adaptiv-value(margin-bottom, 35, 20, 3);
-	}
+	margin: 0px 0px 10px 0px;
+	@include adaptiv-value(font-size, 80, 20, 3);
+	line-height: 1.5em;
 	@media (max-width: $md4) {
-		font-size: rem(26);
-		
-
+		margin: 15% 0px 10px 0px;
+		line-height: 2em;
 	}
+	& span {
+		@include adaptiv-value(font-size, 200, 63, 3);
+	}
+
 }
 
 ._page-subtitle {
@@ -27,7 +23,6 @@
 ._section-title {
 	@include adaptiv-value(font-size, 24, 12, 3);
 	@include adaptiv-value(line-height, 28, 14, 3);
-	//@include adaptiv-value(padding, 130, 60, 3);
 	text-transform: uppercase;
 	font-weight: 700;
 	min-height: auto;
