@@ -30,6 +30,11 @@
 	//@include adaptiv-value(padding, 130, 60, 3);
 	text-transform: uppercase;
 	font-weight: 700;
+	min-height: auto;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	padding: 5px 0px 5px;
 	& span {
 		font-weight: 900;
 		color: $tc2
