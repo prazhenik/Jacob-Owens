@@ -2934,12 +2934,12 @@ body._lock._pc .__popup-link {
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
+  gap: 5px;
 }
 
 .gallery__item {
   position: relative;
-  min-height: 150px;
+  min-height: 250px;
 }
 
 .gallery__item_title {
@@ -2952,29 +2952,14 @@ body._lock._pc .__popup-link {
   padding: 5px 0px 5px;
 }
 
-.gallery__item_cameramen img {
-  -o-object-position: 0 60%;
-     object-position: 0 60%;
-}
-
-.gallery__item img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .lg-actions,
 .lg-next::after {
-  content: "🠖" !important;
+  content: "⮞" !important;
 }
 
 .lg-actions,
 .lg-prev::after {
-  content: "🠔" !important;
+  content: "⮜" !important;
 }
 
 .lg-prev::before,
@@ -2983,7 +2968,7 @@ body._lock._pc .__popup-link {
 }
 
 .lg-close:after {
-  content: "✖" !important;
+  content: "🞩" !important;
 }
 
 .hero-bottom {
@@ -2999,6 +2984,8 @@ body._lock._pc .__popup-link {
           align-items: center;
   min-height: 60vh;
   background: url("../img/home/jakob-owens-hero-bottom.jpg") 20% top/cover no-repeat;
+  -webkit-box-shadow: inset 0px 20px 15px -15px rgba(0, 0, 0, 0.85), inset 0px -20px 15px -15px rgba(0, 0, 0, 0.85);
+          box-shadow: inset 0px 20px 15px -15px rgba(0, 0, 0, 0.85), inset 0px -20px 15px -15px rgba(0, 0, 0, 0.85);
 }
 
 .hero-bottom__offer {
@@ -3366,10 +3353,6 @@ body._lock._pc .__popup-link {
     -ms-grid-rows: (minmax(240px, 1fr))[3];
     grid-template-rows: repeat(3, minmax(240px, 1fr));
     gap: 5px;
-  }
-
-  .gallery__item {
-    position: relative;
   }
 
   .gallery__item img {
@@ -3757,6 +3740,55 @@ body._lock._pc .__popup-link {
 
   .hero__arrDown {
     display: none;
+  }
+
+  .gallery__item {
+    min-height: 250px;
+  }
+
+  .gallery__item:nth-child(3),
+  .gallery__item:nth-child(4),
+  .gallery__item:nth-child(5) {
+    display: none;
+  }
+
+  .gallery__item:nth-child(2):after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: url("../img/icons/plus-zoom.svg") no-repeat center;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 5;
+  }
+
+  .gallery__item_title {
+    min-height: auto;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    padding: 5px 0px 5px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .gallery__item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 
   .hero-bottom__offer {
