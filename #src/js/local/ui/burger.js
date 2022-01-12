@@ -2,7 +2,6 @@
 let delay = 500;
 
 let iconMenu = document.querySelector(".menu__icon");
-let iconMenuClose = document.querySelector(".menu__icon-close");
 let menuButton = document.querySelector(".menu__button");
 let menuBody = document.querySelector(".menu__body");
 
@@ -43,7 +42,6 @@ if (menuButton != null) {
 			iconMenu.classList.remove("_hover");
 			iconMenu.classList.toggle("_active");
 			menuButton.classList.toggle("_active");
-			iconMenuClose.classList.toggle("_active");
 			menuBody.classList.toggle("_active");
 		}
 	});
@@ -74,10 +72,15 @@ if (menuLinks.length > 0) {
 			});
 			e.preventDefault();
 		}
-		
+
 	}
 }
 
+document.addEventListener('keydown', function (e) {
+	if (e.code === 'Escape') {
+		removeActiveMenu();
+	}
+});
 
 // // на touch устройствах из functions.js открываем и закрываем subMenu
 // if (isMobile.any()) {

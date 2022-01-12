@@ -1,65 +1,21 @@
 //---------------------------- ▼ ▼ ▼ BURGER ▼ ▼ ▼ -------------------------------
+//----------------------STATIC MENU-------------------------
 
-//----------------------desktop-------------------------
-
-.menu__wrapper {
-	display: block;
-}
-.menu__list {
-	display: flex;
-	flex-wrap: wrap;
-	max-width: 400px;
-	width: 100%;
-	margin: 0 auto;
-	font-weight: 400;
-	@media (max-width: $md3) {
-		max-width: 100%;
-	}
-}
-
-.menu__list > li > a._activepage {
-	color: $tc1;
-	font-weight: 700;
-	@media (max-width: $md3), (max-device-width: 960px) and (orientation: landscape) {
-		//color: $tc5;
-		font-weight: 500;
-	}
-}
-.menu__list > li {
-	position: relative;
-	flex: 0 1 25%;
-	text-align: center;
-	position: relative;
-	z-index: 10;
-	& a {
-		padding: 5px 0px;
-	}
-
-	.menu__list > li:last-child {
-		margin: 0px 0px 0px 0px;
-	}
-}
-
-.menu__link {
-	display: inline-block;
-}
-
-//----------------------touch-------------------------
-
-body._touch .menu__list > li {
-	display: flex;
-	justify-content: center;
-}
-
+//----------------------BURGER MENU-------------------------
+//----------------------burger icon-------------------------
 .menu__icon {
 	position: relative;
 	@include blockSize(40, 20);
 	cursor: pointer;
 	z-index: 17;
-	transition: transform 0.5s ease;
+	transition: all 0.5s ease;
 	&._active {
-		border-right: 1px solid;
-		border-left: 1px solid;
+		border-right: 2px solid;
+		border-left: 2px solid;
+		&:hover {
+			border-color: $navc1;
+			transition: all 0.5s ease;
+		}
 	}
 	&._hover {
 		transform: translateY(-2px);
@@ -70,14 +26,8 @@ body._touch .menu__list > li {
 	}
 }
 
-.menu__icon-close {
-	margin: 0px 30px 0px 0px;
-	
-	@media (max-width: $md4) {
-		order: 2;
-		margin: 0px;
-	}
-}
+
+
 
 .menu__icon span,
 .menu__icon::before,
@@ -92,7 +42,6 @@ body._touch .menu__list > li {
 	transform: scale3d(1, 1, 1) rotateZ(-45deg);
 	transform-style: preserve-3d;
 }
-
 .menu__icon::before {
 	width: 50%;
 	top: 0;
@@ -106,7 +55,6 @@ body._touch .menu__list > li {
 	width: 100%;
 	top: 50%;
 }
-
 .menu__icon._hover span,
 .menu__icon._hover::before,
 .menu__icon._hover::after {
@@ -115,7 +63,6 @@ body._touch .menu__list > li {
 	left: 0;
 	background: $tc2;
 }
-
 .menu__icon._active span,
 .menu__icon._active::before,
 .menu__icon._active::after {
@@ -123,22 +70,22 @@ body._touch .menu__list > li {
 	top: 50%;
 	left: 0%;
 }
-
 .menu__icon._active span {
 	opacity: 0;
 }
-
 .menu__icon._active::before {
 	transform: rotate(-45deg);
 }
-
 .menu__icon._active::after {
 	transform: rotate(45deg);
 }
+//----------------------burger icon-------------------------
 
 .menu__body {
 	position: fixed;
-	display: inline-block;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 	top: 0%;
 	left: -100%;
 	width: 100%;
@@ -146,39 +93,25 @@ body._touch .menu__list > li {
 	color: $tc1;
 	background: $bgc4;
 	backdrop-filter: blur(20px);
-	padding: 110px 0px;
+	padding: 5% 0px;
 	transition: left 0.5s ease;
 	overflow: auto;
 	z-index: 16;
 }
 .menu__body._active {
 	left: 0;
+}
+
+.menu__list {
 	display: flex;
-	justify-content: center;
-	text-align: center;
-	z-index: 16;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
 
-
-.menu__list > li {
-	margin: 0px 0px 70px 0px;
-	flex: 0 1 100%;
-	@media (max-device-width: 960px) and (orientation: landscape) {
-		margin: 0px 0px 10px 0px;
-		height: 20%;
-	}
-}
-.menu__list > li:last-child {
-	margin-bottom: 0;
-}
-
-.menu__list,
-.menu__list > li._active {
-	display: block;
-}
 .menu__link {
-	font-size: 25px;
+	@include adaptiv-value(font-size, 65, 40, 3);
 	transition: all 0.5s ease;
+	position: relative;
 	&:hover,
 	&:active {
 		color: $tc2;
@@ -186,21 +119,19 @@ body._touch .menu__list > li {
 	}
 	&:after {
 		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
 		display: block;
-		height: 2px;
+		@include adaptiv-value(height, 4, 2, 3);
 		width: 0%;
 		background: $navc1;
-		margin: 5px 0px 0px 0px;
-		transition: width 0.5s ease;
+		transition: all 0.5s ease;
 	}
-	&:hover:after {
-		width: 100%;
-		transition: width 0.5s ease;
-	}
+	&:hover:after,
 	&:active:after {
 		width: 100%;
 		transition: width 0.5s ease;
 	}
 }
-
 //---------------------------- ▲ ▲ ▲ BURGER ▲ ▲ ▲ ------------------------------

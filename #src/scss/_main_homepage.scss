@@ -1,5 +1,7 @@
 //----------------------------------------------HOME---------------------------------------------
 
+
+
 // ---------------------hero section
 .hero {
 	&__content {
@@ -8,12 +10,11 @@
 	}
 
 	&__offer {
-		padding: 40px 0px;
+		padding: 40px 10%;
 		box-sizing: content-box;
-		text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
-		@media (max-width: $md3) {
-			//max-width: 60%;
-			margin: 0px;
+		text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+		@media (max-width: $md4) {
+			padding: 40px 5%;
 		}
 	}
 
@@ -21,7 +22,7 @@
 		// styles in textstyles.scss
 	}
 
-	&__text {
+	&__skills {
 		font-weight: 400;
 		font-size: rem(20);
 		letter-spacing: 3.3px;
@@ -32,23 +33,22 @@
 			@include adaptiv-value(line-height, 23, 16, 3);
 			@include adaptiv-value(letter-spacing, 3.3, 0.2, 3);
 		}
-		@media (max-width: $md3) {
-			line-height: 1.2em;
-		}
 		@media (max-width: $md4) {
 			display: none;
 		}
 	}
-	&__text-dynamic {
-		display: inline-block; //для работы firstLetter
+	&__skills-dynamic {
+		display: block; //для работы firstLetter
+		font-weight: 500;
+		margin-left: auto;
+		padding: 20px 0px 0px 0px;
 		&::first-letter {
 			color: $navc1;
-			font-weight: 500;
 		}
 		@media (max-width: $md4) {
 			font-size: rem(22);
+			
 			letter-spacing: 3.3px;
-			font-weight: 500;
 			margin: 0;
 			color: $tc2;
 		}
@@ -56,6 +56,7 @@
 			font-size: rem(18);
 		}
 		&:before {
+			
 			@media (max-width: $md4) {
 				content: "";
 				animation: profile 10s infinite;
@@ -85,7 +86,7 @@
 
 	&__arrDown {
 		position: absolute;
-		bottom: 10%;
+		bottom: 0%;
 		padding: 10px;
 		margin: 0px 0px 0px -10px;
 		&:hover * {
@@ -129,6 +130,7 @@
 		}
 	}
 	@media (max-width: $md4) {
+		gap: 0;
 		&__title-work,
 		&__title-happyness {
 			order: 1;
@@ -138,7 +140,7 @@
 			order: 0;
 		}
 		&__item {
-			min-height: 30vh;
+			min-height: 40vh;
 			&:nth-child(3),
 			&:nth-child(4),
 			&:nth-child(5) {
@@ -297,11 +299,11 @@
 				}
 			}
 
-			&_coral {
+			&_sharks {
 				grid-column: 2 / 6;
 				grid-row: 3 / 4;
 				& img {
-					object-position: center 60%;
+					object-position: center 40%;
 				}
 			}
 
@@ -363,7 +365,7 @@
 
 	&__title {
 		text-transform: uppercase;
-		@include adaptiv-value(font-size, 32, 16, 3);
+		@include adaptiv-value(font-size, 32, 18, 3);
 		line-height: 1em;
 		@media (max-width: $md4) {
 			padding: 5px 0;

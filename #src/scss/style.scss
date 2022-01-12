@@ -156,8 +156,6 @@ $mainBgcColor: $bgc1;
 
 //========================================= ▼ ▼ ▼ ФАЙЛЫ БИБЛИОТЕК ▼ ▼ ▼====================================================
 
-
-
 //@import "libs/datepicker";
 //@import "libs/hystmodal";
 
@@ -245,11 +243,27 @@ body._lock._pc .__popup-link {
 	) !important; // коррекция _popup-link на скролл при модалке/меню  _popup-link position fixed ил relative
 }
 
-._line {
-	display: block;
+section {
+	position: relative;
+	@include adaptiv-value(padding-top, 100, 40, 1);
+	@include adaptiv-value(padding-bottom, 50, 20, 1);
+
+	@media (max-width: $md4) {
+		@include adaptiv-value(padding-top, 50, 20, 1);
+	}
+}
+
+section:not(.hero, .hero-bottom):after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
 	width: 200px;
-	border-top: 2px solid $borc1;
-	margin: 0px auto;
+	transform: translate(-50%);
+	height: 2px;
+	margin: 0 auto;
+	background-color: $bgc5;
 }
 
 //------------------свойства для удаления гор скрола + прибивает footer к низу страницы (ч.1)-----------------
@@ -266,16 +280,6 @@ body._lock._pc .__popup-link {
 
 .main {
 	flex: 1 1 auto; //свойство прибивает footer к низу страницы (ч.2)
-}
-
-.gallery {
-	@include adaptiv-value(padding-top, 100, 40, 1);
-	@include adaptiv-value(padding-bottom, 50, 20, 1);
-}
-
-.hero-bottom {
-	@include adaptiv-value(padding-top, 100, 40, 1);
-	@include adaptiv-value(padding-bottom, 25, 10, 1);
 }
 
 //============================================<FULL SCREEN>================================================
@@ -314,7 +318,6 @@ body._lock._pc .__popup-link {
 //=============================== ▼ ▼ ▼ ФАЙЛЫ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ ▼ ▼ ▼=============================================
 
 //--------------------- стили дополнений -------------------------
-
 
 //------------------ стили страниц многостраничного сайта -------------------------
 
