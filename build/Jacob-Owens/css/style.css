@@ -3858,13 +3858,11 @@ section:not(.hero, .hero-bottom):after {
     min-height: 40vh;
   }
 
-  .gallery__item:nth-child(3),
-  .gallery__item:nth-child(4),
-  .gallery__item:nth-child(5) {
+  .gallery__item:not(:nth-child(2)) {
     display: none;
   }
 
-  .gallery__item:nth-child(2):after {
+  .gallery__item:after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -3878,11 +3876,6 @@ section:not(.hero, .hero-bottom):after {
     background: url("../img/icons/plus-zoom.svg") no-repeat center;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 5;
-  }
-
-  .gallery__item_wife img {
-    -o-object-position: 45%;
-       object-position: 45%;
   }
 
   .hero-bottom__content {
