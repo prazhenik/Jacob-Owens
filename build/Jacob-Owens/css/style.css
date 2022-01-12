@@ -2957,6 +2957,11 @@ section:not(.hero, .hero-bottom):after {
   content: "✕" !important;
 }
 
+.lg-zoom-in,
+.lg-zoom-out {
+  display: none;
+}
+
 .hero-bottom {
   color: black;
 }

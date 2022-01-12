@@ -19,10 +19,11 @@ function gallery_init() {
 	for (let index = 0; index < gallery.length; index++) {
 		const el = gallery[index];
 		lightGallery(el, {
+			plugins: [lgZoom],
 			thumbnail: true,
 			download: false,
 			selector: 'a',
-			zoomFromOrigin: true,
+			zoomFromOrigin: false,
 			mobileSettings: {
 				controls: false, download: false, zoomFromOrigin: true
 			}

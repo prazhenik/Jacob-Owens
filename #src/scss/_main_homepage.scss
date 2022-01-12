@@ -1,7 +1,5 @@
 //----------------------------------------------HOME---------------------------------------------
 
-
-
 // ---------------------hero section
 .hero {
 	&__content {
@@ -47,7 +45,7 @@
 		}
 		@media (max-width: $md4) {
 			font-size: rem(22);
-			
+
 			letter-spacing: 3.3px;
 			margin: 0;
 			color: $tc2;
@@ -56,7 +54,6 @@
 			font-size: rem(18);
 		}
 		&:before {
-			
 			@media (max-width: $md4) {
 				content: "";
 				animation: profile 10s infinite;
@@ -122,11 +119,11 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			transition: all ease .5s;
+			transition: all ease 0.5s;
 		}
 		&:hover img {
 			transform: scale(1.05);
-			transition: all ease .5s;
+			transition: all ease 0.5s;
 		}
 	}
 	@media (max-width: $md4) {
@@ -141,7 +138,7 @@
 		}
 		&__item {
 			min-height: 40vh;
-			&:not(:nth-child(2)){
+			&:not(:nth-child(2)) {
 				display: none;
 			}
 			&:after {
@@ -328,6 +325,12 @@
 .lg-close:after {
 	content: "✕" !important;
 }
+
+.lg-zoom-in,
+.lg-zoom-out {
+	display: none;
+}
+
 // ---------------------hero-bottom section
 .hero-bottom {
 	color: $tc3;
@@ -382,9 +385,9 @@
 		text-transform: uppercase;
 		font-weight: 700;
 		border-radius: 7px;
-		&:hover{
+		&:hover {
 			border: rgba(0, 0, 0, 0) 1px solid;
-			
+
 			background-color: $navc1;
 			color: $tc2;
 		}
