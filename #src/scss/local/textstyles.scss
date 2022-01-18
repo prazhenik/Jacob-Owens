@@ -6,17 +6,16 @@
 	text-transform: uppercase;
 	color: $tc1;
 	padding: 3% 0px 0px 0px;
-	@include adaptiv-value(font-size, 80, 20, 3);
+	@include adaptiv-value(font-size, 60, 20, 3);
 	line-height: 1.5em;
 	@media (max-width: $md4) {
-		padding: 15% 0px 0px 0px;
+		padding: 0;
 		line-height: 2em;
 	}
 	& span {
 		color: $tc2;
-		@include adaptiv-value(font-size, 200, 60, 3);
+		@include adaptiv-value(font-size, 140, 60, 3);
 	}
-
 }
 
 ._page-subtitle {
@@ -32,11 +31,19 @@
 	justify-self: center;
 	text-align: center;
 	padding: 5px 0px 5px;
+	font-size: rem(38);
+	padding: 50px 0px 25px 0px;
+	@media (max-width: $md4) {
+		position: absolute;
+		top: 0;
+		z-index: 15;
+		//font-size: rem(18);
+	}
 	& span {
 		display: block;
-		@include adaptiv-value(font-size, 24, 18, 3);
 		font-weight: 900;
-		color: $tc2
+		color: $tc2;
+line-height: 1em;
 	}
 }
 

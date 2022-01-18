@@ -120,6 +120,9 @@ $responsiveType: 1;
 	width: 100%;
 	max-width: 100%;
 	padding: 0 3%;
+	@media (max-width: $md4) {
+		//padding: 0;
+	}
 }
 
 //======================================== ▲ ▲ ▲ БРЕЙКПОИНТЫ ▲ ▲ ▲=========================================================
@@ -158,7 +161,6 @@ $mainBgcColor: $bgc1;
 
 //@import "libs/datepicker";
 //@import "libs/hystmodal";
-
 
 @import "libs/lightgallery-bundle.min";
 //@import "libs/nouislider";
@@ -246,13 +248,16 @@ body._lock._pc .__popup-link {
 
 section {
 	position: relative;
-	@include adaptiv-value(padding-top, 100, 40, 1);
-	@include adaptiv-value(padding-bottom, 50, 20, 1);
-
+	//@include adaptiv-value(padding-top, 100, 40, 1);
+	//@include adaptiv-value(padding-bottom, 50, 20, 1);
+	//height: 100vh;
 	@media (max-width: $md4) {
-		@include adaptiv-value(padding-top, 50, 20, 1);
+		//@include adaptiv-value(padding-top, 50, 20, 1);
+		padding: 2% 0px;
 	}
 }
+
+
 
 section:not(.hero, .hero-bottom):after {
 	content: "";
@@ -265,6 +270,9 @@ section:not(.hero, .hero-bottom):after {
 	height: 2px;
 	margin: 0 auto;
 	background-color: $bgc5;
+	@media (max-width: $md4) {
+		display: none;
+	}
 }
 
 //------------------свойства для удаления гор скрола + прибивает footer к низу страницы (ч.1)-----------------
@@ -290,9 +298,10 @@ section:not(.hero, .hero-bottom):after {
 	min-height: 100vh;
 	display: flex;
 	box-shadow: inset 0px 20px 15px -15px $bgc3, inset 0px -20px 15px -15px $bgc3;
+	overflow: hidden;
 	@media (max-width: $md4) {
 		background: url("../img/home/jakob-owens-hero31.jpg") 0 50% / fill no-repeat;
-		min-height: 50vh;
+		min-height: 100vh;
 		//min-height: calc(var(--vh, 1vh) * 100); //убирает скачек контента при скрытии/показе панели нав. моб браузера
 	}
 }

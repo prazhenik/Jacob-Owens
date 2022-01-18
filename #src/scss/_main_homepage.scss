@@ -2,9 +2,30 @@
 
 // ---------------------hero section
 .hero {
+	@media (max-width: $md4) {
+		margin: 0px 0px 2% 0px;
+	}
+	&__media {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
+	&__video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		min-width: 100%;
+		min-height: 100%;
+		object-fit: cover;
+	}
 	&__content {
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
+		z-index: 1;
 	}
 
 	&__offer {
@@ -12,7 +33,7 @@
 		box-sizing: content-box;
 		text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 		@media (max-width: $md4) {
-			padding: 40px 5%;
+			padding: 0px 5% 30%;
 		}
 	}
 
@@ -24,8 +45,7 @@
 		font-weight: 400;
 		font-size: rem(20);
 		letter-spacing: 3.3px;
-		margin: 0px 0px 35px 0px;
-
+		//margin: 0px 0px 35px 0px;
 		@media (min-width: $md1) {
 			@include adaptiv-value(font-size, 20, 15, 3);
 			@include adaptiv-value(line-height, 23, 16, 3);
@@ -36,16 +56,16 @@
 		}
 	}
 	&__skills-dynamic {
-		display: block; //для работы firstLetter
+		display: none; //для работы firstLetter
 		font-weight: 500;
 		margin-left: auto;
-		padding: 20px 0px 0px 0px;
+		padding: 10px 0px 0px 0px;
 		&::first-letter {
 			color: $navc1;
 		}
 		@media (max-width: $md4) {
-			font-size: rem(22);
-
+			display: block; //для работы firstLetter
+			font-size: rem(18);
 			letter-spacing: 3.3px;
 			margin: 0;
 			color: $tc2;
@@ -84,15 +104,14 @@
 	&__arrDown {
 		position: absolute;
 		bottom: 0%;
-		padding: 10px;
-		margin: 0px 0px 0px -10px;
+		right: 0%;
 		&:hover * {
 			stroke: $tc2;
 			stroke-opacity: 1;
 			transition: all 0.5s ease;
 		}
 		@media (min-width: $md1) {
-			padding: 1% 1% 1% 3%;
+			padding: 1% 3% 40px 1%;
 		}
 		@media (max-width: $md4) {
 			display: none;
@@ -107,11 +126,12 @@
 
 .gallery {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
 	gap: 5px;
 	&__item {
 		position: relative;
 		overflow: hidden;
+
 		& img {
 			position: absolute;
 			top: 0;
@@ -130,14 +150,15 @@
 		gap: 0;
 		&__title-work,
 		&__title-happyness {
-			order: 1;
+			//order: 1;
 		}
 		&__title-rest,
 		&__title-nature {
-			order: 0;
+			//order: 0;
 		}
 		&__item {
-			min-height: 40vh;
+			position: relative;
+			min-height: 50vh;
 			&:not(:nth-child(2)) {
 				display: none;
 			}
@@ -334,7 +355,9 @@
 // ---------------------hero-bottom section
 .hero-bottom {
 	color: $tc3;
-
+	@media (max-width: $md4) {
+		margin: 2% 0px 4%;
+	}
 	&__content {
 		display: flex;
 		align-items: center;
