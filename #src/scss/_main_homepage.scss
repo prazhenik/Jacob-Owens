@@ -33,7 +33,8 @@
 		box-sizing: content-box;
 		//text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.6);
 		@media (max-width: $md4) {
-			padding: 0px 5% 35%;
+			
+			padding: 20% 5% 45%;
 		}
 	}
 
@@ -166,12 +167,13 @@
 				content: "";
 				display: inline-block;
 				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				width: 50px;
-				height: 50px;
-				background: url("../img/icons/plus-zoom.svg") no-repeat center;
+				top: 0;
+				left: 10%;
+				//transform: translate(-50%, -50%);
+				width: 30%;
+				height: 100%;
+				backdrop-filter: blur(5px);
+				background: url("../img/icons/plus-zoom.svg") no-repeat center 90%;
 				background-color: $bgc4;
 				z-index: 5;
 			}
@@ -356,7 +358,7 @@
 .hero-bottom {
 	color: $tc3;
 	@media (max-width: $md4) {
-		margin: 2% 0px 4%;
+		margin: 0px 0px 2%;
 	}
 	&__content {
 		display: flex;

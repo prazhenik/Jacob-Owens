@@ -13,7 +13,7 @@
 		line-height: 2em;
 	}
 	& span {
-		color: rgba(255, 255, 255, 0.4);
+		color: rgba(255, 255, 255, 0.5);
 		@include adaptiv-value(font-size, 140, 60, 3);
 	}
 }
@@ -30,20 +30,21 @@
 	align-self: center;
 	justify-self: center;
 	text-align: center;
-	padding: 5px 0px 5px;
-	font-size: rem(38);
-	padding: 50px 0px 25px 0px;
 	@media (max-width: $md4) {
+		padding: 0px;
 		position: absolute;
-		top: 0;
-		z-index: 15;
-		//font-size: rem(18);
+		top: 10%;
+		left: 20%;
+		line-height: 1.1;
+		z-index: 6;
+		writing-mode: vertical-rl;
+		transform: rotate(180deg);
 	}
 	& span {
 		display: block;
 		font-weight: 900;
 		color: $tc2;
-line-height: 1em;
+		font-size: rem(25);
 	}
 }
 
