@@ -2638,7 +2638,7 @@ a:visited:hover {
 }
 
 ._page-title span {
-  color: white;
+  color: rgba(255, 255, 255, 0.4);
   font-size: calc(
 			60px + 80 * ((100vw - 280px) / 920)
 		);
@@ -2859,7 +2859,6 @@ section:not(.hero, .hero-bottom):after {
   padding: 40px 10%;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero__skills {
@@ -3839,7 +3838,7 @@ section:not(.hero, .hero-bottom):after {
   }
 
   .hero__offer {
-    padding: 0px 5% 30%;
+    padding: 0px 5% 35%;
   }
 
   .hero__skills {
