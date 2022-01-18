@@ -248,11 +248,9 @@ body._lock._pc .__popup-link {
 
 section {
 	position: relative;
-	//@include adaptiv-value(padding-top, 100, 40, 1);
-	//@include adaptiv-value(padding-bottom, 50, 20, 1);
-	//height: 100vh;
+	@include adaptiv-value(padding-top, 100, 40, 1);
+	@include adaptiv-value(padding-bottom, 50, 20, 1);
 	@media (max-width: $md4) {
-		//@include adaptiv-value(padding-top, 50, 20, 1);
 		padding: 2% 0px;
 	}
 }

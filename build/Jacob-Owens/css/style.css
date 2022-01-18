@@ -2756,6 +2756,8 @@ body._lock._pc .__popup-link {
 
 section {
   position: relative;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 section:not(.hero, .hero-bottom):after {
@@ -3770,6 +3772,18 @@ section:not(.hero, .hero-bottom):after {
   .popup__title {
     margin-bottom: calc(
 				20px + 15 * ((100vw - 280px) / 920)
+			);
+  }
+
+  section {
+    padding-top: calc(
+				40px + 60 * ((100vw - 280px) / 920)
+			);
+  }
+
+  section {
+    padding-bottom: calc(
+				20px + 30 * ((100vw - 280px) / 920)
 			);
   }
 
