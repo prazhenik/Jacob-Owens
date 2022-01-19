@@ -14,11 +14,11 @@
 		line-height: 2em;
 	}
 	& span {
-		color: rgba(255, 255, 255, 0.5);
+		color: rgba(255, 255, 255, 1);
 		@include adaptiv-value(font-size, 140, 60, 3);
-		text-shadow: 0 2px 1px $tc2, 2px 5px 1px $navc2, 4px 10px 1px $navc1;
+		text-shadow: 2px 5px 1px $navc1, 4px 10px 1px $navc2;
 		@media (max-width: $md4) {
-			text-shadow: 0 2px 1px $tc2, 1px 4px 1px $navc2, 3px 6px 1px $navc1;
+			text-shadow: 2px 3px 1px $navc1, 4px 6px 1px $navc2;
 		}
 	}
 }

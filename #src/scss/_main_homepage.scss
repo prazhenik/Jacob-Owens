@@ -8,7 +8,7 @@
 	&__logo {
 		display: none;
 		@media (max-width: $md4) {
-			position: absolute;
+			position: fixed;
 			top: 1%;
 			right: 3%;
 			z-index: 6;
@@ -114,6 +114,7 @@
 		position: absolute;
 		bottom: 0%;
 		right: 0%;
+		z-index: 6;
 		&:hover * {
 			stroke: $tc2;
 			stroke-opacity: 1;

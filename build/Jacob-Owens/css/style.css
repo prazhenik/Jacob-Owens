@@ -2639,11 +2639,11 @@ a:visited:hover {
 }
 
 ._page-title span {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
   font-size: calc(
 			60px + 80 * ((100vw - 280px) / 920)
 		);
-  text-shadow: 0 2px 1px white, 2px 5px 1px rgba(0, 160, 255, 0.35), 4px 10px 1px #00a0ff;
+  text-shadow: 2px 5px 1px #00a0ff, 4px 10px 1px rgba(0, 160, 255, 0.35);
 }
 
 ._section-title {
@@ -2800,13 +2800,10 @@ section:not(.hero, .hero-bottom):after {
 }
 
 ._fullscrn {
-  background: url("../img/home/jakob-owens-hero31.jpg") 70% center/cover no-repeat;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: inset 0px 20px 15px -15px rgba(0, 0, 0, 0.85), inset 0px -20px 15px -15px rgba(0, 0, 0, 0.85);
-          box-shadow: inset 0px 20px 15px -15px rgba(0, 0, 0, 0.85), inset 0px -20px 15px -15px rgba(0, 0, 0, 0.85);
   overflow: hidden;
 }
 
@@ -2912,6 +2909,7 @@ section:not(.hero, .hero-bottom):after {
   position: absolute;
   bottom: 0%;
   right: 0%;
+  z-index: 6;
 }
 
 .hero__arrDown:hover * {
@@ -3835,7 +3833,7 @@ section:not(.hero, .hero-bottom):after {
   }
 
   ._page-title span {
-    text-shadow: 0 2px 1px white, 1px 4px 1px rgba(0, 160, 255, 0.35), 3px 6px 1px #00a0ff;
+    text-shadow: 2px 3px 1px #00a0ff, 4px 6px 1px rgba(0, 160, 255, 0.35);
   }
 
   ._section-title {
@@ -3866,7 +3864,6 @@ section:not(.hero, .hero-bottom):after {
   }
 
   ._fullscrn {
-    background: url("../img/home/jakob-owens-hero31.jpg") 0 50%/fill no-repeat;
     min-height: 100vh;
   }
 
@@ -3875,7 +3872,7 @@ section:not(.hero, .hero-bottom):after {
   }
 
   .hero__logo {
-    position: absolute;
+    position: fixed;
     top: 1%;
     right: 3%;
     z-index: 6;

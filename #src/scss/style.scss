@@ -132,7 +132,7 @@ $responsiveType: 1;
 $tc1: rgba(220, 220, 220, 1); // main text color
 $tc2: rgba(255, 255, 255, 1); // hover text color
 $tc3: rgba(0, 0, 0, 1); // secondary text color
-
+$tc4: rgba(220, 220, 220, .6); // main text color
 //---------------------Цвета фонов---------------------
 $bgc1: rgba(0, 0, 0, 1); // main bcg
 $bgc2: rgba(0, 0, 0, 0.6); // menu scroll
@@ -292,13 +292,13 @@ section:not(.hero, .hero-bottom):after {
 //============================================<FULL SCREEN>================================================
 
 ._fullscrn {
-	background: url("../img/home/jakob-owens-hero31.jpg") 70% center / cover no-repeat;
+	//background: url("../img/home/jakob-owens-hero31.jpg") 70% center / cover no-repeat;
 	min-height: 100vh;
 	display: flex;
-	box-shadow: inset 0px 20px 15px -15px $bgc3, inset 0px -20px 15px -15px $bgc3;
+	//box-shadow: inset 0px 20px 15px -15px $bgc3, inset 0px -20px 15px -15px $bgc3;
 	overflow: hidden;
 	@media (max-width: $md4) {
-		background: url("../img/home/jakob-owens-hero31.jpg") 0 50% / fill no-repeat;
+		//background: url("../img/home/jakob-owens-hero31.jpg") 0 50% / fill no-repeat;
 		min-height: 100vh;
 		//min-height: calc(var(--vh, 1vh) * 100); //убирает скачек контента при скрытии/показе панели нав. моб браузера
 	}
