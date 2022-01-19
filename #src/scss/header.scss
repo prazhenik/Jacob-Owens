@@ -75,6 +75,10 @@
 	}
 
 	&__logo {
+		margin: 0px 20px 0px 0px;
+		@media (max-width: $md4) {
+			display: none;
+		}
 	}
 
 	&__subscribe {
@@ -90,11 +94,7 @@
 .logo {
 	display: flex;
 	align-items: center;
-	margin: 0px 20px 0px 0px;
 	flex: 1 1 auto;
-	@media (max-width: $md4) {
-		display: none;
-	}
 	&__text {
 		font-family: "Comforter", cursive;
 		@include adaptiv-value(font-size, 34, 20, 3);
@@ -159,7 +159,7 @@
 			}
 		}
 		& a._active_PC svg path {
-			fill:  $navc1;
+			fill: $navc1;
 		}
 	}
 }
@@ -197,8 +197,6 @@
 	&__linkedin {
 	}
 }
-
-
 
 ._popup-link {
 	@media (max-width: $md4) {

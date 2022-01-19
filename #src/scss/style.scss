@@ -141,7 +141,7 @@ $bgc4: rgba(0, 0, 0, 0.3); // menu overlay
 $bgc5: rgba(220, 220, 220, 1); //
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
-//$navc2: rgba(0, 160, 255, 0.35); // cta prim bcg hover
+$navc2: rgba(0, 160, 255, 0.35); // cta prim bcg hover
 //$navc3: rgba(255, 255, 255, 1); //cta second bcg
 //$navc4: rgba(26, 49, 252, 0.3); // cta prim bcg hover
 
@@ -249,7 +249,7 @@ body._lock._pc .__popup-link {
 section {
 	position: relative;
 	@include adaptiv-value(padding-top, 100, 40, 1);
-	@include adaptiv-value(padding-bottom, 50, 20, 1);
+	@include adaptiv-value(padding-bottom, 100, 40, 1);
 	@media (max-width: $md4) {
 		padding: 2% 0px;
 	}
@@ -303,6 +303,7 @@ section:not(.hero, .hero-bottom):after {
 		//min-height: calc(var(--vh, 1vh) * 100); //убирает скачек контента при скрытии/показе панели нав. моб браузера
 	}
 }
+
 
 //================================================<IBG>====================================================
 
