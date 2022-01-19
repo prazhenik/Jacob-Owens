@@ -139,16 +139,18 @@ $bgc2: rgba(0, 0, 0, 0.6); // menu scroll
 $bgc3: rgba(0, 0, 0, 0.85); // menu
 $bgc4: rgba(0, 0, 0, 0.3); // menu overlay
 $bgc5: rgba(220, 220, 220, 1); //
-$bgc6: rgba(150, 150, 75, 0.2); //
+$bgc6: rgba(220, 220, 220, .3);; //
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
-$navc2: rgba(0, 160, 255, 0.35); // cta prim bcg hover
+$navc2: rgba(0, 160, 255, 0.5); // cta prim bcg hover
 //$navc3: rgba(255, 255, 255, 1); //cta second bcg
 //$navc4: rgba(26, 49, 252, 0.3); // cta prim bcg hover
 
 //---------------------Цвета границ---------------------
 $borc1: rgba(210, 210, 210, 1); //cta border
 $borc2: rgba(0, 0, 0, 1); //active option border, input button border
+$borc3: rgba(0, 160, 255, 1);
+
 
 $mainTextColor: $tc1;
 $mainBgcColor: $bgc1;
@@ -293,10 +295,8 @@ section:not(.hero, .hero-bottom):after {
 //============================================<FULL SCREEN>================================================
 
 ._fullscrn {
-	//background: url("../img/home/jakob-owens-hero31.jpg") 70% center / cover no-repeat;
 	min-height: 100vh;
 	display: flex;
-	//box-shadow: inset 0px 20px 15px -15px $bgc3, inset 0px -20px 15px -15px $bgc3;
 	overflow: hidden;
 	&:after{
 		content: "";
@@ -306,12 +306,7 @@ section:not(.hero, .hero-bottom):after {
 		left: 0;
 		width: 100%;
 		height: 100vh;
-		background: $bgc6;
-	}
-	@media (max-width: $md4) {
-		//background: url("../img/home/jakob-owens-hero31.jpg") 0 50% / fill no-repeat;
-		min-height: 100vh;
-		//min-height: calc(var(--vh, 1vh) * 100); //убирает скачек контента при скрытии/показе панели нав. моб браузера
+		box-shadow: inset 0px 20px 15px -10px $bgc1, inset 0px -20px 15px -10px $bgc1;
 	}
 }
 

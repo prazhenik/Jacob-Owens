@@ -9,7 +9,7 @@
 		display: none;
 		@media (max-width: $md4) {
 			position: absolute;
-			top: 1%;
+			top: 2%;
 			right: 3%;
 			z-index: 6;
 		}
@@ -68,11 +68,24 @@
 	}
 	&__skills-dynamic {
 		display: none; //для работы firstLetter
+		position: relative;
 		font-weight: 500;
 		margin-left: auto;
 		padding: 10px 0px 0px 0px;
 		&::first-letter {
 			color: $navc1;
+		}
+		&:after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: -1%;
+			width: 40%;
+			height: 140%;
+			backdrop-filter: blur(5px);
+			background: $bgc6;
+			z-index: -1;
 		}
 		@media (max-width: $md4) {
 			display: block; //для работы firstLetter
@@ -367,7 +380,7 @@
 
 // ---------------------hero-bottom section
 .hero-bottom {
-	color: $tc3;
+	color: $tc1;
 	@media (max-width: $md4) {
 		margin: 0px 0px 2%;
 	}
@@ -375,8 +388,8 @@
 		display: flex;
 		align-items: center;
 		min-height: 80vh;
-		background: url("../img/home/jakob-owens-hero-bottom.jpg") 20% top / cover no-repeat;
-		box-shadow: inset 0px 20px 15px -15px $bgc3, inset 0px -20px 15px -15px $bgc3;
+		background: url("../img/home/jakob-owens-hero-bottom13.jpg") center / cover no-repeat;
+		box-shadow: inset 0px 20px 15px -10px $bgc1, inset 0px -20px 15px -10px $bgc1;
 		@media (max-width: $md4) {
 			min-height: 50vh;
 		}
@@ -416,14 +429,13 @@
 	}
 
 	&__btn {
-		border: rgba(0, 0, 0, 1) 1px solid;
+		border: $borc3 1px solid;
 		margin: 0px 0px 35px 0px;
 		text-transform: uppercase;
 		font-weight: 700;
 		border-radius: 7px;
 		&:hover {
-			border: rgba(0, 0, 0, 0) 1px solid;
-
+			border: $borc1 1px solid;
 			background-color: $navc1;
 			color: $tc2;
 		}
@@ -443,8 +455,8 @@
 				transition: all 0.5s ease;
 			}
 		}
-		& a svg path {
-			fill: $tc3;
+		& a._active_PC svg path {
+			fill: $navc1;
 		}
 	}
 

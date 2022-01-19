@@ -234,6 +234,7 @@
 		position: relative;
 		border-radius: 7px;
 		color: $tc2;
+		border: 1px solid $borc1;
 		transition: background 0.5s ease;
 		@media (max-width: $md4) {
 			z-index: 17;
