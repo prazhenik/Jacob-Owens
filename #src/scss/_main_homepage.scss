@@ -42,7 +42,6 @@
 	&__offer {
 		padding: 40px 10%;
 		box-sizing: content-box;
-		//text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.6);
 		@media (max-width: $md4) {
 			padding: 20% 5% 45%;
 		}
@@ -192,9 +191,9 @@
 				display: inline-block;
 				position: absolute;
 				top: 0;
-				left: 10%;
+				left: 4%;
 				//transform: translate(-50%, -50%);
-				width: 30%;
+				width: 37%;
 				height: 100%;
 				backdrop-filter: blur(5px);
 				background: url("../img/icons/plus-zoom.svg") no-repeat center 90%;
@@ -388,7 +387,7 @@
 		display: flex;
 		align-items: center;
 		min-height: 80vh;
-		background: url("../img/home/jakob-owens-hero-bottom13.jpg") center / cover no-repeat;
+		background: url("../img/home/jakob-owens-hero-bottom13.jpg") 54% center / cover no-repeat;
 		box-shadow: inset 0px 20px 15px -10px $bgc1, inset 0px -20px 15px -10px $bgc1;
 		@media (max-width: $md4) {
 			min-height: 50vh;
