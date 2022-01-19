@@ -139,6 +139,7 @@ $bgc2: rgba(0, 0, 0, 0.6); // menu scroll
 $bgc3: rgba(0, 0, 0, 0.85); // menu
 $bgc4: rgba(0, 0, 0, 0.3); // menu overlay
 $bgc5: rgba(220, 220, 220, 1); //
+$bgc6: rgba(150, 150, 75, 0.2); //
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
 $navc2: rgba(0, 160, 255, 0.35); // cta prim bcg hover
@@ -297,6 +298,16 @@ section:not(.hero, .hero-bottom):after {
 	display: flex;
 	//box-shadow: inset 0px 20px 15px -15px $bgc3, inset 0px -20px 15px -15px $bgc3;
 	overflow: hidden;
+	&:after{
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background: $bgc6;
+	}
 	@media (max-width: $md4) {
 		//background: url("../img/home/jakob-owens-hero31.jpg") 0 50% / fill no-repeat;
 		min-height: 100vh;
