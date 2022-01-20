@@ -12,7 +12,7 @@
 //&display=swap&subset=cyrillic-ext
 
 //-------------- подключение шрифтов по CDN, если есть ----------------
-@import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap&subset=latin-ext");
 //-------------- файл со шрифтами, который собирает ГАЛП ----------------
 @import "local/fonts";
 
@@ -194,7 +194,7 @@ $mainBgcColor: $bgc1;
 @import "local/ui/buttons";
 
 @import "local/keyframes"; //кейфреймы
-//@import "local/preloader";
+@import "local/preloader";
 @import "local/popup";
 @import "local/textstyles";
 //@import "local/breadcrumbs";

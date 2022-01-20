@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap&subset=latin-ext");
 
 @font-face {
   font-family: "Roboto";
@@ -2408,6 +2408,49 @@ a:visited:hover {
   }
 }
 
+body._loaded .preloader {
+  display: none;
+}
+
+._loaded_hiding .preloader {
+  -webkit-transition: 0.5s opacity;
+  -o-transition: 0.5s opacity;
+  transition: 0.5s opacity;
+  opacity: 0;
+}
+
+.preloader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.preloader__overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 1;
+}
+
+.preloader__img {
+  width: 70%;
+  opacity: 1;
+}
+
 .popup {
   z-index: 100;
   position: fixed;
@@ -2835,6 +2878,10 @@ section:not(.hero, .hero-bottom):after {
 
 .hero__logo {
   display: none;
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  z-index: 6;
 }
 
 .hero__media {
@@ -3140,10 +3187,6 @@ section:not(.hero, .hero-bottom):after {
 }
 
 .header__logo {
-  margin: 0px 20px 0px 0px;
-}
-
-.logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3153,10 +3196,11 @@ section:not(.hero, .hero-bottom):after {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  margin: 0px 20px 0px 0px;
 }
 
 .logo__text {
-  font-family: "Comforter", cursive;
+  font-family: "Comforter";
   font-size: calc(
 			20px + 14 * ((100vw - 280px) / 920)
 		);
@@ -3896,10 +3940,9 @@ section:not(.hero, .hero-bottom):after {
   }
 
   .hero__logo {
-    position: absolute;
-    top: 2%;
-    right: 3%;
-    z-index: 6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .hero__offer {
