@@ -440,18 +440,10 @@
 	}
 
 	&__socials {
+		justify-content: flex-end;
 		margin: 0px -5px 0px 0px;
 		@media (max-width: $md4) {
-			//display: none;
-		}
-		& a {
-			&._active_PC {
-				transform: scale3d(1.05, 1.05, 1.05);
-				transition: all 0.5s ease;
-			}
-		}
-		& a._active_PC svg path {
-			fill: $navc1;
+			display: none;
 		}
 	}
 
@@ -461,25 +453,10 @@
 	}
 }
 
-.subscribe {
-	&__text {
-	}
-
-	&__icon {
-	}
-
-	&__socials {
-	}
-}
 .socials {
-	&__insta {
-	}
-
-	&__facebook {
-	}
-
-	&__linkedin {
-	}
+	// general styles in style.scss
 }
+
+
 
 //----------------------------------------------HOME---------------------------------------------

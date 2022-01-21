@@ -292,6 +292,34 @@ section:not(.hero, .hero-bottom):after {
 	flex: 1 1 auto; //свойство прибивает footer к низу страницы (ч.2)
 }
 
+.socials {
+	display: inline-flex;
+	align-items: center;
+	height: 100%;
+	padding: 5px 0px;
+	z-index: 15;
+	& a {
+		&._active_PC  {
+			transform: scale3d(1.45, 1.45, 1.45);
+			transition: all 0.5s ease;
+		}
+	}
+	& a._active_PC svg path {
+		fill: $navc1;
+	}
+
+	& a svg {
+		box-sizing: content-box;
+		padding: 5px;
+		transition: all 0.5s ease;
+	}
+
+	& a svg path {
+		transition: fill 0.5s ease, fill-opacity 0.5s ease;
+	}
+
+}
+
 //============================================<FULL SCREEN>================================================
 
 ._fullscrn {

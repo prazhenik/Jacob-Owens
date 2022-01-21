@@ -42,9 +42,11 @@ if (smoothLinks) {
 window.onload = function () {
 	let preloader = document.getElementById('preloader');
 	preloader.classList.add('_hide-preloader');
+	body_lock_add();
 	setInterval(function () {
 		preloader.classList.add('_preloader-hidden');
 		preloader.classList.remove('_hide-preloader');
+		body_lock_remove();
 	}, 1500);
 }
 
