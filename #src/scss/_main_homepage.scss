@@ -70,9 +70,6 @@
 		font-weight: 500;
 		margin-left: auto;
 		padding: 10px 0px 0px 0px;
-		&::first-letter {
-			color: $navc1;
-		}
 		&:after {
 			content: "";
 			display: inline-block;

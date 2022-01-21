@@ -1264,7 +1264,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 .lg-comment-box .fb-comments {
   height: 100%;
   width: 100%;
-  background: url(../images/loading.gif) no-repeat scroll center center #fff;
+  background: url("../img/icons/loading.gif") no-repeat scroll center center #fff;
   overflow-y: auto;
   display: inline-block;
 }
@@ -1595,7 +1595,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 .lg-outer .lg-item:not(.lg-start-end-progress) {
-  background: url(../images/loading.gif) no-repeat scroll center center transparent;
+  background: url("../img/icons/loading.gif") no-repeat scroll center center transparent;
 }
 
 .lg-outer.lg-css3 .lg-current,
@@ -2408,27 +2408,7 @@ a:visited:hover {
   }
 }
 
-body._loaded .preloader {
-  display: none;
-}
-
-._loaded_hiding .preloader {
-  -webkit-transition: 0.5s opacity;
-  -o-transition: 0.5s opacity;
-  transition: 0.5s opacity;
-  opacity: 0;
-}
-
 .preloader {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-}
-
-.preloader__overlay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2438,12 +2418,45 @@ body._loaded .preloader {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: black;
   opacity: 1;
+  z-index: 1000;
+}
+
+.preloader._preloader-hidden {
+  display: none;
+}
+
+.preloader._hide-preloader {
+  -webkit-animation: hidePreloader 0.5s;
+          animation: hidePreloader 0.5s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+@-webkit-keyframes hidePreloader {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hidePreloader {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .preloader__img {
@@ -2934,10 +2947,6 @@ section:not(.hero, .hero-bottom):after {
   font-weight: 500;
   margin-left: auto;
   padding: 10px 0px 0px 0px;
-}
-
-.hero__skills-dynamic::first-letter {
-  color: #00a0ff;
 }
 
 .hero__skills-dynamic:after {

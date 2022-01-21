@@ -39,13 +39,20 @@ if (smoothLinks) {
 
 
 //preloader
-window.onload = function preloader() {
-	document.body.classList.add('_loaded_hiding');
-	window.setTimeout(function () {
-		document.body.classList.remove('_loaded_hiding');
-	}, 1000);
+window.onload = function () {
+	let preloader = document.getElementById('preloader');
+	preloader.classList.add('_hide-preloader');
+	setInterval(function () {
+		preloader.classList.add('_preloader-hidden');
+		preloader.classList.remove('_hide-preloader');
+	}, 1500);
 }
 
+
+var lazyLoadInstance = new LazyLoad({
+	// Your custom settings go here
+	use_native: true
+});
 
 
 //------------------------------------parallax----------------------------------------------------

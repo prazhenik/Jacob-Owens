@@ -51,6 +51,7 @@ function ibg() {
 }
 ibg();
 
+
 window.addEventListener("load", function () {
 	if (document.querySelector('.wrapper')) {
 		setTimeout(function () {

@@ -15,7 +15,7 @@
 //include('libs/isotope.pkdg.min.js', {}); //Filter & sort magical layouts
 
 //https://github.com/verlok/vanilla-lazyload
-//include('libs/lazyload.min.js', {}); //script that speeds the loading images, videos and iframes to when they will enter the viewport
+@@include('libs/lazyload.min.js', {}); //script that speeds the loading images, videos and iframes to when they will enter the viewport
 
 //https://github.com/sachinchoolur/lightGallery
 @@include('libs/lightgallery.min.js', {}); //галерея картинок на JS
