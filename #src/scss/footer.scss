@@ -24,10 +24,9 @@
 		}
 	}
 
-	&__outro {
+	&__offer {
 		flex: 0 0 48%;
 		text-align: justify;
-
 		@media (max-width: $md4) {
 			flex: 0 0 100%;
 		}
@@ -38,7 +37,6 @@
 	}
 
 	&__text {
-		//@include adaptiv-value(max-width, 325, 250, 3);
 		@media (max-width: $md4) {
 			margin: 0 auto 30px;
 		}

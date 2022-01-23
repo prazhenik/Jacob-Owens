@@ -248,7 +248,7 @@ body {
 	}
 }
 
-section {
+.gallery {
 	position: relative;
 	@include adaptiv-value(padding-top, 100, 40, 1);
 	@include adaptiv-value(padding-bottom, 100, 40, 1);
@@ -257,7 +257,7 @@ section {
 	}
 }
 
-section:not(.hero, .hero-bottom):after {
+.gallery:not(:last-child):after {
 	content: "";
 	display: inline-block;
 	position: absolute;

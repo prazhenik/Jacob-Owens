@@ -23,9 +23,9 @@ function scroll_scroll() {
 	let header = document.querySelector('header.header');
 	if (header !== null) {
 		if (src_value > 10) {
-			header.classList.add('_scroll');
+			header.classList.add('_scrolled');
 		} else {
-			header.classList.remove('_scroll');
+			header.classList.remove('_scrolled');
 		}
 	}
 
@@ -33,9 +33,9 @@ function scroll_scroll() {
 	// let headerContainer = document.querySelector('.header__container');
 	// if (headerContainer !== null) {
 	// 	if (src_value > 10) {
-	// 		headerContainer.classList.add('_scroll');
+	// 		headerContainer.classList.add('_scrolled');
 	// 	} else {
-	// 		headerContainer.classList.remove('_scroll');
+	// 		headerContainer.classList.remove('_scrolled');
 	// 	}
 	// }
 
