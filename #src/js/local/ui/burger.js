@@ -60,8 +60,7 @@ if (menuLinks.length > 0) {
 
 	function onMenuLinkClick(e) {
 		const menuLink = e.target;
-		setTimeout(removeActiveMenu, 500);
-		removeActiveMenu();
+		setTimeout(removeActiveMenu, 1000);
 		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
 			const gotoBlock = document.querySelector(menuLink.dataset.goto);
 			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;

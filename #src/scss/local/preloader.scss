@@ -12,13 +12,13 @@
 	background: rgba(0, 0, 0, 1);
 	opacity: 1;
 	z-index: 1000;
+	overflow: hidden;
 	&._preloader-hidden {
 		display: none;
 	}
 	&._hide-preloader {
 		animation: hidePreloader .5s;
 		animation-delay: 1s;
-
 	}
 }
 
@@ -33,7 +33,21 @@
 
 .preloader__img {
 	width: 70%;
-	opacity: 1;
+	max-width: 500px;
+	animation: hidePreloaderImg 2s;
 }
+
+@keyframes hidePreloaderImg {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
 
 //--------------- ▲ ▲ ▲ preloader ▲ ▲ ▲ ------------------

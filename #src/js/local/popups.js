@@ -2,7 +2,7 @@
 
 
 
-//popup callback
+//вызов модального окна
 let popup_link = document.querySelectorAll('._popup-link');
 let popups = document.querySelectorAll('.popup');
 for (let index = 0; index < popup_link.length; index++) {
@@ -16,17 +16,6 @@ for (let index = 0; index < popup_link.length; index++) {
 		e.preventDefault();
 	})
 }
-
-//закрытие при нажатии на оверлей
-for (let index = 0; index < popups.length; index++) {
-	const popup = popups[index];
-	popup.addEventListener("click", function (e) {
-		if (!e.target.closest('.popup__body')) {
-			popup_close(e.target.closest('.popup'));
-		}
-	});
-}
-
 
 function popup_open(item, video = '') {
 	let activePopup = document.querySelectorAll('.popup._active');
@@ -47,7 +36,7 @@ function popup_open(item, video = '') {
 	}
 }
 
-
+//функция закрытия
 function popup_close(item, bodyUnlock = true) {
 	if (unlock) {
 		if (!item) {
@@ -72,19 +61,36 @@ function popup_close(item, bodyUnlock = true) {
 		history.pushState('', '', window.location.href.split('#')[0]);
 	}
 }
+
+//закрытие при нажатии на крестик
 let popup_close_icon = document.querySelectorAll('.popup__close,._popup-close');
 if (popup_close_icon) {
 	for (let index = 0; index < popup_close_icon.length; index++) {
 		const el = popup_close_icon[index];
 		el.addEventListener('click', function () {
-			//popup_close(el.closest('.popup'));
-			popup_close();
+			popup_close(el.closest('.popup'));
+			//popup_close();
 		})
 	}
 }
+
+//закрытие при нажатии на Escape
 document.addEventListener('keydown', function (e) {
 	if (e.code === 'Escape') {
 		popup_close();
 	}
 });
+
+//закрытие при нажатии на оверлей
+for (let index = 0; index < popups.length; index++) {
+	const popup = popups[index];
+	popup.addEventListener("click", function (e) {
+		if (!e.target.closest('.popup__body')) {
+			popup_close(e.target.closest('.popup'));
+		}
+	});
+}
+
+
+
 //------------------------------------------

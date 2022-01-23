@@ -40,14 +40,18 @@ if (smoothLinks) {
 
 //preloader
 window.onload = function () {
+	let body = document.querySelector("body");
 	let preloader = document.getElementById('preloader');
+	body.classList.add("_preloader")
+	//body_lock_add();
 	preloader.classList.add('_hide-preloader');
-	body_lock_add();
 	setInterval(function () {
 		preloader.classList.add('_preloader-hidden');
 		preloader.classList.remove('_hide-preloader');
-		body_lock_remove();
+		body.classList.remove("_preloader")
+		//body_lock_remove();
 	}, 1500);
+
 }
 
 
@@ -59,15 +63,15 @@ var lazyLoadInstance = new LazyLoad({
 
 //------------------------------------parallax----------------------------------------------------
 
-var parallaxScene = document.getElementsByClassName("scene")
+// var parallaxScene = document.getElementsByClassName("scene")
 
-if (parallaxScene.length > 0) {
-	var scene1 = document.getElementById('hero__img_secondary1');
-	var parallaxInstance1 = new Parallax(scene1);
+// if (parallaxScene.length > 0) {
+// 	var scene1 = document.getElementById('hero__img_secondary1');
+// 	var parallaxInstance1 = new Parallax(scene1);
 
-	var scene2 = document.getElementById('hero__img_secondary2');
-	var parallaxInstance2 = new Parallax(scene2);
-}
+// 	var scene2 = document.getElementById('hero__img_secondary2');
+// 	var parallaxInstance2 = new Parallax(scene2);
+// }
 
 //------------------------------------parallax----------------------------------------------------
 

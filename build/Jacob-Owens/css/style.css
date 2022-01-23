@@ -2426,6 +2426,7 @@ a:visited:hover {
   background: black;
   opacity: 1;
   z-index: 1000;
+  overflow: hidden;
 }
 
 .preloader._preloader-hidden {
@@ -2461,7 +2462,37 @@ a:visited:hover {
 
 .preloader__img {
   width: 70%;
-  opacity: 1;
+  max-width: 500px;
+  -webkit-animation: hidePreloaderImg 2s;
+          animation: hidePreloaderImg 2s;
+}
+
+@-webkit-keyframes hidePreloaderImg {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hidePreloaderImg {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .popup {
@@ -2627,7 +2658,7 @@ a:visited:hover {
   width: 100%;
 }
 
-.btn__callback {
+.popup-submit_callback {
   font-size: 1.875rem;
   font-weight: 900;
   color: #00a0ff;
@@ -2639,19 +2670,19 @@ a:visited:hover {
   margin-top: 40px;
 }
 
-.btn__callback:hover,
-.btn__callback:active {
+.popup-submit_callback:hover,
+.popup-submit_callback:active {
   color: white;
   -webkit-transition: color 0.5s ease;
   -o-transition: color 0.5s ease;
   transition: color 0.5s ease;
 }
 
-.btn__callback span {
+.popup-submit_callback span {
   display: block;
 }
 
-.btn__callback span:after {
+.popup-submit_callback span:after {
   content: "";
   display: block;
   height: 3px;
@@ -2663,21 +2694,21 @@ a:visited:hover {
   transition: width 0.5s ease;
 }
 
-.btn__callback span:hover:after {
+.popup-submit_callback span:hover:after {
   width: 100%;
   -webkit-transition: width 0.5s ease;
   -o-transition: width 0.5s ease;
   transition: width 0.5s ease;
 }
 
-.btn__callback span:active:after {
+.popup-submit_callback span:active:after {
   width: 100%;
   -webkit-transition: width 0.5s ease;
   -o-transition: width 0.5s ease;
   transition: width 0.5s ease;
 }
 
-.btn__success_popup {
+.popup-submit__success_popup {
   width: auto;
 }
 
@@ -2792,24 +2823,29 @@ body {
   height: 100%;
   min-height: 100vh;
   background-color: black;
-  overflow-y: scroll;
   padding: 0 !important;
-}
-
-body._lock {
   overflow: hidden;
 }
 
-body._lock._pc {
+body._preloader {
+  overflow: hidden;
+}
+
+body._loaded {
+  overflow: visible;
+}
+
+body._loaded._lock {
+  overflow: hidden;
+}
+
+body._loaded._lock._pc {
   padding-right: 16.5px !important;
 }
 
-body._lock._pc .header {
+body._loaded._lock._pc header,
+body._loaded._lock._pc .__popup-link {
   padding-right: 16.5px !important;
-}
-
-body._lock._pc .__popup-link {
-  margin-right: 16.5px !important;
 }
 
 section {
@@ -3174,6 +3210,10 @@ section:not(.hero, .hero-bottom):after {
   font-size: calc(
 			12px + 12 * ((100vw - 280px) / 920)
 		);
+}
+
+.hero-bottom__adress span {
+  white-space: nowrap;
 }
 
 .header {
@@ -3784,7 +3824,7 @@ section:not(.hero, .hero-bottom):after {
 			);
   }
 
-  .btn__callback {
+  .popup-submit_callback {
     margin-top: calc(
 				30px + 10 * ((100vw - 280px) / 920)
 			);
@@ -3891,7 +3931,7 @@ section:not(.hero, .hero-bottom):after {
     width: 85%;
   }
 
-  .btn__callback {
+  .popup-submit_callback {
     font-size: 1.25rem;
   }
 
@@ -4012,10 +4052,6 @@ section:not(.hero, .hero-bottom):after {
   }
 
   .hero-bottom__btn {
-    display: none;
-  }
-
-  .hero-bottom__socials {
     display: none;
   }
 

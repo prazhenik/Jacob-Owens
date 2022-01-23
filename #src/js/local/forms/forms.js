@@ -4,15 +4,15 @@
 
 let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
 let popupSuccess = document.getElementById('popup_success');
-console.log(btn);
 let forms = document.querySelectorAll('.form');
-console.log(forms);
+
 if (forms.length > 0) {
 	for (let index = 0; index < forms.length; index++) {
 		const el = forms[index];
 		el.addEventListener('submit', form_submit);
 	}
 }
+
 
 async function form_submit(e) {
 	e.preventDefault();
@@ -42,12 +42,11 @@ async function form_submit(e) {
 				form.reset();
 				form_clean(form);
 				//serviseMessage.classList.add("_active")
-				// if (message) {
-				// 	popup_open(message + '-message');
-				// 	alert("Форма отправлена");
-				// }
+				if (message) {
+					alert("Message sent successfully");
+				}
 			} else {
-				alert("Форма не отправлена");
+				alert("Message not sent");
 				form.classList.remove('_sending');
 			}
 		}
@@ -59,6 +58,7 @@ async function form_submit(e) {
 		e.preventDefault();
 	}
 }
+
 
 function form_validate(form) {
 	let error = 0;

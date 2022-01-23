@@ -442,21 +442,19 @@
 	&__socials {
 		justify-content: flex-end;
 		margin: 0px -5px 0px 0px;
-		@media (max-width: $md4) {
-			display: none;
-		}
 	}
 
 	&__adress {
 		font-weight: 400;
 		@include adaptiv-value(font-size, 24, 12, 3);
+		& span {
+			white-space: nowrap;
+		}
 	}
 }
 
 .socials {
 	// general styles in style.scss
 }
-
-
 
 //----------------------------------------------HOME---------------------------------------------

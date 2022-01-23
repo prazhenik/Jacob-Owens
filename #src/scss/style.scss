@@ -132,14 +132,14 @@ $responsiveType: 1;
 $tc1: rgba(220, 220, 220, 1); // main text color
 $tc2: rgba(255, 255, 255, 1); // hover text color
 $tc3: rgba(0, 0, 0, 1); // secondary text color
-$tc4: rgba(220, 220, 220, .6); // main text color
+$tc4: rgba(220, 220, 220, 0.6); // main text color
 //---------------------Цвета фонов---------------------
 $bgc1: rgba(0, 0, 0, 1); // main bcg
 $bgc2: rgba(0, 0, 0, 0.6); // menu scroll
 $bgc3: rgba(0, 0, 0, 0.85); // menu
 $bgc4: rgba(0, 0, 0, 0.3); // menu overlay
 $bgc5: rgba(220, 220, 220, 1); //
-$bgc6: rgba(220, 220, 220, .3);; //
+$bgc6: rgba(220, 220, 220, 0.3); //
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
 $navc2: rgba(0, 160, 255, 0.5); // cta prim bcg hover
@@ -150,7 +150,6 @@ $navc2: rgba(0, 160, 255, 0.5); // cta prim bcg hover
 $borc1: rgba(210, 210, 210, 1); //cta border
 $borc2: rgba(0, 0, 0, 1); //active option border, input button border
 $borc3: rgba(0, 160, 255, 1);
-
 
 $mainTextColor: $tc1;
 $mainBgcColor: $bgc1;
@@ -226,27 +225,27 @@ body {
 	height: 100%;
 	min-height: 100vh;
 	background-color: $mainBgcColor;
-	overflow-y: scroll;
 	padding: 0 !important;
-	&._lock {
-		overflow: hidden; //класс для блокировки скрола в бургере и модалке
+	overflow: hidden;
+	&._preloader {
+		overflow: hidden;
 	}
-	&._lock._pc {
+	&._loaded {
+		overflow: visible;
+	}
+	&._loaded._lock {
+		overflow: hidden;
+	}
+	&._loaded._lock._pc {
 		padding-right: calc($scrollbarWidth - 0.5px) !important; // общая коррекция контента на скролл при модалке/меню
 		//padding: 0 !important;
+		& header,
+		.__popup-link {
+			padding-right: calc(
+				$scrollbarWidth - 0.5px
+			) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
+		}
 	}
-}
-
-body._lock._pc .header {
-	padding-right: calc(
-		$scrollbarWidth - 0.5px
-	) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
-}
-
-body._lock._pc .__popup-link {
-	margin-right: calc(
-		$scrollbarWidth - 0.5px
-	) !important; // коррекция _popup-link на скролл при модалке/меню  _popup-link position fixed ил relative
 }
 
 section {
@@ -257,8 +256,6 @@ section {
 		padding: 2% 0px;
 	}
 }
-
-
 
 section:not(.hero, .hero-bottom):after {
 	content: "";
@@ -299,7 +296,7 @@ section:not(.hero, .hero-bottom):after {
 	padding: 5px 0px;
 	z-index: 15;
 	& a {
-		&._active_PC  {
+		&._active_PC {
 			transform: scale3d(1.45, 1.45, 1.45);
 			transition: all 0.5s ease;
 		}
@@ -317,7 +314,6 @@ section:not(.hero, .hero-bottom):after {
 	& a svg path {
 		transition: fill 0.5s ease, fill-opacity 0.5s ease;
 	}
-
 }
 
 //============================================<FULL SCREEN>================================================
@@ -326,7 +322,7 @@ section:not(.hero, .hero-bottom):after {
 	min-height: 100vh;
 	display: flex;
 	overflow: hidden;
-	&:after{
+	&:after {
 		content: "";
 		display: block;
 		position: absolute;
@@ -337,7 +333,6 @@ section:not(.hero, .hero-bottom):after {
 		box-shadow: inset 0px 20px 15px -10px $bgc1, inset 0px -20px 15px -10px $bgc1;
 	}
 }
-
 
 //================================================<IBG>====================================================
 

@@ -57,7 +57,7 @@ window.addEventListener("load", function () {
 		setTimeout(function () {
 			document.querySelector('.wrapper').classList.add('_loaded');
 			document.body.classList.add('_loaded');
-		}, 500);
+		}, 1000);
 	}
 });
 
