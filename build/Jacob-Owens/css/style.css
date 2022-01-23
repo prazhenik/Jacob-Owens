@@ -2802,6 +2802,10 @@ body._loaded._lock._pc .__popup-link {
   padding-right: 16.5px !important;
 }
 
+._touch body {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 .gallery {
   position: relative;
   padding-top: 100px;
@@ -3846,6 +3850,12 @@ body._loaded._lock._pc .__popup-link {
 
   .gallery__title span {
     font-size: 1.5625rem;
+  }
+
+  ._touch body {
+    -webkit-transition: height 0.2s;
+    -o-transition: height 0.2s;
+    transition: height 0.2s;
   }
 
   .gallery {
