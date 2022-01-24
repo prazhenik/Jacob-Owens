@@ -140,6 +140,7 @@ $bgc3: rgba(0, 0, 0, 0.85); // menu
 $bgc4: rgba(0, 0, 0, 0.3); // menu overlay
 $bgc5: rgba(220, 220, 220, 1); //
 $bgc6: rgba(220, 220, 220, 0.3); //
+$bgc7: rgba(0, 160, 255, 1);
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
 $navc2: rgba(0, 160, 255, 0.5); // cta prim bcg hover
@@ -254,32 +255,6 @@ body {
 	}
 }
 
-.gallery {
-	position: relative;
-	@include adaptiv-value(padding-top, 100, 40, 1);
-	@include adaptiv-value(padding-bottom, 100, 40, 1);
-	@media (max-width: $md4) {
-		padding: 2% 0px;
-	}
-}
-
-.gallery:not(:last-child):after {
-	content: "";
-	display: inline-block;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 200px;
-	transform: translate(-50%);
-	height: 2px;
-	margin: 0 auto;
-	background-color: $bgc5;
-	@media (max-width: $md4) {
-		display: none;
-	}
-}
-
-//------------------свойства для удаления гор скрола + прибивает footer к низу страницы (ч.1)-----------------
 .wrapper {
 	width: 100%;
 	min-height: 100vh;
@@ -322,6 +297,47 @@ body {
 	}
 }
 
+.gallery {
+	position: relative;
+	@include adaptiv-value(padding-top, 100, 40, 1);
+	@include adaptiv-value(padding-bottom, 100, 40, 1);
+	@media (max-width: $md4) {
+		padding: 2% 0px;
+	}
+}
+
+.gallery:not(:last-child):after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 200px;
+	transform: translate(-50%);
+	height: 2px;
+	margin: 0 auto;
+	background-color: $bgc5;
+	@media (max-width: $md4) {
+		display: none;
+	}
+}
+
+.pace-progress {
+	box-shadow:  0px 0px 1px 1px transparent, 0px 0px 10px 3px rgba(0, 160, 255, 0.3), 0px 0px 10px 3px rgba(80, 255, 255, 0.8);
+	//box-shadow: 0 5px 10px rgba(0, 123, 255, 0.7), 0 0 40px rgba(0, 123, 255, 0.7), 0 0 100px rgba(0, 123, 255, 0.7);
+}
+
+.pace {
+	position: absolute !important;
+}
+
+.pace,
+.pace-progress {
+	background: linear-gradient(90deg, rgba(0, 160, 255, 1) 75%, rgba(80, 255, 255, 1) 100%) !important;
+	height: 3px !important;
+	//box-shadow: 0 10px 40px -10px #fff;
+}
+
 //============================================<FULL SCREEN>================================================
 
 ._fullscrn {
@@ -338,7 +354,6 @@ body {
 		height: 100vh;
 		box-shadow: inset 0px 20px 15px -10px $bgc1, inset 0px -20px 15px -10px $bgc1;
 	}
-
 }
 
 //================================================<IBG>====================================================

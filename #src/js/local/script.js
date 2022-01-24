@@ -50,7 +50,7 @@ window.onload = function () {
 		preloader.classList.remove('_hide-preloader');
 		body.classList.remove("_preloader")
 		//body_lock_remove();
-	}, 1500);
+	}, 1000);
 
 }
 

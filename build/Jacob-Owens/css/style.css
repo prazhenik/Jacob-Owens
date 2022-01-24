@@ -2433,10 +2433,10 @@ a:visited:hover {
 }
 
 .preloader._hide-preloader {
-  -webkit-animation: hidePreloader 0.5s;
-          animation: hidePreloader 0.5s;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation: hidePreloader 0.5s infinite;
+          animation: hidePreloader 0.5s infinite;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 @-webkit-keyframes hidePreloader {
@@ -2462,13 +2462,13 @@ a:visited:hover {
 .preloader__img {
   width: 70%;
   max-width: 500px;
-  -webkit-animation: hidePreloaderImg 2s;
-          animation: hidePreloaderImg 2s;
+  -webkit-animation: hidePreloaderImg 4s infinite;
+          animation: hidePreloaderImg 4s infinite;
 }
 
 @-webkit-keyframes hidePreloaderImg {
   0% {
-    opacity: 0;
+    opacity: 0.4;
   }
 
   50% {
@@ -2476,13 +2476,13 @@ a:visited:hover {
   }
 
   100% {
-    opacity: 0;
+    opacity: 0.4;
   }
 }
 
 @keyframes hidePreloaderImg {
   0% {
-    opacity: 0;
+    opacity: 0.4;
   }
 
   50% {
@@ -2490,7 +2490,7 @@ a:visited:hover {
   }
 
   100% {
-    opacity: 0;
+    opacity: 0.4;
   }
 }
 
@@ -2806,27 +2806,6 @@ body._loaded._lock._pc .__popup-link {
   height: calc(var(--vh, 1vh) * 100);
 }
 
-.gallery {
-  position: relative;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.gallery:not(:last-child):after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 200px;
-  -webkit-transform: translate(-50%);
-      -ms-transform: translate(-50%);
-          transform: translate(-50%);
-  height: 2px;
-  margin: 0 auto;
-  background-color: gainsboro;
-}
-
 .wrapper {
   width: 100%;
   min-height: 100vh;
@@ -2886,6 +2865,44 @@ body._loaded._lock._pc .__popup-link {
   -webkit-transition: fill 0.5s ease, fill-opacity 0.5s ease;
   -o-transition: fill 0.5s ease, fill-opacity 0.5s ease;
   transition: fill 0.5s ease, fill-opacity 0.5s ease;
+}
+
+.gallery {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.gallery:not(:last-child):after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 200px;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  height: 2px;
+  margin: 0 auto;
+  background-color: gainsboro;
+}
+
+.pace-progress {
+  -webkit-box-shadow: 0px 0px 1px 1px transparent, 0px 0px 10px 3px rgba(0, 160, 255, 0.3), 0px 0px 10px 3px rgba(80, 255, 255, 0.8);
+          box-shadow: 0px 0px 1px 1px transparent, 0px 0px 10px 3px rgba(0, 160, 255, 0.3), 0px 0px 10px 3px rgba(80, 255, 255, 0.8);
+}
+
+.pace {
+  position: absolute !important;
+}
+
+.pace,
+.pace-progress {
+  background: -webkit-gradient(linear, left top, right top, color-stop(75%, #00a0ff), to(#50ffff)) !important;
+  background: -o-linear-gradient(left, #00a0ff 75%, #50ffff 100%) !important;
+  background: linear-gradient(90deg, #00a0ff 75%, #50ffff 100%) !important;
+  height: 3px !important;
 }
 
 ._fullscrn {
@@ -2978,9 +2995,9 @@ body._loaded._lock._pc .__popup-link {
   display: inline-block;
   position: absolute;
   top: 0;
-  left: -1%;
-  width: 40%;
-  height: 140%;
+  left: -5px;
+  width: 135px;
+  height: 40px;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   background: rgba(220, 220, 220, 0.3);
@@ -3016,6 +3033,7 @@ body._loaded._lock._pc .__popup-link {
   position: absolute;
   bottom: 0%;
   right: 0%;
+  padding: 1% 3% 40px 1%;
   z-index: 6;
 }
 
@@ -3723,10 +3741,6 @@ body._loaded._lock._pc .__popup-link {
   .hero__popup-link {
     padding-left: 3%;
   }
-
-  .hero__arrDown {
-    padding: 1% 3% 40px 1%;
-  }
 }
 
 @media (max-width: 1200px) {
@@ -3886,7 +3900,7 @@ body._loaded._lock._pc .__popup-link {
 
   .hero__skills-dynamic {
     display: block;
-    font-size: 1.125rem;
+    font-size: 1.125em;
     letter-spacing: 3.3px;
     margin: 0;
     color: white;
@@ -3921,7 +3935,7 @@ body._loaded._lock._pc .__popup-link {
     position: absolute;
     top: 0;
     left: 4%;
-    width: 37%;
+    width: 135px;
     height: 100%;
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);

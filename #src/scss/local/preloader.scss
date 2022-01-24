@@ -16,8 +16,8 @@
 		display: none;
 	}
 	&._hide-preloader {
-		animation: hidePreloader .5s;
-		animation-delay: 1s;
+		animation: hidePreloader .5s infinite;
+		animation-delay: .5s;
 	}
 }
 
@@ -33,18 +33,18 @@
 .preloader__img {
 	width: 70%;
 	max-width: 500px;
-	animation: hidePreloaderImg 2s;
+	animation: hidePreloaderImg 4s infinite;
 }
 
 @keyframes hidePreloaderImg {
 	0% {
-		opacity: 0;
+		opacity: .4;
 	}
 	50% {
 		opacity: 1;
 	}
 	100% {
-		opacity: 0;
+		opacity: .4;
 	}
 }
 
