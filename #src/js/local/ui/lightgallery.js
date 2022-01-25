@@ -26,7 +26,8 @@ function gallery_init() {
 			zoomFromOrigin: false,
 			mobileSettings: {
 				controls: false, download: false, zoomFromOrigin: true
-			}
+			},
+			getCaptionFromTitleOrAlt: false
 		});
 	}
 }
