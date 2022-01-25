@@ -3089,6 +3089,11 @@ progress::-webkit-progress-value {
   transition: all ease 0.5s;
 }
 
+.lg-content {
+  top: 50px !important;
+  bottom: 50px !important;
+}
+
 .lg-actions,
 .lg-next::after {
   content: "⮞" !important;
