@@ -322,16 +322,10 @@ body {
 	}
 }
 
+progress::-webkit-progress-bar { background: transparent; } 
+progress::-webkit-progress-value { background: transparent; }
 
 
-.pace {
-	position: absolute !important;
-	height: 3px !important;
-}
-
-.pace-progress {
-	background: linear-gradient(90deg, rgba(0, 160, 255, .5) 70%, rgba(0, 160, 255, .75) 80%, rgba(0, 160, 255, 1) 95%, rgb(120, 255, 255) 100%) !important;
-}
 
 
 //============================================<FULL SCREEN>================================================

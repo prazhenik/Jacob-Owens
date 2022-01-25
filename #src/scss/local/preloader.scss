@@ -16,8 +16,8 @@
 		display: none;
 	}
 	&._hide-preloader {
-		animation: hidePreloader .5s infinite;
-		animation-delay: .5s;
+		animation: hidePreloader 0.5s infinite;
+		animation-delay: 0.5s;
 	}
 }
 
@@ -38,15 +38,25 @@
 
 @keyframes hidePreloaderImg {
 	0% {
-		opacity: .4;
+		opacity: 0.4;
 	}
 	50% {
 		opacity: 1;
 	}
 	100% {
-		opacity: .4;
+		opacity: 0.4;
 	}
 }
 
+// pace.js progress bar
+.pace {
+	position: absolute !important;
+	height: 3px !important;
+}
 
+.pace-progress {
+	//background: $progress-value-color;
+	box-shadow: 0 0 10px lighten(rgba(120, 255, 255, 1), 2), 0 0 0.8em lighten(rgba(120, 255, 255, 1), 4);
+	background: linear-gradient(90deg, rgba(0, 160, 255, .5) 70%, rgba(0, 160, 255, .75) 80%, rgba(0, 160, 255, 1) 95%, rgba(120, 255, 255, 1) 100%) !important;
+}
 //--------------- ▲ ▲ ▲ preloader ▲ ▲ ▲ ------------------

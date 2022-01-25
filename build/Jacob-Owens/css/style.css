@@ -2494,6 +2494,19 @@ a:visited:hover {
   }
 }
 
+.pace {
+  position: absolute !important;
+  height: 3px !important;
+}
+
+.pace-progress {
+  -webkit-box-shadow: 0 0 10px #82ffff, 0 0 0.8em #8cffff;
+          box-shadow: 0 0 10px #82ffff, 0 0 0.8em #8cffff;
+  background: -webkit-gradient(linear, left top, right top, color-stop(70%, rgba(0, 160, 255, 0.5)), color-stop(80%, rgba(0, 160, 255, 0.75)), color-stop(95%, #00a0ff), to(#78ffff)) !important;
+  background: -o-linear-gradient(left, rgba(0, 160, 255, 0.5) 70%, rgba(0, 160, 255, 0.75) 80%, #00a0ff 95%, #78ffff 100%) !important;
+  background: linear-gradient(90deg, rgba(0, 160, 255, 0.5) 70%, rgba(0, 160, 255, 0.75) 80%, #00a0ff 95%, #78ffff 100%) !important;
+}
+
 .popup {
   z-index: 100;
   position: fixed;
@@ -2888,15 +2901,12 @@ body._loaded._lock._pc .__popup-link {
   background-color: gainsboro;
 }
 
-.pace {
-  position: absolute !important;
-  height: 3px !important;
+progress::-webkit-progress-bar {
+  background: transparent;
 }
 
-.pace-progress {
-  background: -webkit-gradient(linear, left top, right top, color-stop(70%, rgba(0, 160, 255, 0.5)), color-stop(80%, rgba(0, 160, 255, 0.75)), color-stop(95%, #00a0ff), to(#78ffff)) !important;
-  background: -o-linear-gradient(left, rgba(0, 160, 255, 0.5) 70%, rgba(0, 160, 255, 0.75) 80%, #00a0ff 95%, #78ffff 100%) !important;
-  background: linear-gradient(90deg, rgba(0, 160, 255, 0.5) 70%, rgba(0, 160, 255, 0.75) 80%, #00a0ff 95%, #78ffff 100%) !important;
+progress::-webkit-progress-value {
+  background: transparent;
 }
 
 ._fullscrn {
