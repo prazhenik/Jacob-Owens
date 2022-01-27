@@ -1,54 +1,35 @@
-
-<!-- в место в верстку вызова добавть ссылку на попап -->
-<!-- в href указываем придуманное имя попапа, который хотим открыть. Например: href="#callback"  -->
-
-<!-- <a href="#callback" class="_popup-link">Кнопка попапа</a> -->
-
-<!-- не забыть подключить этот файл в index.html  @@include('_popup.html',{})-->
-
-<!---------------------------------универсальный попап  -------------------------------->
-<!-- имя попапа писать в виде модификатора к popup_ Пример: popup_callback-->
-<div class="popup popup_callback"> 
-	<div class="popup__content">
-		<div class="popup__body">
-			<div class="popup__close"></div>
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum dolores ut aut, quia maxime non ad explicabo, quisquam placeat nostrum similique. Necessitatibus eaque est dignissimos explicabo, veniam omnis reprehenderit pariatur?
-			<!-- сюда добавлять содержание попапа -->
+<!---------------------------------popup bodies-------------------------------->
+<div class="popups">
+	<!---------------------------------popup callback  -------------------------------->
+	<div class="popup popup_callback">
+		<div class="popup__content">
+			<div class="popup__body popup__body_callback">
+				<div class="popup__close popup__close_callback _icon-close"></div>
+				<form action="sendmail.php" method="POST" data-ajax="true" id="callback-form"
+					class="form callback-form__form">
+					<h3 class="popup__title">Contact Jacob <span>for collaboration</span></h3>
+					<div class="buyer-details__item inputs__item">
+						<input id="formName" type="text" name="name" data-error="Invalid character or data not entered"
+							data-value="Your name*" class="popup__input input _text _req">
+						<div class="warning"></div>
+					</div>
+					<div class="buyer-details__item inputs__item">
+						<input id="formEmail" type="text" name="email" placeholder="example@ex.com"
+							data-error="Incorrect e-mail address" data-value="E-mail*" class="popup__input input _email _req">
+					</div>
+					<div class="buyer-details__item inputs__item">
+						<input id="formPhone" type="tel" name="phone"
+							data-error="Enter your phone number without spaces, starting with '+'" data-value="Phone number*"
+							placeholder="+_______________" class="popup__input input _phone _req">
+					</div>
+					<div class="buyer-details__item inputs__item">
+						<textarea name="textarea" id="formTextarea" class="popup__input textarea _req"
+							data-error="Please write your message" data-value="Message*"></textarea>
+					</div>
+					<button type="submit" class="popup-submit popup-submit_callback"><span>here we go</span></button>
+				</form>
+			</div>
 		</div>
 	</div>
 </div>
-
-
-<!--------------------------------- попап для сообщения -------------------------------->
-
-<div class="popup popup_massagename-message">
-	<div class="popup__content">
-		<div class="popup__body">
-			<div class="popup__close"></div>
-		</div>
-	</div>
-</div>
-
-
-<!--------------------------------- попап для видео (только ютуб) ------------------------------------->
-
-<!-- в место в верстку вызова добавть ссылку на попап -->
-<!-- в href указываем придуманное имя попапа, который хотим открыть. Например: href="#video"  -->
-
-<!-- <a href="#video" class="_popup-link" data-video="вписать ID видео на ютубе">Кнопка попапа</a> -->
-
-<!-- не забыть подключить этот файл в index.html  @@include('_popup.html',{})-->
-
-<!---------------------------------универсальный попап  -------------------------------->
-<!-- имя попапа писать в виде модификатора к popup_ Пример: popup_video-->
-
-
-
-<div class="popup popup_video">
-	<div class="popup__content">
-		<div class="popup__body">
-			<div class="popup__close popup__close_video"></div>
-			<div class="popup__video _video"></div>
-		</div>
-	</div>
-</div>
+<!---------------------------------popup bodies-------------------------------->

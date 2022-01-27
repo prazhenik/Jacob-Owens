@@ -82,64 +82,29 @@ var lazyLoadInstance = new LazyLoad({
 //------------------------------------subscribe submenu----------------------------------------------------
 
 const subscribe = document.querySelector(".subscribe");
-const subscribeText = document.querySelector(".subscribe__text");
 const subscribeIcon = document.querySelector(".subscribe__icon");
 const socials = document.querySelector(".socials");
 const iconsSocial = document.querySelectorAll(".socials a");
 
-
-
-if (iconsSocial.length > 0) {
-	iconsSocial.forEach(iconSocial => {
-		//скрытие панели при переходе
-		iconSocial.addEventListener("click", function (e) {
-			socials.classList.remove("_show");
-		});
-		if (!isMobile.any()) {
-			iconSocial.addEventListener("mouseover", function (e) {
-				if (iconSocial.classList.contains("_active_PC")) {
-					iconSocial.classList.remove("_active_PC");
-				} else {
-					iconSocial.classList.add("_active_PC");
-				}
-			});
-			//анимация при уходе с кнопки
-			iconSocial.addEventListener("mouseout", function (e) {
-				iconSocial.classList.remove("_active_PC");
-			});
-			subscribe.addEventListener("mouseover", function (e) {
-				socials.classList.add("_show");
-				subscribeText.classList.add("_hide");
-			});
-
-			subscribe.addEventListener("mouseout", function (e) {
-				socials.classList.remove("_show");
-				subscribeText.classList.remove("_hide");
-			});
-		}
+if (isMobile.any()) {
+	subscribe.addEventListener("click", function (e) {
+		subscribeIcon.classList.toggle("_active");
+		setTimeout(function () {
+			socials.classList.toggle("_show");
+		}, 300);
 	});
 }
 
-
-
-//открытие соцсетей и закрытие при нажатии на оверлей
-subscribeIcon.addEventListener("click", function (e) {
-	socials.classList.toggle("_show");
-});
-
+//закрытие при нажатии на оверлей
 function socials_close() {
 	socials.classList.remove("_show");
+	subscribeIcon.classList.remove("_active");
 }
 document.addEventListener("click", function (e) {
 	if (!e.target.closest('.subscribe__icon')) {
 		socials_close(e.target.closest('.socials'));
 	}
 });
-
-
-
-
-
 
 //------------------------------------textarea autosize----------------------------------------------------
 autosize(document.querySelectorAll('textarea'));

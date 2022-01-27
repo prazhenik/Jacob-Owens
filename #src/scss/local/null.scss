@@ -16,10 +16,10 @@
 	outline: none;
 }
 a,
-a:focus,
-a:active,
-a:hover,
-a:visited {
+a:not(.btn):focus,
+a:not(.btn):active,
+a:not(.btn):visited,
+a:not(.btn):hover {
 	cursor: pointer;
 	text-decoration: none;
 	color: inherit;
@@ -29,6 +29,7 @@ a:visited {
 a:visited {
 	color: inherit;
 }
+
 
 aside,
 nav,

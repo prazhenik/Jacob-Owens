@@ -6,41 +6,31 @@
 	width: 100%;
 	z-index: 17;
 	font-weight: 400;
-
-	&__container {
-		@media (max-width: $md4) {
-			position: fixed;
-			left: 0;
-			bottom: 0;
-		}
+	@media (max-width: $md4) {
+		left: 0;
+		bottom: 0;
+		top: auto;
 	}
 
-	&__container:before {
+	&:before {
 		content: "";
-		opacity: 0;
-		position: fixed;
+		display: block;
+		position: absolute;
 		left: 0;
 		width: 100%;
-		height: 60px;
-		background: rgba(0, 0, 0, 0.6);
-		backdrop-filter: blur(30px);
-		//border-bottom: 2px solid $tc1;
+		height: 100%;
 		@media (max-width: $md4) {
-			display: block;
-			top: auto;
-			height: 50px;
-			bottom: 0;
-			opacity: 1;
+			background: rgba(0, 0, 0, 0.6);
 			box-shadow: 0 -3px 5px 2px rgba(0, 0, 0, 0.3);
 			backdrop-filter: blur(20px);
 		}
 	}
 
-	&._scrolled .header__container:before {
+	&._scrolled:before {
 		@media (min-width: $md4) {
-			opacity: 1;
-			top: 0;
-			box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.3);
+			background: rgba(0, 0, 0, 0.6);
+			box-shadow: 0 -3px 5px 2px rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(20px);
 		}
 	}
 
@@ -49,12 +39,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		height: 60px;
-		padding: 5px 0px;
-
+		padding: 10px 0px;
 		@media (max-width: $md4) {
 			justify-content: space-evenly;
-			height: 50px;
+			padding: 5px 0px;
 		}
 	}
 
@@ -62,7 +50,7 @@
 		@include adaptiv-value(font-size, 20, 16, 3);
 		font-weight: 500;
 		@media (max-width: $md4) {
-			padding: 10px;
+			padding: 5px;
 		}
 		&:not(:last-child) {
 			@include adaptiv-value(margin-right, 50, 15, 3);
@@ -81,15 +69,6 @@
 			display: none;
 		}
 	}
-
-	&__subscribe {
-	}
-
-	&__popup-link {
-	}
-
-	&__menu {
-	}
 }
 
 .logo {
@@ -98,9 +77,11 @@
 		@include adaptiv-value(font-size, 34, 20, 3);
 		text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
 		transition: all 0.5s ease;
-		&:hover {
-			color: $tc2;
-			transition: color 0.5s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $tc2;
+				transition: color 0.5s ease;
+			}
 		}
 	}
 }
@@ -111,15 +92,23 @@
 	@media (max-width: $md4) {
 		order: 1;
 	}
-	&__text {
-		opacity: 1;
-		transition: all 0.5s ease;
-		@media (max-width: $md4) {
-			display: none;
+	&__body {
+		@media (any-hover: hover) {
+			&:hover .subscribe__text {
+				visibility: hidden;
+				opacity: 0;
+				transition: all 0.5s ease;
+			}
+			&:hover .subscribe__socials {
+				visibility: visible;
+				opacity: 1;
+				transition: all 0.5s ease;
+			}
 		}
 	}
-	&__text._hide {
-		opacity: 0;
+	&__text {
+		opacity: 1;
+		visibility: visible;
 		transition: all 0.5s ease;
 		@media (max-width: $md4) {
 			display: none;
@@ -131,6 +120,18 @@
 			display: block;
 			order: 1;
 		}
+		& svg,
+		path {
+			transition: all 0.2s ease;
+		}
+		&._active svg {
+			transform: scale3d(1.2, 1.2, 1.2);
+			transition: all 0.2s ease;
+		}
+		&._active path {
+			fill: $borc3;
+			transition: fill 0.2s ease;
+		}
 	}
 
 	&__socials {
@@ -140,25 +141,20 @@
 		transform: translate(-50%);
 		opacity: 0;
 		visibility: hidden;
-		transition: all 0.5s ease;
-		@media (max-width: $md4) {
-			top: 50px;
-			transition: all 0.5s ease;
-		}
+		pointer-events: none;
+		transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s linear 0.5s;
 		&._show {
-			visibility: visible;
 			opacity: 1;
-			transition: all 0.5s ease;
-			@media (max-width: $md4) {
-				top: -50px;
-				transition: all 0.5s ease;
-			}
+			visibility: visible;
+			top: -60px;
+			pointer-events: visible;
+			transition: opacity 0.2s ease, visibility 0.2s ease;
 		}
 	}
 }
 
 .socials {
-// general styles in style.scss
+	// general styles in style.scss
 }
 
 ._popup-link {
@@ -167,9 +163,11 @@
 	}
 	&__text {
 		transition: all 0.5s ease;
-		&:hover {
-			color: $tc2;
-			transition: color 0.5s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $tc2;
+				transition: color 0.5s ease;
+			}
 		}
 		@media (max-width: $md4) {
 			display: none;
@@ -180,6 +178,18 @@
 		display: none;
 		@media (max-width: $md4) {
 			display: block;
+		}
+		& svg,
+		path {
+			transition: all 0.2s ease;
+		}
+		&._active svg {
+			transform: scale3d(1.2, 1.2, 1.2);
+			transition: all 0.2s ease;
+		}
+		&._active path {
+			fill: $borc3;
+			transition: fill 0.2s ease;
 		}
 	}
 }
@@ -193,7 +203,6 @@
 
 	&__button {
 		position: relative;
-		border-radius: 7px;
 		color: $tc2;
 		border: 1px solid $borc1;
 		transition: background 0.5s ease;

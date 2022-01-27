@@ -5,12 +5,16 @@
 	@media (max-width: $md4) {
 		margin: 0px 0px 2% 0px;
 	}
+	&__container {
+		position: relative;
+	}
 	&__logo {
 		display: none;
-		position: absolute;
+		position: fixed;
 		top: 2%;
 		right: 3%;
 		z-index: 6;
+		overflow: hidden;
 		@media (max-width: $md4) {
 			display: flex;
 		}
@@ -25,14 +29,15 @@
 		object-fit: cover;
 	}
 	&__content {
+		height: 100%;
 		display: flex;
 		align-items: flex-end;
-		z-index: 1;
 	}
 
 	&__offer {
 		padding: 40px 10%;
 		box-sizing: content-box;
+		z-index: 1;
 		@media (max-width: $md4) {
 			padding: 20% 5% 45%;
 		}
@@ -138,11 +143,26 @@
 .gallery {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
-	gap: 5px;
 	&__item {
 		position: relative;
 		overflow: hidden;
-
+		min-height: 50vh;
+		&:not(:nth-child(2)) {
+			display: none;
+		}
+		&:after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 4.5%;
+			width: 135px;
+			height: 100%;
+			backdrop-filter: blur(5px);
+			background: url("../img/icons/plus-zoom.svg") no-repeat center 90%;
+			background-color: $bgc4;
+			z-index: 5;
+		}
 		& img {
 			position: absolute;
 			top: 0;
@@ -157,31 +177,7 @@
 			transition: all ease 0.5s;
 		}
 	}
-	@media (max-width: $md4) {
-		gap: 0;
-		&__item {
-			position: relative;
-			min-height: 50vh;
-			&:not(:nth-child(2)) {
-				display: none;
-			}
-			&:after {
-				content: "";
-				display: inline-block;
-				position: absolute;
-				top: 0;
-				left: 4%;
-				width: 135px;
-				height: 100%;
-				backdrop-filter: blur(5px);
-				background: url("../img/icons/plus-zoom.svg") no-repeat center 90%;
-				background-color: $bgc4;
-				z-index: 5;
-			}
-		}
-	}
 	@media (min-width: $md4) {
-		display: grid;
 		grid-template-columns: repeat(6, minmax(50px, 1fr));
 		grid-template-rows: repeat(3, minmax(240px, 1fr));
 		gap: 5px;
@@ -206,6 +202,12 @@
 			padding: 0px;
 		}
 		&__item {
+			&:not(:nth-child(2)) {
+				display: inline-block;
+			}
+			&:after {
+				display: none;
+			}
 			&_work1 {
 				grid-column: 1 / 2;
 				grid-row: 1 / 4;
@@ -235,7 +237,7 @@
 				}
 			}
 
-			//-----rest section------
+			//-----rest------
 
 			&_rest1 {
 				grid-column: 3 / 7;
@@ -263,7 +265,7 @@
 				grid-row: 2 / 4;
 			}
 
-			//-----happyness section------
+			//-----happyness------
 
 			&_happyness1 {
 				grid-column: 1 / 4;
@@ -294,14 +296,11 @@
 				}
 			}
 
-			//-----nature section------
+			//-----nature------
 
 			&_nature1 {
 				grid-column: 1 / 2;
 				grid-row: 1 / 4;
-				& img {
-					//object-position: 60% 35%;
-				}
 			}
 
 			&_nature2 {
@@ -323,13 +322,12 @@
 			&_nature4 {
 				grid-column: 6 / 7;
 				grid-row: 2 / 4;
-				& img {
-					//object-position: center 45%;
-				}
 			}
 		}
 	}
 }
+
+//------lightGallery settings
 
 .lg-content {
 	top: 50px !important;
@@ -365,7 +363,7 @@
 	@media (max-width: $md4) {
 		margin: 0px 0px 2%;
 	}
-	&__content {
+	&__container__lg {
 		display: flex;
 		align-items: center;
 		min-height: 80vh;
@@ -392,7 +390,7 @@
 	&__title {
 		text-transform: uppercase;
 		@include adaptiv-value(font-size, 32, 18, 3);
-		line-height: 1em;
+		line-height: 1;
 		@media (max-width: $md4) {
 			padding: 5px 0;
 		}
@@ -403,7 +401,9 @@
 		line-height: 1em;
 		font-weight: 400;
 		letter-spacing: 0.25em;
-		margin: 0px 0px 35px 0px;
+		&:not(:last-child){
+			margin: 0px 0px 35px 0px;
+		}
 		@media (min-width: $md4) {
 			@include adaptiv-value(margin-right, -7, 0, 1);
 		}
@@ -411,15 +411,19 @@
 
 	&__btn {
 		border: $borc3 1px solid;
-		margin: 0px 0px 35px 0px;
 		text-transform: uppercase;
 		font-weight: 700;
-		border-radius: 7px;
-		&:hover {
-			border: $borc1 1px solid;
-			background-color: $navc1;
-			color: $tc2;
+		&:not(:last-child){
+			margin: 0px 0px 35px 0px;
 		}
+		@media (any-hover: hover){
+			&:hover {
+				border: $borc1 1px solid;
+				background-color: $navc1;
+				color: $tc2;
+			}
+		}
+
 		@media (max-width: $md4) {
 			display: none;
 		}
