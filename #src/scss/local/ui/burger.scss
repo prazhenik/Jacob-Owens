@@ -14,17 +14,17 @@
 	&._active {
 		border-right: 2px solid;
 		border-left: 2px solid;
-		&:hover {
-			border-color: $borc3;
-			transition: all 0.5s ease;
+		@media (any-hover: hover){
+			&:hover {
+				border-color: $borc3;
+				transition: all 0.5s ease;
+			}
 		}
+
 	}
-	&._hover {
-		transform: translateY(-2px);
-		transition: transform 0.5s ease;
-	}
+
 	@media (max-width: $md4) {
-		@include blockSize(30, 15);
+		@include blockSize(34, 17);
 	}
 }
 
@@ -54,6 +54,8 @@
 	width: 100%;
 	top: 50%;
 }
+
+
 .menu__icon._hover span,
 .menu__icon._hover::before,
 .menu__icon._hover::after {

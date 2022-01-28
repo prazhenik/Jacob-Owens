@@ -6,6 +6,7 @@
 	width: 100%;
 	z-index: 17;
 	font-weight: 400;
+
 	@media (max-width: $md4) {
 		left: 0;
 		bottom: 0;
@@ -118,6 +119,7 @@
 		display: none;
 		@media (max-width: $md4) {
 			display: block;
+			height: 30px;
 			order: 1;
 		}
 		& svg,
@@ -141,7 +143,6 @@
 		transform: translate(-50%);
 		opacity: 0;
 		visibility: hidden;
-		pointer-events: none;
 		transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s linear 0.5s;
 		&._show {
 			opacity: 1;
@@ -178,12 +179,13 @@
 		display: none;
 		@media (max-width: $md4) {
 			display: block;
+			height: 25px;
 		}
 		& svg,
 		path {
 			transition: all 0.2s ease;
 		}
-		&._active svg {
+		&._active {
 			transform: scale3d(1.2, 1.2, 1.2);
 			transition: all 0.2s ease;
 		}
@@ -215,8 +217,6 @@
 			@media (max-width: $md4) {
 				background: transparent;
 			}
-		}
-		&:hover:not(._active) {
 		}
 		&._active {
 			transition: all 0.5s ease;

@@ -10,8 +10,8 @@
 		position: relative;
 		justify-content: space-between;
 		align-items: center;
-		&:before{
-			content: '';
+		&:before {
+			content: "";
 			display: inline-block;
 			position: absolute;
 			@include adaptiv-value(top, -100, -40, 1);
@@ -73,14 +73,15 @@
 	&__link {
 		display: block;
 		color: $tc1;
-		transition: all .5s ease;
+		transition: all 0.5s ease;
 		@media (max-width: $md4) {
 			display: inline-block;
 		}
-		&:hover{
-			transition: color .5s ease;
-			color: $navc1;
+		@media (any-hover: hover) {
+			&:hover {
+				transition: color 0.5s ease;
+				color: $navc1;
+			}
 		}
 	}
 }
-

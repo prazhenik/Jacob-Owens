@@ -115,14 +115,11 @@ $responsiveType: 1;
 }
 
 ._container-lg {
-	//position: relative;
+	position: relative;
 	margin: 0 auto;
 	width: 100%;
 	max-width: 100%;
 	padding: 0 3%;
-	@media (max-width: $md4) {
-		//padding: 0;
-	}
 }
 
 //======================================== ▲ ▲ ▲ БРЕЙКПОИНТЫ ▲ ▲ ▲=========================================================
@@ -206,7 +203,7 @@ $mainBgcColor: $bgc1;
 
 //------------custom scrollbar----------------
 
-$scrollbarWidth: 17px;
+$scrollbarWidth: 16px;
 
 //------------custom scrollbar----------------
 
@@ -239,18 +236,11 @@ body {
 	}
 	&._loaded._lock._pc {
 		padding-right: calc($scrollbarWidth - 0.5px) !important; // общая коррекция контента на скролл при модалке/меню
-		//padding: 0 !important;
 		& header,
 		.__popup-link {
 			padding-right: calc(
 				$scrollbarWidth - 0.5px
 			) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
-		}
-	}
-	._touch & {
-		height: calc(var(--vh, 1vh) * 100);
-		@media (max-width: $md4) {
-			transition: height 0.2s;
 		}
 	}
 }
@@ -275,8 +265,11 @@ body {
 	align-items: center;
 	height: 100%;
 	padding: 5px 0px;
-	z-index: 15;
+	@media (max-width: $md4) {
+		pointer-events: none;
+	}
 	& a {
+		z-index: 117;
 		@media (any-hover: hover) {
 			&:hover {
 				& svg path {
@@ -295,30 +288,6 @@ body {
 	}
 }
 
-.gallery {
-	position: relative;
-	@include adaptiv-value(padding-top, 100, 40, 1);
-	@include adaptiv-value(padding-bottom, 100, 40, 1);
-	@media (max-width: $md4) {
-		padding: 2% 0px;
-	}
-}
-
-.gallery:not(:last-child):after {
-	content: "";
-	display: inline-block;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 200px;
-	transform: translate(-50%);
-	height: 2px;
-	margin: 0 auto;
-	background-color: $bgc5;
-	@media (max-width: $md4) {
-		display: none;
-	}
-}
 
 //============================================<FULL SCREEN>================================================
 

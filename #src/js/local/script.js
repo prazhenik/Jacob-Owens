@@ -1,12 +1,14 @@
 //плавный скролл
-const smoothLinks = document.querySelectorAll('a[href^="#"]');
+const smoothLinks = document.querySelectorAll('a[href^="#"]:not(._popup-link)');
+const activePopup = document.querySelectorAll('.popup._active');
 
-if (smoothLinks) {
+
+
+if (smoothLinks.length > 0) {
 	for (let smoothLink of smoothLinks) {
 		smoothLink.addEventListener('click', function (e) {
 			e.preventDefault();
 			const id = smoothLink.getAttribute('href');
-
 			document.querySelector(id).scrollIntoView({
 				behavior: 'smooth',
 				block: 'start'
@@ -14,6 +16,8 @@ if (smoothLinks) {
 		});
 	};
 }
+
+
 
 
 //класс ссылке активной страници
@@ -103,6 +107,7 @@ function socials_close() {
 document.addEventListener("click", function (e) {
 	if (!e.target.closest('.subscribe__icon')) {
 		socials_close(e.target.closest('.socials'));
+
 	}
 });
 

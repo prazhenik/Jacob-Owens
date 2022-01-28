@@ -7,8 +7,6 @@
 let gallery = document.querySelectorAll('._gallery');
 let galleryLink = document.querySelectorAll('._gallery a');
 
-console.log(galleryLink);
-
 if (gallery) {
 	gallery_init();
 	mutationObserverHTML()

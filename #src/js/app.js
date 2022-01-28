@@ -28,8 +28,9 @@
 //include('local/ui/spollers.js', {});
 //include('local/ui/tabs.js', {});
 
+//include('local/map.js', {}); //все касательно карт 
 
 @@include('local/script.js', {}); // стили конкретного проекта
 
 
-//include('local/map.js', {}); //все касательно карт 
+

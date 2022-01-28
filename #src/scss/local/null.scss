@@ -24,7 +24,6 @@ a:not(.btn):hover {
 	text-decoration: none;
 	color: inherit;
 	outline: none;
-	padding: 0;
 }
 a:visited {
 	color: inherit;
@@ -97,6 +96,8 @@ img {
 	display: block;
 	object-fit: cover;
 }
+
+
 svg path {
 	stroke: inherit;
 	stroke-width: inherit;

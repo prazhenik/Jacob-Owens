@@ -52,7 +52,6 @@ if (menuButton != null) {
 
 // плавная рокрутка и закрытие меню по клику
 const menuLinks = document.querySelectorAll('.menu__link');
-console.log(menuLinks.length);
 if (menuLinks.length > 0) {
 	menuLinks.forEach(menuLink => {
 		menuLink.addEventListener("click", onMenuLinkClick);

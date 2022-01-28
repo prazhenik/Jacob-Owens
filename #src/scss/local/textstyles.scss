@@ -33,7 +33,6 @@
 	justify-self: center;
 	text-align: center;
 	@media (max-width: $md4) {
-		padding: 0px;
 		position: absolute;
 		top: 10%;
 		@include adaptiv-value("left", 90, 60, 1);
