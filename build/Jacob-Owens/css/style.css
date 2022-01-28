@@ -2805,12 +2805,15 @@ body._loaded._lock._pc .__popup-link {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
-  padding: 5px 0px;
+}
+
+.socials li {
+  height: 44px;
 }
 
 .socials a {
-  z-index: 117;
+  display: inline-block;
+  height: 100%;
 }
 
 .socials a svg {
@@ -2912,20 +2915,23 @@ body._loaded._lock._pc .__popup-link {
   position: relative;
   font-weight: 500;
   margin-left: auto;
-  padding: 10px 0px 0px 0px;
 }
 
 .hero__skills-dynamic:after {
   content: "";
   display: inline-block;
   position: absolute;
-  top: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   left: -5px;
   width: 135px;
-  height: 40px;
+  height: 1.5em;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   background: rgba(220, 220, 220, 0.3);
+  border: 1px solid rgba(220, 220, 220, 0.3);
   z-index: -1;
 }
 
@@ -2993,6 +2999,8 @@ body._loaded._lock._pc .__popup-link {
           backdrop-filter: blur(5px);
   background: url("../img/icons/plus-zoom.svg") no-repeat center 90%;
   background-color: rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(80, 80, 80, 0.4);
+  border-right: 1px solid rgba(80, 80, 80, 0.4);
   z-index: 5;
 }
 
@@ -3181,6 +3189,8 @@ body._loaded._lock._pc .__popup-link {
 }
 
 .subscribe {
+  display: block;
+  height: 100%;
   position: relative;
   cursor: pointer;
 }
@@ -3221,7 +3231,7 @@ body._loaded._lock._pc .__popup-link {
 
 .subscribe__socials {
   position: absolute;
-  top: 0;
+  top: -55%;
   left: 50%;
   -webkit-transform: translate(-50%);
       -ms-transform: translate(-50%);
@@ -3241,6 +3251,10 @@ body._loaded._lock._pc .__popup-link {
   -webkit-transition: opacity 0.2s ease, visibility 0.2s ease;
   -o-transition: opacity 0.2s ease, visibility 0.2s ease;
   transition: opacity 0.2s ease, visibility 0.2s ease;
+  background: rgba(220, 220, 220, 0.3);
+  border: 1px solid rgba(220, 220, 220, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 
 ._popup-link__text {
@@ -3837,11 +3851,12 @@ body._loaded._lock._pc .__popup-link {
   }
 
   .hero__skills-dynamic {
-    display: block;
+    display: inline-block;
     font-size: 1.125em;
     letter-spacing: 3.3px;
     margin: 0;
     color: white;
+    margin: 10px 0px 0px 0px;
   }
 
   .hero__skills-dynamic:before {

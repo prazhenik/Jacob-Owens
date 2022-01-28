@@ -88,6 +88,8 @@
 }
 
 .subscribe {
+	display: block;
+	height: 100%;
 	position: relative;
 	cursor: pointer;
 	@media (max-width: $md4) {
@@ -138,7 +140,7 @@
 
 	&__socials {
 		position: absolute;
-		top: 0;
+		top: -55%;
 		left: 50%;
 		transform: translate(-50%);
 		opacity: 0;
@@ -150,6 +152,10 @@
 			top: -60px;
 			pointer-events: visible;
 			transition: opacity 0.2s ease, visibility 0.2s ease;
+			background: $bgc6;
+			border: 1px solid $bgc6;
+			backdrop-filter: blur(10px);
+
 		}
 	}
 }

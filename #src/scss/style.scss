@@ -141,7 +141,7 @@ $bgc7: rgba(0, 160, 255, 1);
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
 $navc2: rgba(0, 160, 255, 0.5); // cta prim bcg hover
-//$navc3: rgba(255, 255, 255, 1); //cta second bcg
+$navc3: rgba(0, 160, 255, 0.3); //cta second bcg
 //$navc4: rgba(26, 49, 252, 0.3); // cta prim bcg hover
 
 //---------------------Цвета границ---------------------
@@ -263,13 +263,15 @@ body {
 .socials {
 	display: inline-flex;
 	align-items: center;
-	height: 100%;
-	padding: 5px 0px;
 	@media (max-width: $md4) {
 		pointer-events: none;
 	}
+	& li {
+		height: 44px;
+	}
 	& a {
-		z-index: 117;
+		display: inline-block;
+		height: 100%;
 		@media (any-hover: hover) {
 			&:hover {
 				& svg path {
