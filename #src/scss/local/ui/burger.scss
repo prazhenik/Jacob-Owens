@@ -6,11 +6,11 @@
 	position: relative;
 	@include blockSize(40, 20);
 	cursor: pointer;
-	z-index: 17;
 	transition: all 0.5s ease;
 	border-right: 2px solid;
 	border-left: 2px solid;
 	border-color: transparent;
+	z-index: 100;
 	&._active {
 		border-right: 2px solid;
 		border-left: 2px solid;

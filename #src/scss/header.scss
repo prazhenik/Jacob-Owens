@@ -219,7 +219,6 @@
 		transition: all 0.3s ease;
 		@media (max-width: $md4) {
 			border: none;
-			z-index: 17;
 		}
 		&:not(._active) {
 			background: $navc2;
@@ -228,6 +227,8 @@
 			}
 		}
 		&._active {
+			z-index: 17;
+			pointer-events: auto !important;
 			transition: all 0.3s ease;
 		}
 	}
