@@ -61,10 +61,11 @@
 .menu__icon._hover span,
 .menu__icon._hover::before,
 .menu__icon._hover::after {
-	transform: scale3d(1, 1, 1) rotateZ(0deg);
+	transform: scale3d(1, 1, 1) rotateZ(0deg) translateY(-2px);
 	width: 100%;
 	left: 0;
 	background: $tc2;
+
 }
 .menu__icon._active span,
 .menu__icon._active::before,

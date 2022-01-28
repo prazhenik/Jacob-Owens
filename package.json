@@ -36,6 +36,7 @@
     "gulp-version-number": "^0.2.4",
     "jquery-parallax.js": "^1.5.0",
     "parallax-js": "^3.1.0",
-    "simplebar": "^5.3.6"
+    "simplebar": "^5.3.6",
+    "vanilla-tilt": "^1.7.2"
   }
 }
