@@ -1981,8 +1981,6 @@ textarea {
   left: 0;
   -webkit-transform: scale3d(1, 1, 1) rotateZ(-45deg);
           transform: scale3d(1, 1, 1) rotateZ(-45deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
 }
 
 .menu__icon::before {
@@ -2049,7 +2047,7 @@ textarea {
   width: 100%;
   height: 100%;
   color: gainsboro;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.6);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   padding: 5% 0px;
@@ -2769,6 +2767,7 @@ body._loaded {
 }
 
 body._loaded._lock {
+  pointer-events: none;
   overflow: hidden;
 }
 
@@ -2779,6 +2778,33 @@ body._loaded._lock._pc {
 body._loaded._lock._pc header,
 body._loaded._lock._pc .__popup-link {
   padding-right: 15.5px !important;
+}
+
+._overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+._overlay._active {
+  pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .wrapper {
@@ -3262,6 +3288,7 @@ body._loaded._lock._pc .__popup-link {
   border: 1px solid rgba(220, 220, 220, 0.3);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+  z-index: 101;
 }
 
 ._popup-link__text {

@@ -123,6 +123,7 @@
 			display: block;
 			height: 30px;
 			order: 1;
+			
 		}
 		& svg,
 		path {
@@ -155,6 +156,7 @@
 			background: $bgc6;
 			border: 1px solid $bgc6;
 			backdrop-filter: blur(10px);
+			z-index: 101;
 
 		}
 	}
@@ -186,19 +188,19 @@
 		@media (max-width: $md4) {
 			display: block;
 			height: 25px;
-			transition: all .2s ease;
+			transition: all 0.2s ease;
 		}
 		& svg,
 		path {
-			transition: all .2s ease;
+			transition: all 0.2s ease;
 		}
 		&._active {
 			transform: scale3d(1.2, 1.2, 1.2);
-			transition: all .2s ease;
+			transition: all 0.2s ease;
 		}
 		&._active path {
 			fill: $borc3;
-			transition: fill .2s ease;
+			transition: fill 0.2s ease;
 		}
 	}
 }
