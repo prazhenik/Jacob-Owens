@@ -1953,13 +1953,13 @@ textarea {
   width: 40px;
   height: 20px;
   cursor: pointer;
-  z-index: 17;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   border-right: 2px solid;
   border-left: 2px solid;
   border-color: transparent;
+  z-index: 100;
 }
 
 .menu__icon._active {
@@ -3341,6 +3341,8 @@ body._loaded._lock._pc .__popup-link {
 }
 
 .menu__button._active {
+  z-index: 17;
+  pointer-events: auto !important;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -3999,7 +4001,6 @@ body._loaded._lock._pc .__popup-link {
 
   .menu__button {
     border: none;
-    z-index: 17;
   }
 
   .menu__button:not(._active) {
