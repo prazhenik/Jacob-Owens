@@ -180,18 +180,19 @@
 		@media (max-width: $md4) {
 			display: block;
 			height: 25px;
+			transition: all .2s ease;
 		}
 		& svg,
 		path {
-			transition: all 0.2s ease;
+			transition: all .2s ease;
 		}
 		&._active {
 			transform: scale3d(1.2, 1.2, 1.2);
-			transition: all 0.2s ease;
+			transition: all .2s ease;
 		}
 		&._active path {
 			fill: $borc3;
-			transition: fill 0.2s ease;
+			transition: fill .2s ease;
 		}
 	}
 }

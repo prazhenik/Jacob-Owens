@@ -50,7 +50,10 @@ function popup_open(item, video = '') {
 function popup_close(item, bodyUnlock = true) {
 	if (unlock) {
 		if (isMobile.any()) {
-			popup_link_icon.classList.remove("_active");
+			setTimeout(function () {
+				popup_link_icon.classList.remove("_active");
+			}, 300);
+			
 		}
 		
 		if (!item) {

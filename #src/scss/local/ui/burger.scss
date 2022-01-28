@@ -14,13 +14,16 @@
 	&._active {
 		border-right: 2px solid;
 		border-left: 2px solid;
-		@media (any-hover: hover){
+		@media (any-hover: hover) {
 			&:hover {
 				border-color: $borc3;
 				transition: all 0.5s ease;
 			}
 		}
-
+		@media (max-width: $md4) {
+			border-color: $borc3;
+			transition: all 0.5s ease;
+		}
 	}
 
 	@media (max-width: $md4) {
@@ -54,7 +57,6 @@
 	width: 100%;
 	top: 50%;
 }
-
 
 .menu__icon._hover span,
 .menu__icon._hover::before,
