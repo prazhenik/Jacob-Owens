@@ -213,20 +213,20 @@
 	&__button {
 		position: relative;
 		color: $tc2;
-		border: 1px solid $borc1;
-		transition: background 0.5s ease;
+		border: 1px solid $navc3;
+		transition: all 0.3s ease;
 		@media (max-width: $md4) {
 			border: none;
 			z-index: 17;
 		}
 		&:not(._active) {
-			background: $navc1;
+			background: $navc2;
 			@media (max-width: $md4) {
 				background: transparent;
 			}
 		}
 		&._active {
-			transition: all 0.5s ease;
+			transition: all 0.3s ease;
 		}
 	}
 
@@ -235,7 +235,6 @@
 	}
 
 	&__text {
-		line-height: 1rem;
 		text-transform: uppercase;
 		padding: 0px 15px 0px 0px;
 		@media (max-width: $md4) {

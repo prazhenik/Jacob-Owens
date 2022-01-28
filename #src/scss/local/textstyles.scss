@@ -4,23 +4,24 @@
 	display: inline-block;
 	font-weight: 900;
 	text-transform: uppercase;
-	color: $tc4;
-	padding: 3% 0px 0px 0px;
+	color: $tc1;
 	@include adaptiv-value(font-size, 60, 20, 3);
-	line-height: 1.5em;
+	line-height: 1.5;
 	text-shadow: none;
 	@media (max-width: $md4) {
 		padding: 0;
-		line-height: 2em;
+		line-height: 2;
 
 		
 	}
 	& span {
-		color: $tc1;
+		line-height: .7;
+		color: transparent;
+		-webkit-text-stroke: 3px $navc1;
 		@include adaptiv-value(font-size, 140, 60, 3);
-		text-shadow: 2px 5px 1px $navc1, 4px 10px 1px $navc2;
 		@media (max-width: $md4) {
-			text-shadow: 2px 3px 1px $navc1, 4px 6px 1px $navc2;
+			-webkit-text-stroke: 2px $navc1;
+			//text-shadow: 2px 3px 1px $navc1, 4px 6px 1px $navc2;
 		}
 	}
 }
