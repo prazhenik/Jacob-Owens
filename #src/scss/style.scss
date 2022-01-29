@@ -140,7 +140,7 @@ $bgc6: rgba(220, 220, 220, 0.3); //
 $bgc7: rgba(0, 160, 255, 1);
 //----------------Цвета Кнопок и навигации------------
 $navc1: rgba(0, 160, 255, 1); //cta prim bcg, cta second bcg hover
-$navc2: rgba(0, 160, 255, 0.5); // cta prim bcg hover
+$navc2: rgba(0, 160, 255, 0.6); // cta prim bcg hover
 $navc3: rgba(0, 160, 255, 0.3); //cta second bcg
 //$navc4: rgba(26, 49, 252, 0.3); // cta prim bcg hover
 
@@ -225,6 +225,7 @@ body {
 	background-color: $mainBgcColor;
 	padding: 0 !important;
 	overflow: hidden;
+
 	&._preloader {
 		overflow: hidden;
 	}
@@ -232,6 +233,7 @@ body {
 		overflow: visible;
 	}
 	&._loaded._lock {
+		pointer-events: none;
 		overflow: hidden;
 	}
 	&._loaded._lock._pc {
@@ -244,6 +246,28 @@ body {
 		}
 	}
 }
+
+._overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 11;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	background: $bgc2;
+	backdrop-filter: blur(2px);
+	transition: all .5s;
+	&._active {
+		pointer-events: none;
+		opacity: 1;
+		visibility: visible;
+		transition: all .5s;
+	}
+}
+
 
 .wrapper {
 	width: 100%;
