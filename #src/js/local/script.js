@@ -87,11 +87,10 @@ var lazyLoadInstance = new LazyLoad({
 
 const subscribe = document.querySelector(".subscribe");
 const subscribeIcon = document.querySelector(".subscribe__icon");
-<<<<<<< HEAD
+
 const socials = document.querySelector(".subscribe__socials");
-=======
-const socials = document.querySelector(".socials");
->>>>>>> 3c7f97b4e944f3cbb0f4a2a685eb07102bae8742
+
+
 const overlay = document.querySelector("._overlay");
 
 if (isMobile.any()) {
@@ -108,14 +107,9 @@ if (isMobile.any()) {
 		}
 	});
 	document.addEventListener("click", function (e) {
-<<<<<<< HEAD
+
 		if (!e.target.closest('.subscribe__icon')) {
 			socials_close(e.target.closest('.subscribe__socials'));
-=======
-		console.log(e);
-		if (!e.target.closest('.subscribe__icon')) {
-			socials_close(e.target.closest('.socials'));
->>>>>>> 3c7f97b4e944f3cbb0f4a2a685eb07102bae8742
 		}
 	});
 }

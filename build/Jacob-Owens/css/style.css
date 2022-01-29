@@ -2047,7 +2047,7 @@ textarea {
   width: 100%;
   height: 100%;
   color: gainsboro;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   padding: 5% 0px;
@@ -2760,7 +2760,7 @@ body._loaded._lock._pc .__popup-link {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   -webkit-transition: all 0.5s;
@@ -3331,11 +3331,7 @@ body._loaded._lock._pc .__popup-link {
 }
 
 .menu__button:not(._active) {
-<<<<<<< HEAD
-  background: rgba(0, 160, 255, 0.5);
-=======
   background: rgba(0, 160, 255, 0.6);
->>>>>>> 3c7f97b4e944f3cbb0f4a2a685eb07102bae8742
 }
 
 .menu__button._active {
@@ -4109,15 +4105,12 @@ body._loaded._lock._pc .__popup-link {
 
   .btn:hover::before {
     left: 100%;
-<<<<<<< HEAD
   }
 
   .popup-submit_callback:hover {
     border: #d2d2d2 1px solid;
     background-color: #00a0ff;
     color: white;
-=======
->>>>>>> 3c7f97b4e944f3cbb0f4a2a685eb07102bae8742
   }
 
   .socials a:hover svg path {
