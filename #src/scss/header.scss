@@ -4,8 +4,8 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 17;
 	font-weight: 400;
+	z-index: 5;
 	&._scrolled:before {
 		content: "";
 		display: block;
@@ -24,6 +24,7 @@
 	&__container {
 		display: flex;
 		min-height: 60px;
+		
 	}
 
 	&__content {
@@ -32,6 +33,7 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 10px 0px;
+		z-index: 115;
 		@media (max-width: $md4) {
 			position: fixed;
 			left: 0;
@@ -127,7 +129,7 @@
 	position: relative;
 	cursor: pointer;
 	&__body {
-		@media (any-hover: hover) {
+		@media (any-hover: hover), (orientation: landscape) {
 			&:hover .subscribe__text {
 				visibility: hidden;
 				opacity: 0;

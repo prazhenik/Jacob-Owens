@@ -11,8 +11,7 @@
 	@media (max-width: $md4) {
 		padding: 0;
 		line-height: 2;
-
-		
+		display: block;
 	}
 	& span {
 		line-height: .7;
@@ -43,6 +42,7 @@
 		z-index: 6;
 		writing-mode: vertical-rl;
 		transform: rotate(180deg);
+		z-index: 4;
 	}
 	& span {
 		display: block;

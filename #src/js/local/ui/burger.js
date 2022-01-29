@@ -38,7 +38,7 @@ if (menuButton != null) {
 	//анимация при клике
 	menuButton.addEventListener("click", function (e) {
 		if (unlock) {
-			body_lock(delay);
+			body_lock();
 			iconMenu.classList.remove("_hover");
 			iconMenu.classList.toggle("_active");
 			menuButton.classList.toggle("_active");

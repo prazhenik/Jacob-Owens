@@ -87,18 +87,20 @@ var lazyLoadInstance = new LazyLoad({
 
 const subscribe = document.querySelector(".subscribe");
 const subscribeIcon = document.querySelector(".subscribe__icon");
-
 const socials = document.querySelector(".subscribe__socials");
-
-
 const overlay = document.querySelector("._overlay");
 
+
+
 if (isMobile.any()) {
-	subscribe.addEventListener("click", function (e) {
-		if (!subscribeIcon.classList.contains("_active") && !socials.classList.contains("_show")) {
+	function socials_close() {
+		socials.classList.remove("_show");
+		subscribeIcon.classList.remove("_active");
+	}
+
+	subscribeIcon.addEventListener("click", function (e) {
+		if (!subscribeIcon.classList.contains("_active")) {
 			subscribeIcon.classList.add("_active");
-			overlay.classList.add("_active");
-			body_lock_add();
 			setTimeout(function () {
 				socials.classList.add("_show")
 			}, 300);
@@ -106,23 +108,23 @@ if (isMobile.any()) {
 			socials_close()
 		}
 	});
-	document.addEventListener("click", function (e) {
 
-		if (!e.target.closest('.subscribe__icon')) {
-			socials_close(e.target.closest('.subscribe__socials'));
+	//закрытие при нажатии по єкрану
+	document.addEventListener("click", function (e) {
+		if (!e.target.closest(".subscribe__icon")) {
+			socials_close(e.target.closest('.subscribe'));
+		}
+	});
+	//закрытие при начале скрола
+	document.addEventListener("scroll", function () {
+		if (subscribeIcon.classList.contains("_active")) {
+			socials_close();
 		}
 	});
 }
 
-//закрытие при нажатии на оверлей
-function socials_close() {
-	setTimeout(function () {
-		body_lock_remove();
-	}, 300);
-	socials.classList.remove("_show");
-	subscribeIcon.classList.remove("_active");
-	overlay.classList.remove("_active");
-}
+
+
 
 
 

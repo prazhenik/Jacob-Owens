@@ -247,27 +247,6 @@ body {
 	}
 }
 
-._overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 11;
-	opacity: 0;
-	visibility: hidden;
-	pointer-events: none;
-	background: $bgc2;
-	backdrop-filter: blur(2px);
-	transition: all .5s;
-	&._active {
-		pointer-events: none;
-		opacity: 1;
-		visibility: visible;
-		transition: all .5s;
-	}
-}
-
 
 .wrapper {
 	width: 100%;
@@ -316,23 +295,6 @@ body {
 	}
 }
 
-._overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: $bgc2;
-	opacity: 0;
-	visibility: hidden;
-	&._active {
-		opacity: 1;
-		visibility: visible;
-		z-index: 14;
-		transition: all 0.5s ease;
-		
-	}
-}
 
 //============================================<FULL SCREEN>================================================
 
