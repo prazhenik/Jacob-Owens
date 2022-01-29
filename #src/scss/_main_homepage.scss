@@ -8,16 +8,7 @@
 	&__container {
 		position: relative;
 	}
-	&__logo {
-		display: none;
-		position: absolute;
-		top: 2%;
-		right: 3%;
-		z-index: 6;
-		@media (max-width: $md4) {
-			display: inline-block;
-		}
-	}
+
 	&__bcg-video {
 		position: absolute;
 		top: 50%;

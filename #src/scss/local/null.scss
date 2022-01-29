@@ -29,7 +29,6 @@ a:visited {
 	color: inherit;
 }
 
-
 aside,
 nav,
 footer,
@@ -40,7 +39,6 @@ section {
 
 html,
 body {
-	height: 100%;
 	-webkit-overflow-scrolling: touch;
 }
 body {
@@ -49,6 +47,7 @@ body {
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
+	min-height: 100%;
 }
 input,
 button,
@@ -97,7 +96,6 @@ img {
 	object-fit: cover;
 }
 
-
 svg path {
 	stroke: inherit;
 	stroke-width: inherit;
@@ -113,7 +111,6 @@ h6 {
 	font-weight: inherit;
 	font-size: inherit;
 }
-
 
 /*
 &::-webkit-scrollbar {

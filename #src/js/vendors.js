@@ -44,6 +44,8 @@
 //https://github.com/leongersen/wnumb/releases
 //include('libs/wNumb.min.js', {}); //JavaScript Number & Money formatting
 
+//https://micku7zu.github.io/vanilla-tilt.js/
+@@include('libs/vanilla-tilt.min.js', {}); // smooth 3D tilt
 
 
 
