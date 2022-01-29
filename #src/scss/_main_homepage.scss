@@ -144,7 +144,10 @@
 	&__item {
 		position: relative;
 		overflow: hidden;
-		min-height: 50vh;
+		@media (max-width: $md3) {
+				min-height: 50vh;
+		}
+
 		&:not(:nth-child(2)) {
 			display: none;
 		}
@@ -181,7 +184,7 @@
 	}
 	@media (min-width: $md4) {
 		grid-template-columns: repeat(6, minmax(50px, 1fr));
-		grid-template-rows: repeat(3, minmax(240px, 1fr));
+		grid-template-rows: repeat(3, minmax(220px, 1fr));
 		gap: 5px;
 		@include adaptiv-value(padding-top, 100, 40, 1);
 		@include adaptiv-value(padding-bottom, 100, 40, 1);

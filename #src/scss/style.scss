@@ -130,6 +130,7 @@ $tc1: rgba(220, 220, 220, 1); // main text color
 $tc2: rgba(255, 255, 255, 1); // hover text color
 $tc3: rgba(0, 0, 0, 1); // secondary text color
 $tc4: rgba(220, 220, 220, 0.6); // main text color
+$tc5: rgba(0, 160, 255, 1);
 //---------------------Цвета фонов---------------------
 $bgc1: rgba(0, 0, 0, 1); // main bcg
 $bgc2: rgba(0, 0, 0, 0.7); // menu scroll
@@ -233,7 +234,6 @@ body {
 		overflow: visible;
 	}
 	&._loaded._lock {
-		pointer-events: none;
 		overflow: hidden;
 	}
 	&._loaded._lock._pc {
@@ -295,8 +295,11 @@ body {
 	& a {
 		display: inline-block;
 		height: 100%;
+		transition: .3s ease;
 		@media (any-hover: hover) {
 			&:hover {
+				transition: .2s ease;
+				transform: scale(1.1);
 				& svg path {
 					fill: $navc1;
 				}

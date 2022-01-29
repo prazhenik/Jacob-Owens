@@ -1,7 +1,5 @@
 //================================= POPUPS ==================================================
 
-
-
 .popup {
 	z-index: 100;
 	position: fixed;
@@ -68,8 +66,8 @@
 		border: 2px solid rgba(70, 70, 70, 0.7);
 		@include adaptiv-value(padding-top, 70, 50, 1);
 		@include adaptiv-value(padding-bottom, 50, 20, 1);
-		padding-left: clamp(10px, 4vw, 50px) ;
-		padding-right: clamp(10px, 4vw, 50px) ;
+		padding-left: clamp(10px, 4vw, 50px);
+		padding-right: clamp(10px, 4vw, 50px);
 		&_callback {
 			max-width: 491px;
 			width: 100%;
@@ -96,11 +94,12 @@
 			cursor: pointer;
 			z-index: 10;
 			color: $tc1;
-			transition: all 0.5s ease;
+			transition: all 0.2s ease;
 			&:hover,
 			&:active {
 				color: $tc2;
-				transition: all 0.5s ease;
+				transform: scale(1.15);
+				transition: all 0.2s ease;
 			}
 		}
 	}
@@ -111,7 +110,6 @@
 		& span {
 			display: block;
 			font-size: rem(20);
-
 		}
 	}
 
@@ -119,7 +117,6 @@
 		color: $tc1;
 	}
 }
-
 
 .callback-form {
 	&__form {

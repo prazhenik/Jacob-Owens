@@ -58,7 +58,7 @@
 	&__item {
 		@include adaptiv-value(font-size, 20, 16, 3);
 		font-weight: 500;
-		z-index: 1;
+		z-index: 5;
 		@media (max-width: $md4) {
 			padding: 5px;
 		}
@@ -78,6 +78,15 @@
 		@media (max-width: $md4) {
 			justify-content: flex-end;
 		}
+		& a {
+			@media (any-hover: hover){
+				&:hover{
+					color: $tc2;
+					transform: scale(1.03);
+					transition: .2s ease;
+				}
+			}
+		}
 	}
 	&__subscribe{
 		@media (max-width: $md4) {
@@ -85,6 +94,13 @@
 		}
 	}
 	&__popup-link{
+		transition: .2s ease;
+		@media (any-hover: hover){
+			&:hover{
+				transform: scale(1.04);
+				transition: .2s ease;
+			}
+		}
 		@media (max-width: $md4) {
 			order: 3;
 		}
@@ -102,13 +118,7 @@
 		font-family: "Comforter";
 		@include adaptiv-value(font-size, 34, 20, 3);
 		text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
-		transition: all 0.5s ease;
-		@media (any-hover: hover) {
-			&:hover {
-				color: $tc2;
-				transition: color 0.5s ease;
-			}
-		}
+		transition: all 0.2s ease;
 	}
 }
 
