@@ -1,3 +1,8 @@
+//прокрутка к топ при обновлении страницы
+window.onbeforeunload = function () {
+	window.scrollTo(0, 0);
+}
+
 //плавный скролл
 const smoothLinks = document.querySelectorAll('a[href^="#"]:not(._popup-link)');
 const activePopup = document.querySelectorAll('.popup._active');

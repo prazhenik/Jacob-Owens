@@ -3869,6 +3869,10 @@ body._loaded._lock._pc .__popup-link {
     display: none;
   }
 
+  .header {
+    position: absolute;
+  }
+
   .header._scrolled:before {
     display: none;
   }

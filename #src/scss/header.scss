@@ -6,6 +6,9 @@
 	width: 100%;
 	font-weight: 400;
 	z-index: 5;
+	@media (max-width: $md4) {
+		position: absolute;
+	}
 	&._scrolled:before {
 		content: "";
 		display: block;
@@ -24,7 +27,6 @@
 	&__container {
 		display: flex;
 		min-height: 60px;
-		
 	}
 
 	&__content {
@@ -81,34 +83,33 @@
 			justify-content: flex-end;
 		}
 		& a {
-			@media (any-hover: hover){
-				&:hover{
+			@media (any-hover: hover) {
+				&:hover {
 					color: $tc2;
 					transform: scale(1.03);
-					transition: .2s ease;
+					transition: 0.2s ease;
 				}
 			}
 		}
 	}
-	&__subscribe{
+	&__subscribe {
 		@media (max-width: $md4) {
 			order: 1;
 		}
 	}
-	&__popup-link{
-		transition: .2s ease;
-		@media (any-hover: hover){
-			&:hover{
+	&__popup-link {
+		transition: 0.2s ease;
+		@media (any-hover: hover) {
+			&:hover {
 				transform: scale(1.04);
-				transition: .2s ease;
+				transition: 0.2s ease;
 			}
 		}
 		@media (max-width: $md4) {
 			order: 3;
 		}
-
 	}
-	&__menu{
+	&__menu {
 		@media (max-width: $md4) {
 			order: 2;
 		}
