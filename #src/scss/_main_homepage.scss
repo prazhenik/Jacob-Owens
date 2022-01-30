@@ -65,7 +65,7 @@
 			width: 135px;
 			height: 1.5em;
 			backdrop-filter: blur(5px);
-			background: linear-gradient(45deg, rgba(220,220,220,0.3) 50%, rgba(255,255,255,0.4) 80%);
+			background: linear-gradient(45deg, rgba(220, 220, 220, 0.3) 50%, rgba(255, 255, 255, 0.4) 80%);
 			border: 1px solid $bgc6;
 			z-index: -1;
 		}
@@ -145,7 +145,7 @@
 		position: relative;
 		overflow: hidden;
 		@media (max-width: $md3) {
-				min-height: 65vh;
+			min-height: 65vh;
 		}
 
 		&:not(:nth-child(2)) {
@@ -160,7 +160,9 @@
 			width: 135px;
 			height: 100%;
 			backdrop-filter: blur(5px);
-			background: linear-gradient(45deg, rgba(0,0,0,0.3) 70%, rgba(200,200,200,0.5)), url("../img/icons/more_gallery6.svg") no-repeat center 90%;
+			background: $bgc6;
+			background: url("../img/icons/more_gallery6.svg") no-repeat center 90%,
+				linear-gradient(45deg, rgba(0, 0, 0, 0.3) 70%, rgba(200, 200, 200, 0.5));
 			border-left: 1px solid rgba(80, 80, 80, 0.4);
 			border-right: 1px solid rgba(80, 80, 80, 0.4);
 			z-index: 3;

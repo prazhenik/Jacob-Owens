@@ -6,6 +6,9 @@
 	width: 100%;
 	font-weight: 400;
 	z-index: 5;
+	@media (max-width: $md4) {
+		position: absolute;
+	}
 	&._scrolled:before {
 		content: "";
 		display: block;
