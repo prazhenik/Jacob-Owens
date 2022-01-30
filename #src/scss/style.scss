@@ -247,7 +247,6 @@ body {
 	}
 }
 
-
 .wrapper {
 	width: 100%;
 	min-height: 100vh;
@@ -266,18 +265,16 @@ body {
 .socials {
 	display: inline-flex;
 	align-items: center;
-	@media (max-width: $md4) {
-	}
 	& li {
 		height: 44px;
 	}
 	& a {
 		display: inline-block;
 		height: 100%;
-		transition: .3s ease;
+		transition: 0.3s ease;
 		@media (any-hover: hover) {
 			&:hover {
-				transition: .2s ease;
+				transition: 0.2s ease;
 				transform: scale(1.1);
 				& svg path {
 					fill: $navc1;
@@ -295,23 +292,13 @@ body {
 	}
 }
 
-
 //============================================<FULL SCREEN>================================================
 
 ._fullscrn {
 	min-height: 100vh;
 	display: flex;
 	overflow: hidden;
-	&:after {
-		content: "";
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100vh;
-		box-shadow: inset 0px 20px 15px -10px $bgc1, inset 0px -20px 15px -10px $bgc1;
-	}
+
 }
 
 //================================================<IBG>====================================================
