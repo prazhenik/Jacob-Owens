@@ -25,7 +25,7 @@
 	}
 
 	&__offer {
-		padding: 40px 10%;
+		padding: 40px 0;
 		box-sizing: content-box;
 		z-index: 0;
 		@media (max-width: $md4) {
@@ -41,11 +41,9 @@
 		font-weight: 400;
 		font-size: rem(20);
 		letter-spacing: 3.3px;
-		@media (min-width: $md1) {
 			@include adaptiv-value(font-size, 20, 15, 3);
 			@include adaptiv-value(line-height, 23, 16, 3);
 			@include adaptiv-value(letter-spacing, 3.3, 0.2, 3);
-		}
 		@media (max-width: $md4) {
 			display: none;
 		}

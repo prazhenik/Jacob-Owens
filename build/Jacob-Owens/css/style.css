@@ -2856,7 +2856,7 @@ body._loaded._lock._pc .__popup-link {
 }
 
 .hero__offer {
-  padding: 40px 10%;
+  padding: 40px 0;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   z-index: 0;
@@ -2866,6 +2866,15 @@ body._loaded._lock._pc .__popup-link {
   font-weight: 400;
   font-size: 1.25rem;
   letter-spacing: 3.3px;
+  font-size: calc(
+			15px + 5 * ((100vw - 280px) / 920)
+		);
+  line-height: calc(
+			16px + 7 * ((100vw - 280px) / 920)
+		);
+  letter-spacing: calc(
+			0.2px + 3.1 * ((100vw - 280px) / 920)
+		);
 }
 
 .hero__skills-dynamic {
@@ -3692,18 +3701,6 @@ body._loaded._lock._pc .__popup-link {
 }
 
 @media (min-width: 1200px) {
-  .hero__skills {
-    font-size: calc(
-			15px + 5 * ((100vw - 280px) / 920)
-		);
-    line-height: calc(
-			16px + 7 * ((100vw - 280px) / 920)
-		);
-    letter-spacing: calc(
-			0.2px + 3.1 * ((100vw - 280px) / 920)
-		);
-  }
-
   .hero__popup-link {
     padding-left: 3%;
   }
